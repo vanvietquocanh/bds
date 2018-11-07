@@ -148,42 +148,30 @@
                                             <thead>
                                                 <tr>
                                                     <th>#</th>
-                                                    <th>Table heading</th>
-                                                    <th>Table heading</th>
-                                                    <th>Table heading</th>
-                                                    <th>Table heading</th>
-                                                    <th>Table heading</th>
-                                                    <th>Table heading</th>
+                                                    <th>Lô số</th>
+                                                    <th>Vị trí</th>
+                                                    <th>Loại dự án</th>
+                                                    <th>Giá (tỉ VNĐ)</th>
+                                                    <th>Hướng</th>
+                                                    <th>Diện tích</th>
+                                                    <th>Khu</th>
+                                                    <th>Sửa/Xóa</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <th scope="row">1</th>
-                                                    <td>Table cell</td>
-                                                    <td>Table cell</td>
-                                                    <td>Table cell</td>
-                                                    <td>Table cell</td>
-                                                    <td>Table cell</td>
-                                                    <td>Table cell</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">2</th>
-                                                    <td>Table cell</td>
-                                                    <td>Table cell</td>
-                                                    <td>Table cell</td>
-                                                    <td>Table cell</td>
-                                                    <td>Table cell</td>
-                                                    <td>Table cell</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">3</th>
-                                                    <td>Table cell</td>
-                                                    <td>Table cell</td>
-                                                    <td>Table cell</td>
-                                                    <td>Table cell</td>
-                                                    <td>Table cell</td>
-                                                    <td>Table cell</td>
-                                                </tr>
+                                                <%for (var i = 0; i < result.length; i++) {%>
+                                                    <tr>
+                                                        <th scope="row"><%-i+1%></th>
+                                                        <td><%-result[i]["Lô số"]%></td>
+                                                        <td><%-result[i]["Vị trí"]%></td>
+                                                        <td><%-result[i]["Loại dự án"]%></td>
+                                                        <td><%-result[i]["Giá"]%></td>
+                                                        <td><%-result[i]["Hướng"]%></td>
+                                                        <td><%-result[i]["Diện tích"]%></td>
+                                                        <td><%-result[i]["Khu"]%></td>
+                                                        <td><button type="button" class="btn-primary btn"><i class="fa fa-edit"></i></button><button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button></td>
+                                                    </tr>
+                                                <%}%>
                                             </tbody>
                                         </table>
                                     </div>
@@ -191,21 +179,46 @@
                             </div><!-- end col -->
                             <div class="col-sm-12">
                                 <div class="card-box">
-                                    <form method="post"class="form-horizontal">
+                                    <form method="post" class="form-horizontal text-right">
                                         <div class="form-group">
-                                            <div class="col-sm-10">
-                                                <input type="text" id="range_02">
+                                            <div class="col-sm-11">
+                                                <input type="text" id="range_01" name="Diện tích">
                                             </div>
-                                            <label for="range_02" class="col-sm-2 control-label"><b>Giá</b><span class="font-normal text-muted f-s-12 clearfix">X 1.000.000 đồng</span></label>
+                                            <label for="range_01" class="col-sm-1 control-label"><b>Diện tích</b><span class="font-normal text-muted f-s-12 clearfix">m2</span></label>
                                         </div>
-                                        <div class="form-group">
-                                            <div class="col-sm-10">
-                                                <input type="text" id="range_01">
+                                        <div class="form-group row">
+                                            <div class="col-xs-4">
+                                                <input id="pass1" type="text" placeholder="Lô số" name="Lô số" required="" class="form-control m-b-5 col-xs-3" data-parsley-id="8">
                                             </div>
-                                            <label for="range_01" class="col-sm-2 control-label"><b>Diện tích</b><span class="font-normal text-muted f-s-12 clearfix">m2</span></label>
+                                            <div class="col-xs-4">
+                                                <input id="pass1" type="text" placeholder="Vị trí" name="Vị trí" required="" class="form-control m-b-5 col-xs-3" data-parsley-id="8">
+                                            </div>
+                                            <div class="col-xs-4">
+                                                <input id="pass1" type="text" placeholder="Khu" name="Khu" required="" class="form-control m-b-5 col-xs-3" data-parsley-id="8">
+                                            </div>
+                                            <div class="col-xs-4">
+                                                <input id="pass1" type="text" placeholder="Loại dự án" name="Loại dự án" required="" class="form-control m-b-5 col-xs-3" data-parsley-id="8">
+                                            </div>
+                                            <div class="col-xs-4">
+                                                <input id="pass1" type="number" placeholder="Giá (tỉ VNĐ)" name="Giá" required="" class="form-control m-b-5 col-xs-3" data-parsley-id="8">
+                                            </div>
+                                            <div class="col-xs-4">
+                                                <select name="Hướng" class="form-control m-b-5 col-xs-3" id="">
+                                                    <option value="">Hướng</option>
+                                                    <option value="Bắc">Bắc</option>
+                                                    <option value="Nam">Nam</option>
+                                                    <option value="Đông">Đông</option>
+                                                    <option value="Tây">Tây</option>
+                                                    <option value="Đông Bắc">Đông Bắc</option>
+                                                    <option value="Đông Nam">Đông Nam</option>
+                                                    <option value="Tây Bắc">Tây Bắc</option>
+                                                    <option value="Tây Nam">Tây Nam</option>
+                                                </select>
+                                            </div>
                                         </div>
-                                        <input id="pass1" type="text" placeholder="Địa chỉ" required="" class="form-control" data-parsley-id="8">
+                                        <label for="ex2">Mô tả chi tiết:</label>
                                         <textarea id="elm1" name="area"></textarea>
+                                        <button type="submit" class="btn btn-primary waves-effect w-md waves-light m-b-5 m-t-5">Gửi</button>
                                     </form>
                                 </div>
                             </div>
@@ -216,7 +229,7 @@
                 </div> <!-- content -->
 
                 <footer class="footer text-right">
-                    2016 - 2017 © Adminto.
+                    <%-new Date().getFullYear()%> © Happy Real.
                 </footer>
 
             </div>
@@ -342,5 +355,6 @@
         <script src="../assets/js/jquery.core.js"></script>
         <script src="../assets/js/jquery.app.js"></script>
         <script type="text/javascript" src="../js/form-text-word.js"></script>
+        <script type="text/javascript" src="../js/form-send-new-real-estate.js"></script>
     </body>
 </html>

@@ -12,8 +12,9 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var signinRouter = require('./routes/signin');
 var dashboardRouter = require('./routes/dashboard');
-var nguyentriphuongRouter = require('./routes/nguyentriphuong');
+var areaRouter = require('./routes/area');
 var emailRouter = require('./routes/email');
+var newRealEstateRouter = require('./routes/new.real.estate');
 
 var app = express();
 
@@ -60,7 +61,8 @@ app.route("/facebook").get(passport.authenticate("facebook"));
 app.use('/signin', signinRouter);
 app.use('/users', usersRouter);
 app.use('/admin', dashboardRouter);
-app.use('/admin/nguyen-tri-phuong-happy-real', nguyentriphuongRouter);
+app.use('/admin', areaRouter);
+app.use('/new-area', newRealEstateRouter);
 app.use('/admin/email-happy-real', emailRouter);
 
 // catch 404 and forward to error handler
