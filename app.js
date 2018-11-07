@@ -13,6 +13,7 @@ var usersRouter = require('./routes/users');
 var signinRouter = require('./routes/signin');
 var dashboardRouter = require('./routes/dashboard');
 var nguyentriphuongRouter = require('./routes/nguyentriphuong');
+var emailRouter = require('./routes/email');
 
 var app = express();
 
@@ -60,6 +61,7 @@ app.use('/signin', signinRouter);
 app.use('/users', usersRouter);
 app.use('/admin', dashboardRouter);
 app.use('/admin/nguyen-tri-phuong-happy-real', nguyentriphuongRouter);
+app.use('/admin/email-happy-real', emailRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
