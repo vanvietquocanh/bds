@@ -4,9 +4,15 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var sassMiddleware = require('node-sass-middleware');
-
+var passport = require("passport")
+var infoAPI = require("./routes/apiInfo.js");
+var session = require("express-session");
+var FacebookStrategy = require('passport-facebook');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var signinRouter = require('./routes/signin');
+var dashboardRouter = require('./routes/dashboard');
+var nguyentriphuongRouter = require('./routes/nguyentriphuong');
 
 var app = express();
 
@@ -25,9 +31,35 @@ app.use(sassMiddleware({
   sourceMap: true
 }));
 app.use(express.static(path.join(__dirname, 'public')));
-
 app.use('/', indexRouter);
+app.use(session(
+                { secret: 'coppycat',
+                  resave: false,
+                  saveUninitialized: false,
+                  cookie:{
+                    expires: new Date(253402300000000)
+                  }
+                }
+              ));
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new FacebookStrategy(infoAPI, function(accessToken, refreshToken, profile, done) {
+      done(null, profile);
+    })|| new LocalStrategy(function(username, password, done) {
+   
+    })
+    )
+passport.serializeUser((user, done)=>{
+  done(null, user)
+})
+passport.deserializeUser((id, done)=>{
+  done(null, id)
+})
+app.route("/facebook").get(passport.authenticate("facebook"));
+app.use('/signin', signinRouter);
 app.use('/users', usersRouter);
+app.use('/admin', dashboardRouter);
+app.use('/admin/nguyen-tri-phuong-happy-real', nguyentriphuongRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
