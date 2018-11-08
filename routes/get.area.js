@@ -11,9 +11,12 @@ router.get('/:area', function(req, res, next) {
 			assert.equal(null, err);
 			db.collection(req.params.area).find().toArray((err, result)=>{
 				assert.equal(null, err);
-					console.log(result);
-					res.render("khu-vuc-happy-real",{"result": result})
 				db.close();
+				if(!err){
+					res.render("khu-vuc-happy-real",{"result": result})
+				}else{
+					res.send(err)
+				}
 			})
 		})
 	// }else{

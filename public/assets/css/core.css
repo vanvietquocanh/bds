@@ -1353,3 +1353,10 @@ blockquote.pull-right {
     margin-top: 0px;
   }
 }
+/* custom CSS */
+.null::placeholder{
+  color: #e74c3c!important;
+}
+.null{
+  color: #e74c3c!important;
+}

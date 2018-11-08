@@ -194,31 +194,28 @@
                             </div><!-- end col -->
                             <div class="col-sm-12">
                                 <div class="card-box">
-                                    <form method="post" class="form-horizontal text-right">
-                                        <div class="form-group">
-                                            <div class="col-sm-11">
-                                                <input type="text" id="range_01" name="Diện tích">
-                                            </div>
-                                            <label for="range_01" class="col-sm-1 control-label"><b>Diện tích</b><span class="font-normal text-muted f-s-12 clearfix">m2</span></label>
-                                        </div>
+                                    <div class="form-horizontal text-right" id="form-add">
                                         <div class="form-group row">
                                             <div class="col-xs-4">
-                                                <input id="pass1" type="text" placeholder="Lô số" name="Lô số" id="landNumber" class="form-control m-b-5 col-xs-3" data-parsley-id="8">
+                                                <input type="number" placeholder="Diện tích (m2)" name="Diện tích" id="acreage" min="0" class="form-control m-b-5 col-xs-3">
                                             </div>
                                             <div class="col-xs-4">
-                                                <input id="pass1" type="text" placeholder="Vị trí" name="Vị trí" id="location" class="form-control m-b-5 col-xs-3" data-parsley-id="8">
+                                                <input type="text" placeholder="Lô số" name="Lô số" id="landNumber" class="form-control m-b-5 col-xs-3">
                                             </div>
                                             <div class="col-xs-4">
-                                                <input id="pass1" type="text" placeholder="Khu" name="Khu" id="area" class="form-control m-b-5 col-xs-3" data-parsley-id="8">
+                                                <input type="text" placeholder="Vị trí" name="Vị trí" id="location" class="form-control m-b-5 col-xs-3">
                                             </div>
                                             <div class="col-xs-4">
-                                                <input id="pass1" type="text" placeholder="Loại dự án" name="Loại dự án" id="typeProject" class="form-control m-b-5 col-xs-3" data-parsley-id="8">
+                                                <input type="text" placeholder="Khu" name="Khu" id="area" class="form-control m-b-5 col-xs-3">
                                             </div>
                                             <div class="col-xs-4">
-                                                <input id="pass1" type="number" placeholder="Giá (tỉ VNĐ)" name="Giá" id="price" class="form-control m-b-5 col-xs-3" data-parsley-id="8">
+                                                <input type="text" placeholder="Loại dự án" name="Loại dự án" id="typeProject" class="form-control m-b-5 col-xs-3">
                                             </div>
                                             <div class="col-xs-4">
-                                                <select name="Hướng" class="form-control m-b-5 col-xs-3" id="">
+                                                <input type="number" placeholder="Giá (tỉ VNĐ)" name="Giá" id="price" min="0" class="form-control m-b-5 col-xs-3">
+                                            </div>
+                                            <div class="col-xs-4">
+                                                <select name="Hướng" id="direction" class="form-control m-b-5 col-xs-3">
                                                     <option value="">Hướng</option>
                                                     <option value="Bắc">Bắc</option>
                                                     <option value="Nam">Nam</option>
@@ -231,10 +228,12 @@
                                                 </select>
                                             </div>
                                         </div>
-                                        <label for="ex2">Mô tả chi tiết:</label>
-                                        <textarea id="elm1" name="area"></textarea>
-                                        <button type="submit" class="btn btn-primary waves-effect w-md waves-light m-b-5 m-t-5">Gửi</button>
-                                    </form>
+                                        <div class="form-group">
+                                            <label for="details">Mô tả chi tiết:</label>
+                                            <textarea class="form-control" name="Chi tiết" style="resize: none;" id="details"></textarea>
+                                        </div>
+                                        <button type="submit" id="submit" class="btn btn-primary waves-effect w-md waves-light m-b-5 m-t-5">Gửi</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>

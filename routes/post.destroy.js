@@ -8,18 +8,22 @@ const pathMongodb = require("./mongodb.path.js");
 /* POST new real estate. */
 router.post('/:area', function(req, res, next) {
 	// if(req.user){
-		mongo.connect(pathMongodb,(err, db)=>{
-			assert.equal(null, err);
-			db.collection(req.params.area).deleteOne({_id:ObjectId(req.body.id)}, (err, result)=>{
+		if(req.body.id!==""){
+			mongo.connect(pathMongodb,(err, db)=>{
 				assert.equal(null, err);
+				db.collection(req.params.area).deleteOne({_id:ObjectId(req.body.id)}, (err, result)=>{
+					assert.equal(null, err);
+					db.close();
 					if(!err){
 						res.send("success");
 					}else{
 						res.send(err)
 					}
-				db.close();
+				})
 			})
-		})
+		}else{
+			res.send("error")
+		}
 	// }else{
 	// 	res.redirect("/error")
 	// }

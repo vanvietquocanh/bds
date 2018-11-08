@@ -1,28 +1,29 @@
 var express = require('express');
 var router = express.Router();
 var mongo = require("mongodb");
+var ObjectId = require('mongodb').ObjectId;
 const assert = require('assert');
 const pathMongodb = require("./mongodb.path.js");
-const valid = require("./valid.js");
 
 /* POST new real estate. */
 router.post('/:area', function(req, res, next) {
 	// if(req.user){
-		if(valid(req.body).length>0){
-			res.send({"error": valid(req.body)});
-		}else{
+		if(req.body.id!==""){
 			mongo.connect(pathMongodb,(err, db)=>{
 				assert.equal(null, err);
-				db.collection(req.params.area).insertOne(req.body, (err, result)=>{
+				db.collection(req.params.area).findOne({_id:ObjectId(`${req.body.id}`)}, (err, result)=>{
 					assert.equal(null, err);
 					db.close();
 					if(!err){
-						res.send("success");
+						res.send(result);
 					}else{
-						res.send(err)
+						res.send("error")
 					}
 				})
 			})
+		}else{
+			res.send("error")
+
 		}
 	// }else{
 	// 	res.redirect("/error")
