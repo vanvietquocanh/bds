@@ -1,4 +1,14 @@
 $(document).ready(function () {
+    var convertLanguage = {
+        "Diện tích" : "acreage",
+        "Lô số"     : "landNumber",
+        "Vị trí"    : "location",
+        "Khu"       : "area",
+        "Loại dự án": "typeProject",
+        "Giá"       : "price",
+        "Hướng"     : "direction",
+        "Chi tiết"  : "details"
+    }
     function valid(data){
         var valids = [];
         for (var i = 0; i < Object.values(data).length; i++) {
@@ -28,7 +38,7 @@ $(document).ready(function () {
         $("#direction").val((typeof data==="string")?data:data["Hướng"])
         $("#details").val((typeof data==="string")?data:data["Chi tiết"])
     }
-    function createData() {
+    function createData(id) {
         return {
             "Diện tích" : $("#acreage").val(),
             "Lô số"     : $("#landNumber").val(),
@@ -37,52 +47,83 @@ $(document).ready(function () {
             "Loại dự án": $("#typeProject").val(),
             "Giá"       : $("#price").val(),
             "Hướng"     : $("#direction").val(),
-            "Chi tiết"  : $("#details").val()
+            "Chi tiết"  : $("#details").val(),
+            "_id"       : (id)?id:""
         }
+        
     }
-    $("#submit").click(e=>{
-        let data = createData()
+    function successUpdate(data){
+        let id = data._id;
+        delete data._id;
+        $.each(data, function(index, val) {
+            if(index!=="Chi tiết"){
+                $(`#${id}`).children(`.${convertLanguage[index]}`).text(val);
+            }
+        });
+    }
+    function successInsert(data) {
+        let htmlNewArea =   `<tr>
+                                <th scope="row">${$("tbody").children("tr").length+1}</th>
+                                <td>${data["Lô số"]}</td>
+                                <td>${data["Vị trí"]}</td>
+                                <td>${data["Loại dự án"]}</td>
+                                <td>${data["Giá"]}</td>
+                                <td>${data["Hướng"]}</td>
+                                <td>${data["Diện tích"]}</td>
+                                <td>${data["Khu"]}</td>
+                                <td>
+                                    <button disabled type="button" class="btn-primary btn 5be47af1405d9709d4d7801a">
+                                        <i class="fa fa-edit"></i>
+                                    </button>
+                                    <button disabled type="button" class="btn-danger btn 5be47af1405d9709d4d7801a">
+                                        <i class="fa fa-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>`
+        returnValueInput("")
+        $("tbody").append(htmlNewArea)
+    }
+    function submitForm(data, subParams, afterPost) {
+        console.log(data);
         if(valid(data).length>0){
             alertError(valid(data))
         }else{
             $.each(data, function(index, val) {
                 $(`[name='${index}']`).removeClass('null')
             });
-            $.post(window.location.pathname.split("admin").join("new-area"), data, function(res, textStatus, xhr) {
+            $.post(window.location.pathname.split("admin").join(subParams), data, function(res, textStatus, xhr) {
                 if(res==="success"){
-                    let htmlNewArea =   `<tr>
-                                            <th scope="row">${$("tbody").children("tr").length+1}</th>
-                                            <td>${data["Lô số"]}</td>
-                                            <td>${data["Vị trí"]}</td>
-                                            <td>${data["Loại dự án"]}</td>
-                                            <td>${data["Giá"]}</td>
-                                            <td>${data["Hướng"]}</td>
-                                            <td>${data["Diện tích"]}</td>
-                                            <td>${data["Khu"]}</td>
-                                            <td>
-                                                <button disabled type="button" class="btn-primary btn 5be47af1405d9709d4d7801a">
-                                                    <i class="fa fa-edit"></i>
-                                                </button>
-                                                <button disabled type="button" class="btn-danger btn 5be47af1405d9709d4d7801a">
-                                                    <i class="fa fa-trash"></i>
-                                                </button>
-                                            </td>
-                                        </tr>`
-                    returnValueInput("")
-                    $("tbody").append(htmlNewArea)
+                    return afterPost;
                 }else{
                     alertError(res.error)
                 }
             });
         }
-    })
+    }
+    function initEventCreateArea() {
+        returnValueInput("");
+        $("#submit").click(e=>{
+            let data = createData(false)
+            delete data._id;
+            submitForm(data, "new-area", successInsert(data))
+        })
+    }
     function editBTN(id, element){
         $.post(window.location.pathname.split("admin").join("find"), id, (res, stt, xhr)=>{
             if(typeof res==="object"){
                 returnValueInput(res)
-                $("#submit").text("Save").attr("id","save");
-                $("form").append(`<input type='text' name="_id" style="display: none;" value="${res._id}"/>`);
-                $("form").attr("action", window.location.pathname.split("admin").join("update"));
+                $("#submit").unbind('click');
+                $("#submit").text("Save").attr("id","btn-save");
+                $("#form-add").append(`<button type="submit" id="destroy" class="btn btn-primary waves-effect w-md waves-light m-b-5 m-t-5">Hủy</button>`)
+                $("#destroy").click(function(event) {
+                    initEventCreateArea();
+                })
+                $("#btn-save").click(function(event) {
+                    $("#btn-save").unbind('click')
+                    let data = createData(id.id)
+                    submitForm(createData(id.id), "update", successUpdate(data))
+                    initEventCreateArea();
+                });
             }else{
                 alert("error");
                 window.location.href = window.location.href;
@@ -98,11 +139,12 @@ $(document).ready(function () {
             }
         })
     }
+    initEventCreateArea()
     $(".btn").click(e=>{
         if($(e.currentTarget).attr("class").split(" ").length===3){
             if($(e.currentTarget).attr("class").indexOf("danger")===-1){
                 editBTN({id : $(e.currentTarget).attr("class").split("btn ")[1]}, $(e.currentTarget));
-            }else{
+            }else {
                 dropBTN({id : $(e.currentTarget).attr("class").split("btn ")[1]}, $(e.currentTarget))
             }
         }
