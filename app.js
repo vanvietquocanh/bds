@@ -18,6 +18,7 @@ var destroyAreaRouter = require('./routes/post.destroy');
 var newRealEstateRouter = require('./routes/post.newRealeState');
 var findRouter = require('./routes/post.find');
 var updateRouter = require('./routes/post.update');
+var huonggiachu = require('./routes/huonggiachu');
 
 var app = express();
 
@@ -69,6 +70,7 @@ app.use('/new-area', newRealEstateRouter);
 app.use('/destroy', destroyAreaRouter);
 app.use('/find', findRouter);
 app.use('/update', updateRouter);
+app.use('/huonggiachu', huonggiachu);
 app.use('/admin/email-happy-real', emailRouter);
 
 // catch 404 and forward to error handler

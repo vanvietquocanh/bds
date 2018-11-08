@@ -139,6 +139,9 @@ $(document).ready(function () {
             }
         })
     }
+    // $.get('/test',function(data, textStatus, xhr) {
+    //     console.log(JSON.parse(data));
+    // });
     initEventCreateArea()
     $(".btn").click(e=>{
         if($(e.currentTarget).attr("class").split(" ").length===3){
