@@ -63,6 +63,14 @@
                                 <h4 class="page-title">Nguyễn Tri Phương</h4>
                             </li>
                         </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="hidden-xs">
+                                <div class="app-search" id="app-search">
+                                    <input type="text" placeholder="Search..." class="form-control">
+                                    <a href=""><i class="fa fa-search"></i></a>
+                                </div>
+                            </li>
+                        </ul>
                     </div><!-- end container -->
                 </div><!-- end navbar -->
             </div>
@@ -155,21 +163,28 @@
                                                     <th>Hướng</th>
                                                     <th>Diện tích</th>
                                                     <th>Khu</th>
-                                                    <th>Sửa/Xóa</th>
+                                                    <th>Sửa / Xóa</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <%for (var i = 0; i < result.length; i++) {%>
                                                     <tr>
                                                         <th scope="row"><%-i+1%></th>
-                                                        <td><%-result[i]["Lô số"]%></td>
-                                                        <td><%-result[i]["Vị trí"]%></td>
-                                                        <td><%-result[i]["Loại dự án"]%></td>
-                                                        <td><%-result[i]["Giá"]%></td>
-                                                        <td><%-result[i]["Hướng"]%></td>
-                                                        <td><%-result[i]["Diện tích"]%></td>
-                                                        <td><%-result[i]["Khu"]%></td>
-                                                        <td><button type="button" class="btn-primary btn"><i class="fa fa-edit"></i></button><button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button></td>
+                                                        <td><%-(result[i]["Lô số"])?result[i]["Lô số"]:""%></td>
+                                                        <td><%-(result[i]["Vị trí"])?result[i]["Vị trí"]:""%></td>
+                                                        <td><%-(result[i]["Loại dự án"])?result[i]["Loại dự án"]:""%></td>
+                                                        <td><%-(result[i]["Giá"])?result[i]["Giá"]:""%></td>
+                                                        <td><%-(result[i]["Hướng"])?result[i]["Hướng"]:""%></td>
+                                                        <td><%-(result[i]["Diện tích"])?result[i]["Diện tích"]:""%></td>
+                                                        <td><%-(result[i]["Khu"])?result[i]["Khu"]:""%></td>
+                                                        <td>
+                                                            <button type="button" class="btn-primary btn <%-result[i]._id%>">
+                                                                <i class="fa fa-edit"></i>
+                                                            </button>
+                                                            <button type="button" class="btn-danger btn <%-result[i]._id%>">
+                                                                <i class="fa fa-trash"></i>
+                                                            </button>
+                                                        </td>
                                                     </tr>
                                                 <%}%>
                                             </tbody>
@@ -188,19 +203,19 @@
                                         </div>
                                         <div class="form-group row">
                                             <div class="col-xs-4">
-                                                <input id="pass1" type="text" placeholder="Lô số" name="Lô số" required="" class="form-control m-b-5 col-xs-3" data-parsley-id="8">
+                                                <input id="pass1" type="text" placeholder="Lô số" name="Lô số" id="landNumber" class="form-control m-b-5 col-xs-3" data-parsley-id="8">
                                             </div>
                                             <div class="col-xs-4">
-                                                <input id="pass1" type="text" placeholder="Vị trí" name="Vị trí" required="" class="form-control m-b-5 col-xs-3" data-parsley-id="8">
+                                                <input id="pass1" type="text" placeholder="Vị trí" name="Vị trí" id="location" class="form-control m-b-5 col-xs-3" data-parsley-id="8">
                                             </div>
                                             <div class="col-xs-4">
-                                                <input id="pass1" type="text" placeholder="Khu" name="Khu" required="" class="form-control m-b-5 col-xs-3" data-parsley-id="8">
+                                                <input id="pass1" type="text" placeholder="Khu" name="Khu" id="area" class="form-control m-b-5 col-xs-3" data-parsley-id="8">
                                             </div>
                                             <div class="col-xs-4">
-                                                <input id="pass1" type="text" placeholder="Loại dự án" name="Loại dự án" required="" class="form-control m-b-5 col-xs-3" data-parsley-id="8">
+                                                <input id="pass1" type="text" placeholder="Loại dự án" name="Loại dự án" id="typeProject" class="form-control m-b-5 col-xs-3" data-parsley-id="8">
                                             </div>
                                             <div class="col-xs-4">
-                                                <input id="pass1" type="number" placeholder="Giá (tỉ VNĐ)" name="Giá" required="" class="form-control m-b-5 col-xs-3" data-parsley-id="8">
+                                                <input id="pass1" type="number" placeholder="Giá (tỉ VNĐ)" name="Giá" id="price" class="form-control m-b-5 col-xs-3" data-parsley-id="8">
                                             </div>
                                             <div class="col-xs-4">
                                                 <select name="Hướng" class="form-control m-b-5 col-xs-3" id="">

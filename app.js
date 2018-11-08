@@ -8,13 +8,14 @@ var passport = require("passport")
 var infoAPI = require("./routes/apiInfo.js");
 var session = require("express-session");
 var FacebookStrategy = require('passport-facebook');
-var indexRouter = require('./routes/index');
+var indexRouter = require('./routes/get.index');
 var usersRouter = require('./routes/users');
 var signinRouter = require('./routes/signin');
-var dashboardRouter = require('./routes/dashboard');
-var areaRouter = require('./routes/area');
-var emailRouter = require('./routes/email');
-var newRealEstateRouter = require('./routes/new.real.estate');
+var dashboardRouter = require('./routes/get.dashboard');
+var areaRouter = require('./routes/get.area');
+var emailRouter = require('./routes/get.email');
+var destroyAreaRouter = require('./routes/post.destroy');
+var newRealEstateRouter = require('./routes/post.newRealeState');
 
 var app = express();
 
@@ -63,6 +64,7 @@ app.use('/users', usersRouter);
 app.use('/admin', dashboardRouter);
 app.use('/admin', areaRouter);
 app.use('/new-area', newRealEstateRouter);
+app.use('/destroy', destroyAreaRouter);
 app.use('/admin/email-happy-real', emailRouter);
 
 // catch 404 and forward to error handler
