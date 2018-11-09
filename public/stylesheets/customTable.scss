@@ -1,0 +1,50 @@
+.table-success, .table-success>td, .table-success>th {
+    background-color: rgba(55, 155, 220, .75);
+}
+.table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+	border-collapse: collapse;
+	color: #fff;
+}
+thead {
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+    background: #02344a;
+    color: #fff;
+}
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0,0,0,.05);
+}
+.table-striped > tbody > tr:nth-of-type(odd), .property-table > tbody > tr:nth-of-type(odd){
+	background-color : #3498db!important;
+	color: #fff;
+}
+.table-striped > tbody > tr:nth-of-type(odd):hover, .property-table > tbody > tr:nth-of-type(odd):hover{
+	background-color : rgba(26, 188, 156, .75) !important;
+}
+.hidden-320px{
+    display: none;
+}
+@media screen and (min-width: 568px){
+    .show-568px{
+        display: table-cell;
+    }
+}
+@media screen and (min-width: 640px){
+    .show-640px{
+        display: table-cell;
+    }
+}
+@media screen and (min-width: 720px){
+    .show-720px{
+        display: table-cell;
+    }
+}
