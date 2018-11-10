@@ -19,7 +19,7 @@ router.post('/:area', function(req, res, next) {
 					if(!err){
 						res.send("success");
 					}else{
-						res.send(err)
+						res.send("error")
 					}
 				})
 			})
