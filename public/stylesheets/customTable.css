@@ -97,6 +97,17 @@ body #GoTop::before {
         bottom: -1em;
         padding: .5em 1.5em; }
 
+.custom-tabs-navigation {
+  display: flex;
+  flex-wrap: wrap; }
+
+.custom-active {
+  width: 100%; }
+
+.custom-links {
+  width: 50%;
+  background: #1b99ce; }
+
 @media screen and (min-width: 568px) {
   .show-568px {
     display: table-cell; } }

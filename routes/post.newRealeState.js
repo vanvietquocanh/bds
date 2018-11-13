@@ -13,7 +13,9 @@ router.post('/:area', function(req, res, next) {
 		}else{
 			mongo.connect(pathMongodb,(err, db)=>{
 				assert.equal(null, err);
-				db.collection(req.params.area).insertOne(req.body, (err, result)=>{
+				req.body["Khu Vực"] = req.params.area;
+				req.body["Ngày"]    = Date.now();
+				db.collection("happy-real-Area").insertOne(req.body, (err, result)=>{
 					assert.equal(null, err);
 					db.close();
 					if(!err){

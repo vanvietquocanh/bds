@@ -16,7 +16,7 @@ router.post('/:area', function(req, res, next) {
 				assert.equal(null, err);
 				var id = req.body._id;
 				delete req.body._id;
-				db.collection(req.params.area).updateOne({_id : ObjectId(id)},{ $set: req.body }, (err, result)=>{
+				db.collection("happy-real-Area").updateOne({_id : ObjectId(id)},{ $set: req.body }, (err, result)=>{
 					assert.equal(null, err);
 					db.close();
 					if(!err){

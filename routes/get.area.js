@@ -9,7 +9,7 @@ router.get('/:area', function(req, res, next) {
 	// if(req.user){
 		mongo.connect(pathMongodb,(err, db)=>{
 			assert.equal(null, err);
-			db.collection(req.params.area).find().toArray((err, result)=>{
+			db.collection("happy-real-Area").find({"Khu Vực":req.params.area}).toArray((err, result)=>{
 				assert.equal(null, err);
 				db.close();
 				if(!err){

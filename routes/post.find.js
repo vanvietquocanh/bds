@@ -11,7 +11,7 @@ router.post('/:area', function(req, res, next) {
 		if(req.body.id!==""){
 			mongo.connect(pathMongodb,(err, db)=>{
 				assert.equal(null, err);
-				db.collection(req.params.area).findOne({_id:ObjectId(`${req.body.id}`)}, (err, result)=>{
+				db.collection("happy-real-Area").findOne({_id:ObjectId(`${req.body.id}`)}, (err, result)=>{
 					assert.equal(null, err);
 					db.close();
 					if(!err){

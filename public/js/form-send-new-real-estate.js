@@ -37,6 +37,7 @@ $(document).ready(function () {
         $("#acreage").val((typeof data==="string")?data:data["Diện tích"])
         $("#direction").val((typeof data==="string")?data:data["Hướng"])
         $("#details").val((typeof data==="string")?data:data["Chi tiết"])
+        $("#details").val((typeof data==="string")?data:data["Sổ đỏ"])
     }
     function createData(id) {
         return {
@@ -48,6 +49,7 @@ $(document).ready(function () {
             "Giá"       : $("#price").val(),
             "Hướng"     : $("#direction").val(),
             "Chi tiết"  : $("#details").val(),
+            "Sổ đỏ"     : $("#landCertificates").is(':checked'),
             "_id"       : (id)?id:""
         }
         
@@ -71,6 +73,7 @@ $(document).ready(function () {
                                 <td>${data["Hướng"]}</td>
                                 <td>${data["Diện tích"]}</td>
                                 <td>${data["Khu"]}</td>
+                                <td>${(data["Sổ đỏ"])?"có":"không"}</td>
                                 <td>
                                     <button disabled type="button" class="btn-primary btn 5be47af1405d9709d4d7801a">
                                         <i class="fa fa-edit"></i>
@@ -84,11 +87,11 @@ $(document).ready(function () {
         $("tbody").append(htmlNewArea)
     }
     function submitForm(data, subParams, afterPost) {
-        console.log(data);
         if(valid(data).length>0){
             alertError(valid(data))
         }else{
             $.each(data, function(index, val) {
+                console.log(data)
                 $(`[name='${index}']`).removeClass('null')
             });
             $.post(window.location.pathname.split("admin").join(subParams), data, function(res, textStatus, xhr) {

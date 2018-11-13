@@ -169,25 +169,25 @@ img.emoji {
 <div id="filter_rent_sale_widget-2" class="widget widget_filter_rent_sale_widget">
 
 <div class="tabs">
-	<ul class="tabs-navigation">
-		<li class="rent active"><a href="#filter_rent_sale_widget-2-rent">Mua</a></li>
-		<li class="link last">
+	<ul class="tabs-navigation custom-tabs-navigation">
+		<li class="rent active custom-active"><a href="#filter_rent_sale_widget-2-rent">Mua</a></li>
+		<li class="link last custom-links">
 		    <a href="./?filter-sticky=1">VIP > 3 Tỷ</a>
 		</li>
-		<li class="link">
+		<li class="link custom-links">
 		    <a href="./?filter-sold=1">2 - 3 Tỷ</a>
 		</li>
-		<li class="link">
+		<li class="link custom-links">
 		    <a href="./?filter-reduced=1">1.6 - 2 Tỷ</a>
 		</li>
 
-		<li class="link">
+		<li class="link custom-links">
 		    <a href="./?filter-featured=1">Đã có sổ đỏ</a>
 		</li>
-		<li class="link">
+		<li class="link custom-links">
 		    <a href="./">Lô góc</a>
 		</li>
-		<li class="link">
+		<li class="link custom-links">
 		    <a href="./">Lô Biệt Thự</a>
 		</li>
 	</ul>
@@ -348,17 +348,21 @@ img.emoji {
 	            </tr>
 			</thead>
 			<tbody>
-			    <tr>
-			      	<th scope="row" class="hidden-320px show-640px">1</th>
-			      	<td class="hidden-320px show-720px">Mark</td>
-			      	<td class="hidden-320px show-568px">@mdo</td>
-			      	<td class="hidden-320px show-720px">@mdo</td>
-			      	<td>@mdo</td>
-			      	<td>@mdo</td>
-			      	<td>@mdo</td>
-			      	<td>@mdo</td>
-			      	<td class="hidden-320px show-568px">@mdo</td>
-			    </tr>
+				<%for (var i = 0; i < arrArea.length; i++) {%>
+				<%var arrName = ["nguyen-tri-phuong-happy-real","dao-vip-happy-real","nam-hoa-xuan-happy-real","hoa-xuan-1a-happy-real","lang-chau-au-1-happy-real","lang-chau-au-2-happy-real"]%>
+				<%var realName = ["Nguyễn Tri Phương","Đảo Vip","Nam Hòa Xuân","Hòa Xuân 1A","Làng Châu Âu 1","Làng Châu Âu 2"]%>
+				    <tr>
+				      	<th scope="row" class="hidden-320px show-640px"><%-i%></th>
+				      	<td class="hidden-320px show-720px"><%-arrArea[i]['Ngày']%></td>
+				      	<td class="hidden-320px show-568px"><%-arrArea[i]['Lô số']%></td>
+				      	<td class="hidden-320px show-720px"><%-arrArea[i]['Loại dự án']%></td>
+				      	<td><%-arrArea[i]['Giá']%></td>
+				      	<td><%-arrArea[i]['Hướng']%></td>
+				      	<td><%-arrArea[i]["Diện tích"]%></td>
+				      	<td><%-realName[arrName.indexOf(arrArea[i]["Khu Vực"])]%></td>
+				      	<td class="hidden-320px show-568px"><%-(arrArea[i]["Sổ đỏ"]=="true")?"có":"không"%></td>
+				    </tr>
+				<%}%>
 		  	</tbody>
 		</table>
 		<div class="showmore">
@@ -950,60 +954,6 @@ img.emoji {
 			})
 		});
 	</script>
-
-<div id="partners_widget-3" class="widget widget_partners_widget">
-
-
-
-	<div class="item-per-row-5">
-					<div class="partners-row">
-		
-							<div class="partners-container">
-									<div class="partner-featured-image">
-						<a href="#">
-							<img width="226" height="53" src="./content/uploads/2015/06/logo4.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="logo4">						</a>
-					</div><!-- /.partner-featured-image -->
-							</div><!-- /.partners-container -->
-
-			
-								<div class="partners-container">
-									<div class="partner-featured-image">
-						<a href="#">
-							<img width="100" height="92" src="./content/uploads/2015/06/logo5.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="logo5">						</a>
-					</div><!-- /.partner-featured-image -->
-							</div><!-- /.partners-container -->
-
-			
-								<div class="partners-container">
-									<div class="partner-featured-image">
-						<a href="#">
-							<img width="170" height="62" src="./content/uploads/2015/06/logo2.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="logo2">						</a>
-					</div><!-- /.partner-featured-image -->
-							</div><!-- /.partners-container -->
-
-			
-								<div class="partners-container">
-									<div class="partner-featured-image">
-						<a href="#">
-							<img width="127" height="93" src="./content/uploads/2015/06/logo3.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="logo3">						</a>
-					</div><!-- /.partner-featured-image -->
-							</div><!-- /.partners-container -->
-
-			
-								<div class="partners-container">
-									<div class="partner-featured-image">
-						<a href="#">
-							<img width="123" height="113" src="./content/uploads/2015/06/logo1.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="logo1">						</a>
-					</div><!-- /.partner-featured-image -->
-							</div><!-- /.partners-container -->
-
-			
-					
-					</div><!-- /.properties-row -->
-			</div>
-
-
-</div>
         <div id="aviators_features_circles-2" class="widget widget_aviators_features_circles">
         <div class="fullwidth background-white">
             <div class="row">
