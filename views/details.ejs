@@ -28,6 +28,7 @@ img.emoji {
 	padding: 0 !important;
 }
 </style>
+<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.woff">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.woff2">
@@ -35,7 +36,7 @@ img.emoji {
 <link rel="stylesheet" id="contact-form-7-css" href="./content/plugins/contact-form-7/includes/css/styles.css?ver=4.3.1" type="text/css" media="all">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.0.0-beta.3/assets/owl.carousel.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.0.0-beta.3/assets/owl.theme.default.min.css">
-<link rel="stylesheet" href="./stylesheets/customTable.css">
+<link rel="stylesheet" href="./stylesheets/slider.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.woff">
 <link rel="stylesheet" id="fontawesome-css" href="./content/themes/HappyReal/assets/libraries/font-awesome-4.7.0/css/font-awesome.min.css" type="text/css" media="all">
 <link rel="stylesheet" id="open-sans-css" href="https://fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C300%2C400%2C600&amp;subset=latin%2Clatin-ext&amp;ver=4.4.1" type="text/css" media="all">
@@ -52,11 +53,61 @@ img.emoji {
 <link rel="https://api.w.org/" href="./json/">
 <link rel="EditURI" type="application/rsd+xml" title="RSD" href="./php?rsd">
 <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="./includes/wlwmanifest.xml"> 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.0.0-beta.3/owl.carousel.min.js"></script>
-
 <meta name="generator" content="WordPress 4.4.1">
 <link rel="canonical" href="./<link rel="shortlink" href="./<script type="text/javascript">
 <link rel="https://github.com/WP-API/WP-API" href="./json">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.0.0-beta.3/owl.carousel.min.js"></script>
+ <style>
+    #sync1 .item {
+      background: #0c83e7;
+      padding: 80px 0px;
+      margin: 5px;
+      color: #FFF;
+      border-radius: 3px;
+      text-align: center;
+    }
+    #sync2 .item {
+      background: #C9C9C9;
+      padding: 10px 0px;
+      margin: 5px;
+      color: #FFF;
+      border-radius: 3px;
+      text-align: center;
+      cursor: pointer;
+    }
+    #sync2 .item h1 {
+      font-size: 18px;
+    }
+    #sync2 .current .item {
+      background: #0c83e7;
+    }
+    .owl-theme .owl-nav {
+      /*default owl-theme theme reset .disabled:hover links */
+    }
+    .owl-theme .owl-nav [class*='owl-'] {
+      transition: all 0.3s ease;
+    }
+    .owl-theme .owl-nav [class*='owl-'].disabled:hover {
+      background-color: #D6D6D6;
+    }
+    #sync1.owl-theme {
+      position: relative;
+    }
+    #sync1.owl-theme .owl-next,
+    #sync1.owl-theme .owl-prev {
+      width: 22px;
+      height: 40px;
+      margin-top: -20px;
+      position: absolute;
+      top: 50%;
+    }
+    #sync1.owl-theme .owl-prev {
+      left: 10px;
+    }
+    #sync1.owl-theme .owl-next {
+      right: 10px;
+    }
+</style>
 </head>
 
 <body class="home page page-id-268 page-template-default">
@@ -100,50 +151,50 @@ img.emoji {
 <ul class="dropdown-menu sub-menu">
 	<li id="menu-item-454" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-454"><a href="#">Nguyễn Tri Phương</a>
 		<ul class="dropdown-menu sub-menu">
-			<li id="menu-item-457" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-457"><a href="/gioi-thieu-<%-nameCompany%>?">Giới Thiệu</a></li>
-			<li id="menu-item-460" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-460"><a href="/so-do-bang-gia-<%-nameCompany%>?">Bảng giá và sơ đồ</a></li>
-			<li id="menu-item-456" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-456"><a href="/tien-do-du-an-<%-nameCompany%>?">Tiến độ</a></li>
-			<li id="menu-item-458" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-458"><a href="/cac-lo-dang-ban-<%-nameCompany%>?">Các lô đang bán</a></li>
+			<li id="menu-item-457" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-457"><a href="./new-york-city/brooklyn/">Giới Thiệu</a></li>
+			<li id="menu-item-460" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-460"><a href="./new-york-city/the-bronx/">Bảng giá và sơ đồ</a></li>
+			<li id="menu-item-456" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-456"><a href="./new-york-city/manhattan/">Tiến độ</a></li>
+			<li id="menu-item-458" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-458"><a href="./new-york-city/queens/">Các lô đang bán</a></li>
 		</ul>
 	</li>
 	<li id="menu-item-454" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-454"><a href="#">Nam Hòa Xuân</a>
 		<ul class="dropdown-menu sub-menu">
-			<li id="menu-item-457" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-457"><a href="/gioi-thieu-<%-nameCompany%>?">Giới Thiệu</a></li>
-			<li id="menu-item-460" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-460"><a href="/so-do-bang-gia-<%-nameCompany%>?">Bảng giá và sơ đồ</a></li>
-			<li id="menu-item-456" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-456"><a href="/tien-do-du-an-<%-nameCompany%>?">Tiến độ</a></li>
-			<li id="menu-item-458" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-458"><a href="/cac-lo-dang-ban-<%-nameCompany%>?">Các lô đang bán</a></li>
+			<li id="menu-item-457" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-457"><a href="./new-york-city/brooklyn/">Giới Thiệu</a></li>
+			<li id="menu-item-460" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-460"><a href="./new-york-city/the-bronx/">Bảng giá và sơ đồ</a></li>
+			<li id="menu-item-456" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-456"><a href="./new-york-city/manhattan/">Tiến độ</a></li>
+			<li id="menu-item-458" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-458"><a href="./new-york-city/queens/">Các lô đang bán</a></li>
 		</ul>
 	</li>
 	<li id="menu-item-455" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-455"><a href="#">Đảo VIP</a>
 		<ul class="dropdown-menu sub-menu">
-			<li id="menu-item-457" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-457"><a href="/gioi-thieu-<%-nameCompany%>?">Giới Thiệu</a></li>
-			<li id="menu-item-460" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-460"><a href="/so-do-bang-gia-<%-nameCompany%>?">Bảng giá và sơ đồ</a></li>
-			<li id="menu-item-456" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-456"><a href="/tien-do-du-an-<%-nameCompany%>?">Tiến độ</a></li>
-			<li id="menu-item-458" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-458"><a href="/cac-lo-dang-ban-<%-nameCompany%>?">Các lô đang bán</a></li>
+			<li id="menu-item-457" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-457"><a href="./new-york-city/brooklyn/">Giới Thiệu</a></li>
+			<li id="menu-item-460" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-460"><a href="./new-york-city/the-bronx/">Bảng giá và sơ đồ</a></li>
+			<li id="menu-item-456" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-456"><a href="./new-york-city/manhattan/">Tiến độ</a></li>
+			<li id="menu-item-458" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-458"><a href="./new-york-city/queens/">Các lô đang bán</a></li>
 		</ul>
 	</li>
 	<li id="menu-item-480" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-480"><a href="#">Hòa Xuân 1A</a>
 		<ul class="dropdown-menu sub-menu">
-			<li id="menu-item-457" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-457"><a href="/gioi-thieu-<%-nameCompany%>?">Giới Thiệu</a></li>
-			<li id="menu-item-460" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-460"><a href="/so-do-bang-gia-<%-nameCompany%>?">Bảng giá và sơ đồ</a></li>
-			<li id="menu-item-456" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-456"><a href="/tien-do-du-an-<%-nameCompany%>?">Tiến độ</a></li>
-			<li id="menu-item-458" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-458"><a href="/cac-lo-dang-ban-<%-nameCompany%>?">Các lô đang bán</a></li>
+			<li id="menu-item-457" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-457"><a href="./new-york-city/brooklyn/">Giới Thiệu</a></li>
+			<li id="menu-item-460" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-460"><a href="./new-york-city/the-bronx/">Bảng giá và sơ đồ</a></li>
+			<li id="menu-item-456" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-456"><a href="./new-york-city/manhattan/">Tiến độ</a></li>
+			<li id="menu-item-458" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-458"><a href="./new-york-city/queens/">Các lô đang bán</a></li>
 		</ul>
 	</li>
 	<li id="menu-item-487" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-487"><a href="#">Làng Châu Âu</a>
 		<ul class="dropdown-menu sub-menu">
-			<li id="menu-item-488" class="menu-item menu-item-type-taxonomy menu-item-object-statuses menu-item-488"><a href="/gioi-thieu-<%-nameCompany%>?">Giới Thiệu</a></li>
-			<li id="menu-item-489" class="menu-item menu-item-type-taxonomy menu-item-object-statuses menu-item-489"><a href="/so-do-bang-gia-<%-nameCompany%>?">Bảng giá & sơ đồ</a></li>
-			<li id="menu-item-490" class="menu-item menu-item-type-taxonomy menu-item-object-statuses menu-item-490"><a href="/tien-do-du-an-<%-nameCompany%>?">Tiến độ</a></li>
+			<li id="menu-item-488" class="menu-item menu-item-type-taxonomy menu-item-object-statuses menu-item-488"><a href="./available/">Giới Thiệu</a></li>
+			<li id="menu-item-489" class="menu-item menu-item-type-taxonomy menu-item-object-statuses menu-item-489"><a href="./rent-agreed/">Bảng giá & sơ đồ</a></li>
+			<li id="menu-item-490" class="menu-item menu-item-type-taxonomy menu-item-object-statuses menu-item-490"><a href="./reserved/">Tiến độ</a></li>
 			<li id="menu-item-491" class="menu-item menu-item-type-taxonomy menu-item-object-statuses menu-item-491"><a href="./sell-agreed/">Các lô đang bán</a></li>
 		</ul>
 	</li>
 	<li id="menu-item-479" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-479"><a href="#">Làng Châu Âu 2</a>
 		<ul class="dropdown-menu sub-menu">
-			<li id="menu-item-488" class="menu-item menu-item-type-taxonomy menu-item-object-statuses menu-item-488"><a href="/gioi-thieu-<%-nameCompany%>?">Giới Thiệu</a></li>
-			<li id="menu-item-489" class="menu-item menu-item-type-taxonomy menu-item-object-statuses menu-item-489"><a href="/so-do-bang-gia-<%-nameCompany%>?">Bảng giá & sơ đồ</a></li>
-			<li id="menu-item-490" class="menu-item menu-item-type-taxonomy menu-item-object-statuses menu-item-490"><a href="/tien-do-du-an-<%-nameCompany%>?">Tiến độ</a></li>
-			<li id="menu-item-491" class="menu-item menu-item-type-taxonomy menu-item-object-statuses menu-item-491"><a href="/cac-lo-dang-ban-<%-nameCompany%>?">Các lô đang bán</a></li>
+			<li id="menu-item-488" class="menu-item menu-item-type-taxonomy menu-item-object-statuses menu-item-488"><a href="./available/">Giới Thiệu</a></li>
+			<li id="menu-item-489" class="menu-item menu-item-type-taxonomy menu-item-object-statuses menu-item-489"><a href="./rent-agreed/">Bảng giá & sơ đồ</a></li>
+			<li id="menu-item-490" class="menu-item menu-item-type-taxonomy menu-item-object-statuses menu-item-490"><a href="./reserved/">Tiến độ</a></li>
+			<li id="menu-item-491" class="menu-item menu-item-type-taxonomy menu-item-object-statuses menu-item-491"><a href="./sell-agreed/">Các lô đang bán</a></li>
 		</ul>
 	</li>
 </ul>
@@ -156,7 +207,7 @@ img.emoji {
 	<li id="menu-item-496" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-496"><a href="./property/">Giới thiệu dự án</a></li>
 </ul>
 </li>
-<li id="menu-item-494" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-494"><a href="/lien-he-<%-nameCompany%>">Liên Hệ</a></li>
+<li id="menu-item-494" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-494"><a href="./">Liên Hệ</a></li>
 </ul></div></div><!-- /.container -->
 				</div><!-- /.header-bottom -->
 					</nav>
@@ -176,23 +227,23 @@ img.emoji {
 	<ul class="tabs-navigation custom-tabs-navigation">
 		<li class="rent active custom-active"><a href="#filter_rent_sale_widget-2-rent">Mua</a></li>
 		<li class="link last custom-links">
-		    <a href="?than=3b">VIP > 3 Tỷ</a>
+		    <a href="./?filter-sticky=1">VIP > 3 Tỷ</a>
 		</li>
 		<li class="link custom-links">
-		    <a href="?from=2b&to=3b">2 - 3 Tỷ</a>
+		    <a href="./?filter-sold=1">2 - 3 Tỷ</a>
 		</li>
 		<li class="link custom-links">
-		    <a href="?from=1.6b&to=2b">1.6 - 2 Tỷ</a>
+		    <a href="./?filter-reduced=1">1.6 - 2 Tỷ</a>
 		</li>
 
 		<li class="link custom-links">
-		    <a href="?book=1">Đã có sổ đỏ</a>
+		    <a href="./?filter-featured=1">Đã có sổ đỏ</a>
 		</li>
 		<li class="link custom-links">
-		    <a href="?corner=1">Lô góc</a>
+		    <a href="./">Lô góc</a>
 		</li>
 		<li class="link custom-links">
-		    <a href="?villa=1">Lô Biệt Thự</a>
+		    <a href="./">Lô Biệt Thự</a>
 		</li>
 	</ul>
 
@@ -281,7 +332,7 @@ img.emoji {
 	</div><!-- /.form-group -->
 																																																																																																																																																																																																																					
 									<div class="form-group">
-						<button class="button">Tìm kiếm</button>
+						<button class="button">Lọc bất động sản</button>
 					</div><!-- /.form-group -->
 							</form>
 		</div>
@@ -334,348 +385,154 @@ img.emoji {
 </div>
 
 </div>	</div><!-- /.sidebar -->
-<!-- table -->
-<div class="row">
-	<div class="content col-sm-12 col-md-12">
-		<table class="table table-striped table-hover table-success">
-			<thead>
-			    <tr>
-	                <th scope="col" class="hidden-320px show-640px">#</th>
-	                <th scope="col" class="hidden-320px show-720px">Ngày</th>
-	                <th scope="col" class="hidden-320px show-568px">Lô số</th>
-	                <th scope="col" class="hidden-320px show-720px">Loại dự án</th>
-	                <th scope="col">Giá (tỉ VNĐ)</th>
-	                <th scope="col">Hướng</th>
-	                <th scope="col">Diện tích(m2)</th>
-	                <th scope="col">Khu</th>
-	                <th scope="col" class="hidden-320px show-568px">Sổ đỏ</th>
-	            </tr>
-			</thead>
-			<tbody>
-				<%for (var i = 0; i < arrArea.length; i++) {%>
-				<%var arrName = ["nguyen-tri-phuong-happy-real","dao-vip-happy-real","nam-hoa-xuan-happy-real","hoa-xuan-1a-happy-real","lang-chau-au-1-happy-real","lang-chau-au-2-happy-real"]%>
-				<%var realName = ["Nguyễn Tri Phương","Đảo Vip","Nam Hòa Xuân","Hòa Xuân 1A","Làng Châu Âu 1","Làng Châu Âu 2"]%>
-				    <tr>
-				      	<th scope="row" class="hidden-320px show-640px"><%-i%></th>
-				      	<td class="hidden-320px show-720px"><%-arrArea[i]['Ngày']%></td>
-				      	<td class="hidden-320px show-568px"><%-arrArea[i]['Lô số']%></td>
-				      	<td class="hidden-320px show-720px"><%-arrArea[i]['Loại dự án']%></td>
-				      	<td><%-arrArea[i]['Giá']%></td>
-				      	<td><%-arrArea[i]['Hướng']%></td>
-				      	<td><%-arrArea[i]["Diện tích"]%></td>
-				      	<td><%-realName[arrName.indexOf(arrArea[i]["Khu Vực"])]%></td>
-				      	<td class="hidden-320px show-568px"><%-(arrArea[i]["Sổ đỏ"]=="true")?"có":"không"%></td>
-				    </tr>
-				<%}%>
-		  	</tbody>
-		</table>
-		<div class="showmore">
-			<a class="showmore-txt">Xem thêm</a>
-		</div>
-	</div>
-</div>	
-<!-- table		 -->
 <div class="row">
 	<div class="content col-sm-8 col-md-9">
 		
 									
-<article id="post-268" class="post-268 page type-page status-publish hentry">
-	
-	<header class="entry-header page-header">
-					<h1>Bất động sản mới</h1>
-			</header><!-- .entry-header -->
 
-	<div class="entry-content">
-		<div class="row">
-<div class="col-sm-8"></div>
-</div>
-
-			</div><!-- .entry-content -->
-</article><!-- #post-## -->			
-					
-		
-
-<div id="properties_widget-3" class="widget widget_properties_widget">
-
-	
-			
-		<div class="type-box item-per-row-3">
-						<div class="properties-row">
-				
-												<div class="property-container">
-										
-
-
-<div class="property-box">
-    <div class="property-box-image ">
-        <a href="./south-mervin-boulevard/" class="property-box-image-inner ">
-			
-            				<img width="270" height="226" src="./content/uploads/2015/06/5388662544_96ca3f71c1_o-270x226.jpg" class="attachment-property-box-thumbnail size-property-box-thumbnail wp-post-image" alt="interiors">            
-			<div class="property-box-image-price">
-    $ 220,000</div><!-- /.property-box-image-price -->
-
-                        
-                            <span class="property-badge">Featured / Reduced</span>
+<article id="post-145" class="post-145 property type-property status-publish has-post-thumbnail hentry amenities-air-conditioning amenities-bedding amenities-cable-tv amenities-dvd amenities-fan amenities-hairdryer amenities-internet amenities-juicer amenities-lift statuses-available locations-brooklyn locations-new-york-city materials-block property_types-villa">
+	<header class="entry-header">
+		<h1 class="entry-title property-title">South Mervin Boulevard</h1>	</header><!-- .entry-header -->
+	<div class="property-detail-subtitle">
+							<div class="property-location">
+				<a href="http://preview.byaviators.com/theme/realia/location/new-york-city/">New York City</a> <span class="separator">,</span> <a href="http://preview.byaviators.com/theme/realia/location/new-york-city/brooklyn/">Brooklyn</a>			</div>
+									<div class="property-price">
+				$ 220,000			</div>
+			</div>
+	<div id="sync1" class="owl-carousel owl-theme">
+      	<div class="item">
+        	<h1>1</h1>
+    	</div>
+      	<div class="item">
+        	<h1>2</h1>
+    	</div>
+      	<div class="item">
+        	<h1>3</h1>
+    	</div>
+      	<div class="item">
+        	<h1>4</h1>
+    	</div>
+      	<div class="item">
+        	<h1>5</h1>
+    	</div>
+      	<div class="item">
+        	<h1>6</h1>
+    	</div>
+      	<div class="item">
+        	<h1>7</h1>
+    	</div>
+    	<div class="item">
+        	<h1>8</h1>
+    	</div>
+    </div>
+    <div id="sync2" class="owl-carousel owl-theme">
+	    <div class="item">
+	        <h1>1</h1>
+	    </div>
+	    <div class="item">
+	        <h1>2</h1>
+	    </div>
+	    <div class="item">
+	        <h1>3</h1>
+	    </div>
+	    <div class="item">
+	        <h1>4</h1>
+	    </div>
+	    <div class="item">
+	        <h1>5</h1>
+	    </div>
+	    <div class="item">
+	        <h1>6</h1>
+	    </div>
+	    <div class="item">
+	        <h1>7</h1>
+	    </div>
+	    <div class="item">
+			<h1>8</h1>
+		</div>
+	</div>
+<script src="./js/slider-details.js"></script>
+<div class="property-content">
+    <h2>Overview</h2>
+    <div class="property-overview">
+        <dl>
+                                        <dt>Price</dt><dd>$ 220,000</dd>
             
-                            <span class="property-badge property-badge-sticky">TOP</span>
-                    </a>
-    </div><!-- /.property-image -->
-
-    <div class="property-box-content">
-        <div class="property-box-title">
-	        
-            <h3><a href="./south-mervin-boulevard/">South Mervin Boulevard</a></h3>
-
-	                </div><!-- /.property-box-title -->
-
-	    <div class="property-box-body">
-		    
-	        	        	            <div class="property-box-type">
-	                Villa	            </div><!-- /.property-box-type -->
-	        
-	        	        	            <div class="property-box-price">
-	                $ 220,000	            </div><!-- /.property-box-price -->
-	        
-		    <div class="property-box-read-more">
-			    <a href="./south-mervin-boulevard/">Read More</a>
-		    </div><!-- /.property-box-price -->
-
-		    <div class="property-box-meta">
-                <span class="property-box-meta-item property-box-meta-item-area">
-            <i class="pp pp-normal-cursor-scale-up"></i> 140 sqft        </span><!-- /.property-box-meta-item -->
-    
-                <span class="property-box-meta-item property-box-meta-item-beds">
-            <i class="pp pp-normal-bed"></i> 3        </span><!-- /.property-box-meta-item -->
-    
-                <span class="property-box-meta-item property-box-meta-item-baths">
-            <i class="pp pp-normal-shower"></i> 4        </span><!-- /.property-box-meta-item -->
-    </div><!-- /.property-box-meta -->
-	    </div><!-- /.property-box-body -->
-    </div><!-- /.property-box-content -->
-</div>
-				</div><!-- /.property-container -->
-
-				
-												<div class="property-container">
-										
-
-
-<div class="property-box">
-    <div class="property-box-image ">
-        <a href="./north-parchmore-street/" class="property-box-image-inner ">
-			
-            				<img width="270" height="226" src="./content/uploads/2015/06/5388661724_859d557469_o-270x226.jpg" class="attachment-property-box-thumbnail size-property-box-thumbnail wp-post-image" alt="interiors">            
-			<div class="property-box-image-price">
-    $ 340,000</div><!-- /.property-box-image-price -->
-
-                        
+                                        <dt>Reference</dt><dd>14</dd>
             
-                    </a>
-    </div><!-- /.property-image -->
-
-    <div class="property-box-content">
-        <div class="property-box-title">
-	        
-            <h3><a href="./north-parchmore-street/">North Parchmore Street</a></h3>
-
-	                </div><!-- /.property-box-title -->
-
-	    <div class="property-box-body">
-		    
-	        	        	            <div class="property-box-type">
-	                House	            </div><!-- /.property-box-type -->
-	        
-	        	        	            <div class="property-box-price">
-	                $ 340,000	            </div><!-- /.property-box-price -->
-	        
-		    <div class="property-box-read-more">
-			    <a href="./north-parchmore-street/">Read More</a>
-		    </div><!-- /.property-box-price -->
-
-		    <div class="property-box-meta">
-                <span class="property-box-meta-item property-box-meta-item-area">
-            <i class="pp pp-normal-cursor-scale-up"></i> 150 sqft        </span><!-- /.property-box-meta-item -->
-    
-                <span class="property-box-meta-item property-box-meta-item-beds">
-            <i class="pp pp-normal-bed"></i> 2        </span><!-- /.property-box-meta-item -->
-    
-                <span class="property-box-meta-item property-box-meta-item-baths">
-            <i class="pp pp-normal-shower"></i> 3        </span><!-- /.property-box-meta-item -->
-    </div><!-- /.property-box-meta -->
-	    </div><!-- /.property-box-body -->
-    </div><!-- /.property-box-content -->
-</div>
-				</div><!-- /.property-container -->
-
-				
-												<div class="property-container">
-										
-
-
-<div class="property-box">
-    <div class="property-box-image ">
-        <a href="./apricot-west-britford-arch/" class="property-box-image-inner ">
-			
-            				<img width="270" height="226" src="./content/uploads/2015/06/5388658984_72f0ca75aa_o-1-270x226.jpg" class="attachment-property-box-thumbnail size-property-box-thumbnail wp-post-image" alt="interiors">            
-			<div class="property-box-image-price">
-    $ 125,000</div><!-- /.property-box-image-price -->
-
                         
-                            <span class="property-badge">Featured</span>
-            
-                            <span class="property-badge property-badge-sticky">TOP</span>
-                    </a>
-    </div><!-- /.property-image -->
-
-    <div class="property-box-content">
-        <div class="property-box-title">
-	        
-            <h3><a href="./apricot-west-britford-arch/">Apricot West Britford Arch</a></h3>
-
-	                </div><!-- /.property-box-title -->
-
-	    <div class="property-box-body">
-		    
-	        	        	            <div class="property-box-type">
-	                Apartment	            </div><!-- /.property-box-type -->
-	        
-	        	        	            <div class="property-box-price">
-	                $ 125,000	            </div><!-- /.property-box-price -->
-	        
-		    <div class="property-box-read-more">
-			    <a href="./apricot-west-britford-arch/">Read More</a>
-		    </div><!-- /.property-box-price -->
-
-		    <div class="property-box-meta">
-                <span class="property-box-meta-item property-box-meta-item-area">
-            <i class="pp pp-normal-cursor-scale-up"></i> 125 sqft        </span><!-- /.property-box-meta-item -->
-    
-                <span class="property-box-meta-item property-box-meta-item-beds">
-            <i class="pp pp-normal-bed"></i> 3        </span><!-- /.property-box-meta-item -->
-    
-                <span class="property-box-meta-item property-box-meta-item-baths">
-            <i class="pp pp-normal-shower"></i> 4        </span><!-- /.property-box-meta-item -->
-    </div><!-- /.property-box-meta -->
-	    </div><!-- /.property-box-body -->
-    </div><!-- /.property-box-content -->
-</div>
-				</div><!-- /.property-container -->
-
-							</div><div class="properties-row">
-				
-												<div class="property-container">
-										
-
-
-<div class="property-box">
-    <div class="property-box-image ">
-        <a href="./south-celler-court/" class="property-box-image-inner ">
-			
-            				<img width="270" height="226" src="./content/uploads/2015/06/5388655270_3a8c3c8799_o-270x226.jpg" class="attachment-property-box-thumbnail size-property-box-thumbnail wp-post-image" alt="interiors">            
-			<div class="property-box-image-price">
-    $ 225,000</div><!-- /.property-box-image-price -->
-
                         
+                                        <dt>Year built</dt><dd>2000</dd>
             
-                    </a>
-    </div><!-- /.property-image -->
+                                        <dt>Type</dt><dd>Villa</dd>
+            
+                        <dt>Sold</dt>
+            <dd>
+                                    No                            </dd>
 
-    <div class="property-box-content">
-        <div class="property-box-title">
-	        
-            <h3><a href="./south-celler-court/">South Celler Court</a></h3>
-
-	                </div><!-- /.property-box-title -->
-
-	    <div class="property-box-body">
-		    
-	        	        	            <div class="property-box-type">
-	                Building area	            </div><!-- /.property-box-type -->
-	        
-	        	        	            <div class="property-box-price">
-	                $ 225,000	            </div><!-- /.property-box-price -->
-	        
-		    <div class="property-box-read-more">
-			    <a href="./south-celler-court/">Read More</a>
-		    </div><!-- /.property-box-price -->
-
-		    <div class="property-box-meta">
-                <span class="property-box-meta-item property-box-meta-item-area">
-            <i class="pp pp-normal-cursor-scale-up"></i> 160 sqft        </span><!-- /.property-box-meta-item -->
+            
+                            <dt>Contract</dt>
+                <dd>
+                    Sale                </dd>
+            
+                                        <dt>Status</dt><dd>Available</dd>
+            
+                                        <dt>Location</dt><dd><a href="http://preview.byaviators.com/theme/realia/location/new-york-city/">New York City</a> <span class="separator">,</span> <a href="http://preview.byaviators.com/theme/realia/location/new-york-city/brooklyn/">Brooklyn</a></dd>
+            
+                                                        <dt>Home area</dt><dd>140                    sqft</dd>
+            
+                                        <dt>Lot dimensions</dt><dd>20x30x40x50                    ft</dd>
+            
+                                                        <dt>Lot area</dt><dd>150                    sqft</dd>
+            
+                                        <dt>Material</dt><dd>Block</dd>
+            
+                                        <dt>Rooms</dt><dd>2</dd>
+            
+                                        <dt>Beds</dt><dd>3</dd>
+            
+                                        <dt>Baths</dt><dd>4</dd>
+            
+                                        <dt>Garages</dt><dd>1</dd>
+                    </dl>
+    </div><!-- /.property-overview -->
+</div><!-- /.property-content --><div class="property-content">
+    <div class="property-description">
+        <h2>Description</h2>        <p>Vivamus quis elementum magna. Morbi maximus orci nisi, eget fermentum nisi lobortis id. Phasellus eros leo, tempus et augue tempor, interdum blandit felis. Nunc scelerisque enim nisl, non iaculis sem varius vitae. Nunc gravida rutrum mauris, eu sagittis velit finibus nec. In a ullamcorper nibh. In pulvinar, lacus vel auctor rhoncus, quam eros vestibulum orci, et lobortis ipsum ipsum et odio. Phasellus tristique tempus luctus. Mauris luctus egestas facilisis. Nunc a augue non tellus porttitor feugiat vitae non nulla. Donec volutpat nulla vitae arcu imperdiet, vitae auctor tortor mattis. Donec consequat, est non rhoncus hendrerit, dui quam molestie odio, ac efficitur risus erat vel massa. Curabitur tincidunt rhoncus dui, nec sodales nibh ornare porttitor. Donec mi felis, imperdiet eget malesuada at, varius in tellus.</p>
+    </div><!-- /.property-description -->
+</div><!-- /.property-content -->
+<div class="property-content">
     
-                <span class="property-box-meta-item property-box-meta-item-beds">
-            <i class="pp pp-normal-bed"></i> 4        </span><!-- /.property-box-meta-item -->
-    
-                <span class="property-box-meta-item property-box-meta-item-baths">
-            <i class="pp pp-normal-shower"></i> 5        </span><!-- /.property-box-meta-item -->
-    </div><!-- /.property-box-meta -->
-	    </div><!-- /.property-box-body -->
-    </div><!-- /.property-box-content -->
-</div>
-				</div><!-- /.property-container -->
+            <div class="property-floor-plans">
+            <h2>Floor Plans</h2>
+                            <a href="http://preview.byaviators.com/theme/megareal/wp-content/uploads/2015/03/plan.jpg" rel="property-plans" class="cboxElement">
+                    <img width="150" height="150" src="http://preview.byaviators.com/theme/realia/wp-content/uploads/2015/03/plan-150x150.jpg" class="attachment-thumbnail size-thumbnail" alt="plan">                </a>
+                            <a href="http://preview.byaviators.com/theme/megareal/wp-content/uploads/2015/03/plan3.jpg" rel="property-plans" class="cboxElement">
+                    <img width="150" height="150" src="http://preview.byaviators.com/theme/realia/wp-content/uploads/2015/03/plan3-150x150.jpg" class="attachment-thumbnail size-thumbnail" alt="plan3">                </a>
+                            <a href="http://preview.byaviators.com/theme/megareal/wp-content/uploads/2015/03/plan2.jpg" rel="property-plans" class="cboxElement">
+                    <img width="150" height="150" src="http://preview.byaviators.com/theme/realia/wp-content/uploads/2015/03/plan2-150x150.jpg" class="attachment-thumbnail size-thumbnail" alt="plan2">                </a>
+                            <a href="http://preview.byaviators.com/theme/megareal/wp-content/uploads/2015/03/plan4.jpg" rel="property-plans" class="cboxElement">
+                    <img width="150" height="150" src="http://preview.byaviators.com/theme/realia/wp-content/uploads/2015/03/plan4-150x150.jpg" class="attachment-thumbnail size-thumbnail" alt="plan4">                </a>
+                    </div><!-- /.property-floor-plans -->
+    </div><!-- /.property-content -->
+<div class="property-content">
+    </div><!-- /.property-content -->
 
-				
-												<div class="property-container">
-										
+<!-- SIMILAR PROPERTIES -->
+
+    <div class="similar-properties">
+        <h2>Similar properties</h2>
+        <div class="type-box item-per-row-3">
+            <div class="properties-row">
+                                                <div class="property-container">
+                    
 
 
 <div class="property-box">
     <div class="property-box-image ">
-        <a href="./ely-parkway/" class="property-box-image-inner ">
+        <a href="http://preview.byaviators.com/theme/realia/properties/eaton-garth/" class="property-box-image-inner ">
 			
-            				<img width="270" height="226" src="./content/uploads/2015/06/5388654584_646ed56dd3_o-270x226.jpg" class="attachment-property-box-thumbnail size-property-box-thumbnail wp-post-image" alt="interiors">            
-			<div class="property-box-image-price">
-    $ 350,000</div><!-- /.property-box-image-price -->
-
-                        
-            
-                    </a>
-    </div><!-- /.property-image -->
-
-    <div class="property-box-content">
-        <div class="property-box-title">
-	        
-            <h3><a href="./ely-parkway/">Ely Parkway</a></h3>
-
-	                </div><!-- /.property-box-title -->
-
-	    <div class="property-box-body">
-		    
-	        	        	            <div class="property-box-type">
-	                Apartment	            </div><!-- /.property-box-type -->
-	        
-	        	        	            <div class="property-box-price">
-	                $ 350,000	            </div><!-- /.property-box-price -->
-	        
-		    <div class="property-box-read-more">
-			    <a href="./ely-parkway/">Read More</a>
-		    </div><!-- /.property-box-price -->
-
-		    <div class="property-box-meta">
-                <span class="property-box-meta-item property-box-meta-item-area">
-            <i class="pp pp-normal-cursor-scale-up"></i> 250 sqft        </span><!-- /.property-box-meta-item -->
-    
-                <span class="property-box-meta-item property-box-meta-item-beds">
-            <i class="pp pp-normal-bed"></i> 4        </span><!-- /.property-box-meta-item -->
-    
-                <span class="property-box-meta-item property-box-meta-item-baths">
-            <i class="pp pp-normal-shower"></i> 5        </span><!-- /.property-box-meta-item -->
-    </div><!-- /.property-box-meta -->
-	    </div><!-- /.property-box-body -->
-    </div><!-- /.property-box-content -->
-</div>
-				</div><!-- /.property-container -->
-
-				
-												<div class="property-container">
-										
-
-
-<div class="property-box">
-    <div class="property-box-image ">
-        <a href="./eaton-garth/" class="property-box-image-inner ">
-			
-            				<img width="270" height="226" src="./content/uploads/2015/06/5388654148_447f6f2289_o-270x226.jpg" class="attachment-property-box-thumbnail size-property-box-thumbnail wp-post-image" alt="interiors">            
+            				<img width="270" height="226" src="http://preview.byaviators.com/theme/realia/wp-content/uploads/2015/06/5388654148_447f6f2289_o-270x226.jpg" class="attachment-property-box-thumbnail size-property-box-thumbnail wp-post-image" alt="interiors">            
 			<div class="property-box-image-price">
     $ 90,000</div><!-- /.property-box-image-price -->
 
@@ -687,7 +544,7 @@ img.emoji {
     <div class="property-box-content">
         <div class="property-box-title">
 	        
-            <h3><a href="./eaton-garth/">Eaton Garth</a></h3>
+            <h3><a href="http://preview.byaviators.com/theme/realia/properties/eaton-garth/">Eaton Garth</a></h3>
 
 	                </div><!-- /.property-box-title -->
 
@@ -700,7 +557,7 @@ img.emoji {
 	                $ 90,000	            </div><!-- /.property-box-price -->
 	        
 		    <div class="property-box-read-more">
-			    <a href="./eaton-garth/">Read More</a>
+			    <a href="http://preview.byaviators.com/theme/realia/properties/eaton-garth/">Read More</a>
 		    </div><!-- /.property-box-price -->
 
 		    <div class="property-box-meta">
@@ -716,16 +573,252 @@ img.emoji {
 	    </div><!-- /.property-box-body -->
     </div><!-- /.property-box-content -->
 </div>
-				</div><!-- /.property-container -->
+                </div>
 
-				
-								
-							</div><!-- /.properties-row -->
-				</div>
-	
-	
-</div>	</div><!-- /.content -->
+                                                            </div>
+        </div>
+    </div><!-- /.similar-properties -->
 
+<!-- AGENT PROPERTIES -->
+
+        
+    
+            <div class="similar-properties">
+            <h2>More agent properties</h2>
+            <div class="row">
+                                
+                                
+                                <div class="col-md-4 col-sm-6">
+                    <div class="property-box-wrapper">
+                        
+
+
+<div class="property-box">
+    <div class="property-box-image ">
+        <a href="http://preview.byaviators.com/theme/realia/properties/apricot-west-britford-arch/" class="property-box-image-inner ">
+			
+            				<img width="270" height="226" src="http://preview.byaviators.com/theme/realia/wp-content/uploads/2015/06/5388658984_72f0ca75aa_o-1-270x226.jpg" class="attachment-property-box-thumbnail size-property-box-thumbnail wp-post-image" alt="interiors">            
+			<div class="property-box-image-price">
+    $ 125,000</div><!-- /.property-box-image-price -->
+
+                        
+                            <span class="property-badge">Featured</span>
+            
+                            <span class="property-badge property-badge-sticky">TOP</span>
+                    </a>
+    </div><!-- /.property-image -->
+
+    <div class="property-box-content">
+        <div class="property-box-title">
+	        
+            <h3><a href="http://preview.byaviators.com/theme/realia/properties/apricot-west-britford-arch/">Apricot West Britford Arch</a></h3>
+
+	                </div><!-- /.property-box-title -->
+
+	    <div class="property-box-body">
+		    
+	        	        	            <div class="property-box-type">
+	                Apartment	            </div><!-- /.property-box-type -->
+	        
+	        	        	            <div class="property-box-price">
+	                $ 125,000	            </div><!-- /.property-box-price -->
+	        
+		    <div class="property-box-read-more">
+			    <a href="http://preview.byaviators.com/theme/realia/properties/apricot-west-britford-arch/">Read More</a>
+		    </div><!-- /.property-box-price -->
+
+		    <div class="property-box-meta">
+                <span class="property-box-meta-item property-box-meta-item-area">
+            <i class="pp pp-normal-cursor-scale-up"></i> 125 sqft        </span><!-- /.property-box-meta-item -->
+    
+                <span class="property-box-meta-item property-box-meta-item-beds">
+            <i class="pp pp-normal-bed"></i> 3        </span><!-- /.property-box-meta-item -->
+    
+                <span class="property-box-meta-item property-box-meta-item-baths">
+            <i class="pp pp-normal-shower"></i> 4        </span><!-- /.property-box-meta-item -->
+    </div><!-- /.property-box-meta -->
+	    </div><!-- /.property-box-body -->
+    </div><!-- /.property-box-content -->
+</div>
+                    </div>
+                </div><!-- /.col-sm-4 -->
+
+                
+                                                
+                                <div class="col-md-4 col-sm-6">
+                    <div class="property-box-wrapper">
+                        
+
+
+<div class="property-box">
+    <div class="property-box-image ">
+        <a href="http://preview.byaviators.com/theme/realia/properties/eaton-garth/" class="property-box-image-inner ">
+			
+            				<img width="270" height="226" src="http://preview.byaviators.com/theme/realia/wp-content/uploads/2015/06/5388654148_447f6f2289_o-270x226.jpg" class="attachment-property-box-thumbnail size-property-box-thumbnail wp-post-image" alt="interiors">            
+			<div class="property-box-image-price">
+    $ 90,000</div><!-- /.property-box-image-price -->
+
+                        
+            
+                    </a>
+    </div><!-- /.property-image -->
+
+    <div class="property-box-content">
+        <div class="property-box-title">
+	        
+            <h3><a href="http://preview.byaviators.com/theme/realia/properties/eaton-garth/">Eaton Garth</a></h3>
+
+	                </div><!-- /.property-box-title -->
+
+	    <div class="property-box-body">
+		    
+	        	        	            <div class="property-box-type">
+	                Villa	            </div><!-- /.property-box-type -->
+	        
+	        	        	            <div class="property-box-price">
+	                $ 90,000	            </div><!-- /.property-box-price -->
+	        
+		    <div class="property-box-read-more">
+			    <a href="http://preview.byaviators.com/theme/realia/properties/eaton-garth/">Read More</a>
+		    </div><!-- /.property-box-price -->
+
+		    <div class="property-box-meta">
+                <span class="property-box-meta-item property-box-meta-item-area">
+            <i class="pp pp-normal-cursor-scale-up"></i> 350 sqft        </span><!-- /.property-box-meta-item -->
+    
+                <span class="property-box-meta-item property-box-meta-item-beds">
+            <i class="pp pp-normal-bed"></i> 2        </span><!-- /.property-box-meta-item -->
+    
+                <span class="property-box-meta-item property-box-meta-item-baths">
+            <i class="pp pp-normal-shower"></i> 1        </span><!-- /.property-box-meta-item -->
+    </div><!-- /.property-box-meta -->
+	    </div><!-- /.property-box-body -->
+    </div><!-- /.property-box-content -->
+</div>
+                    </div>
+                </div><!-- /.col-sm-4 -->
+
+                
+                                                
+                                <div class="col-md-4 col-sm-6">
+                    <div class="property-box-wrapper">
+                        
+
+
+<div class="property-box">
+    <div class="property-box-image ">
+        <a href="http://preview.byaviators.com/theme/realia/properties/myuna-causeway/" class="property-box-image-inner ">
+			
+            				<img width="270" height="226" src="http://preview.byaviators.com/theme/realia/wp-content/uploads/2015/06/5388053335_55e53eefd1_o-270x226.jpg" class="attachment-property-box-thumbnail size-property-box-thumbnail wp-post-image" alt="interiors">            
+			<div class="property-box-image-price">
+    $ 165,000</div><!-- /.property-box-image-price -->
+
+                        
+                            <span class="property-badge">Reduced</span>
+            
+                    </a>
+    </div><!-- /.property-image -->
+
+    <div class="property-box-content">
+        <div class="property-box-title">
+	        
+            <h3><a href="http://preview.byaviators.com/theme/realia/properties/myuna-causeway/">Myuna Causeway</a></h3>
+
+	                </div><!-- /.property-box-title -->
+
+	    <div class="property-box-body">
+		    
+	        	        	            <div class="property-box-type">
+	                House	            </div><!-- /.property-box-type -->
+	        
+	        	        	            <div class="property-box-price">
+	                $ 165,000	            </div><!-- /.property-box-price -->
+	        
+		    <div class="property-box-read-more">
+			    <a href="http://preview.byaviators.com/theme/realia/properties/myuna-causeway/">Read More</a>
+		    </div><!-- /.property-box-price -->
+
+		    <div class="property-box-meta">
+                <span class="property-box-meta-item property-box-meta-item-area">
+            <i class="pp pp-normal-cursor-scale-up"></i> 350 sqft        </span><!-- /.property-box-meta-item -->
+    
+                <span class="property-box-meta-item property-box-meta-item-beds">
+            <i class="pp pp-normal-bed"></i> 2        </span><!-- /.property-box-meta-item -->
+    
+                <span class="property-box-meta-item property-box-meta-item-baths">
+            <i class="pp pp-normal-shower"></i> 1        </span><!-- /.property-box-meta-item -->
+    </div><!-- /.property-box-meta -->
+	    </div><!-- /.property-box-body -->
+    </div><!-- /.property-box-content -->
+</div>
+                    </div>
+                </div><!-- /.col-sm-4 -->
+
+                            </div><div class="properties-row">
+                
+                                                
+                                <div class="col-md-4 col-sm-6">
+                    <div class="property-box-wrapper">
+                        
+
+
+<div class="property-box">
+    <div class="property-box-image ">
+        <a href="http://preview.byaviators.com/theme/realia/properties/frankland-oval/" class="property-box-image-inner ">
+			
+            				<img width="270" height="226" src="http://preview.byaviators.com/theme/realia/wp-content/uploads/2015/06/5388052993_9814125d09_o-270x226.jpg" class="attachment-property-box-thumbnail size-property-box-thumbnail wp-post-image" alt="interiors">            
+			<div class="property-box-image-price">
+    $ 300,000</div><!-- /.property-box-image-price -->
+
+                        
+                            <span class="property-badge">Featured</span>
+            
+                    </a>
+    </div><!-- /.property-image -->
+
+    <div class="property-box-content">
+        <div class="property-box-title">
+	        
+            <h3><a href="http://preview.byaviators.com/theme/realia/properties/frankland-oval/">Frankland Oval</a></h3>
+
+	                </div><!-- /.property-box-title -->
+
+	    <div class="property-box-body">
+		    
+	        	        	            <div class="property-box-type">
+	                Condo	            </div><!-- /.property-box-type -->
+	        
+	        	        	            <div class="property-box-price">
+	                $ 300,000	            </div><!-- /.property-box-price -->
+	        
+		    <div class="property-box-read-more">
+			    <a href="http://preview.byaviators.com/theme/realia/properties/frankland-oval/">Read More</a>
+		    </div><!-- /.property-box-price -->
+
+		    <div class="property-box-meta">
+                <span class="property-box-meta-item property-box-meta-item-area">
+            <i class="pp pp-normal-cursor-scale-up"></i> 150 sqft        </span><!-- /.property-box-meta-item -->
+    
+                <span class="property-box-meta-item property-box-meta-item-beds">
+            <i class="pp pp-normal-bed"></i> 2        </span><!-- /.property-box-meta-item -->
+    
+                <span class="property-box-meta-item property-box-meta-item-baths">
+            <i class="pp pp-normal-shower"></i> 2        </span><!-- /.property-box-meta-item -->
+    </div><!-- /.property-box-meta -->
+	    </div><!-- /.property-box-body -->
+    </div><!-- /.property-box-content -->
+</div>
+                    </div>
+                </div><!-- /.col-sm-4 -->
+
+                
+                                                            </div><!-- /.row -->
+        </div><!-- /.similar-properties -->
+</article><!-- #post-## -->
+
+			
+					
+			</div>
 		<div class="sidebar col-sm-4 col-md-3">
 		
 
@@ -735,29 +828,6 @@ img.emoji {
 
 	
 	<div class="type-small item-per-row-1">
-		
-							
-
-			
-								<div class="agents-container">
-				
-<div class="agent-small">
-	<div class="agent-small-inner">
-		<div class="agent-small-image">
-			<a href="./evaristo/" class="agent-small-image-inner">
-							</a><!-- /.agent-small-image-inner -->
-		</div><!-- /.agent-small-image -->
-
-		<div class="agent-small-content">
-			<h3 class="agent-small-title">
-				<a href="./evaristo/">Evaristo</a>
-			</h3>
-
-						
-								</div><!-- /.agent-small-content -->
-	</div><!-- /.agent-small-inner -->
-</div><!-- /.agent-small -->
-			</div><!-- /.property-container -->
 
 			
 								<div class="agents-container">
@@ -874,89 +944,6 @@ img.emoji {
 	
 </div>	</div><!-- /.sidebar -->
 </div><!-- /.row -->
-
-			
-        <div id="property_carousel_widget-2" class="widget widget_property_carousel_widget">
-		    <div class="owl-carousel owl-theme">
-			    <div class="item">
-					<div class="property-container">
-															
-
-
-					<div class="property-box">
-					    <div class="property-box-image ">
-					        <a href="./north-parchmore-street/" class="property-box-image-inner ">
-								
-					            				<img width="270" height="226" src="./content/uploads/2015/06/5388661724_859d557469_o-270x226.jpg" class="attachment-property-box-thumbnail size-property-box-thumbnail wp-post-image" alt="interiors">            
-								<div class="property-box-image-price">
-					    $ 340,000</div><!-- /.property-box-image-price -->
-
-					                        
-					            
-					                    </a>
-					    </div><!-- /.property-image -->
-
-					    <div class="property-box-content">
-					        <div class="property-box-title">
-						        
-					            <h3><a href="./north-parchmore-street/">North Parchmore Street</a></h3>
-
-						                </div><!-- /.property-box-title -->
-
-						    <div class="property-box-body">
-							    
-						        	        	            <div class="property-box-type">
-						                House	            </div><!-- /.property-box-type -->
-						        
-						        	        	            <div class="property-box-price">
-						                $ 340,000	            </div><!-- /.property-box-price -->
-						        
-							    <div class="property-box-read-more">
-								    <a href="./north-parchmore-street/">Read More</a>
-							    </div><!-- /.property-box-price -->
-
-							    <div class="property-box-meta">
-					                <span class="property-box-meta-item property-box-meta-item-area">
-					            <i class="pp pp-normal-cursor-scale-up"></i> 150 sqft        </span><!-- /.property-box-meta-item -->
-					    
-					                <span class="property-box-meta-item property-box-meta-item-beds">
-					            <i class="pp pp-normal-bed"></i> 2        </span><!-- /.property-box-meta-item -->
-					    
-					                <span class="property-box-meta-item property-box-meta-item-baths">
-					            <i class="pp pp-normal-shower"></i> 3        </span><!-- /.property-box-meta-item -->
-					    </div><!-- /.property-box-meta -->
-						    </div><!-- /.property-box-body -->
-					    </div><!-- /.property-box-content -->
-					</div>
-									</div>
-
-			    </div>
-			</div>
-        </div>
-	<script>
-		jQuery(document).ready(function($) {
-			$('.owl-carousel').owlCarousel({
-			    loop:true,
-			    margin:10,
-			    responsiveClass:true,
-			    nav:true,
-			    responsive:{
-			        0:{
-			            items:1,
-			            nav:true
-			        },
-			        600:{
-			            items:3,
-			            nav:false
-			        },
-			        1000:{
-			            items:5,
-			            nav:true,
-			            loop:false
-			        }
-			    }
-			})
-		});
 	</script>
         <div id="aviators_features_circles-2" class="widget widget_aviators_features_circles">
         <div class="fullwidth background-white">

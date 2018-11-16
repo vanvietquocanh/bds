@@ -19,6 +19,7 @@ var newRealEstateRouter = require('./routes/post.newRealeState');
 var findRouter = require('./routes/post.find');
 var updateRouter = require('./routes/post.update');
 var receiveEmailRouter = require('./routes/post.receive-email');
+var details = require('./routes/get.details');
 var huonggiachu = require('./routes/huonggiachu');
 
 var app = express();
@@ -72,6 +73,7 @@ app.use('/destroy', destroyAreaRouter);
 app.use('/find', findRouter);
 app.use('/update', updateRouter);
 app.use('/huonggiachu', huonggiachu);
+app.use('/details', details);
 app.use('/receive-email', receiveEmailRouter);
 app.use('/admin/email-happy-real', emailRouter);
 
