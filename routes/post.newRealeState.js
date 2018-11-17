@@ -12,9 +12,17 @@ router.post('/:area', function(req, res, next) {
 			res.send({"error": valid(req.body)});
 		}else{
 			mongo.connect(pathMongodb,(err, db)=>{
+				var direction = req.body["Hướng[]"];
+				delete req.body["Hướng[]"];
 				assert.equal(null, err);
+				req.body["Hướng"] = direction;
 				req.body["Khu Vực"] = req.params.area;
 				req.body["Ngày"]    = Date.now();
+				for (var i = 0; i < Object.values(req.body).length; i++) {
+					if(!isNaN(Object.values(req.body)[i])&&Object.keys(req.body)[i]!=="Ngày"){
+						req.body[Object.keys(req.body)[i]] = Number(Object.values(req.body)[i].replace(/^0+/, ''));
+					}
+				}
 				db.collection("happy-real-Area").insertOne(req.body, (err, result)=>{
 					assert.equal(null, err);
 					db.close();

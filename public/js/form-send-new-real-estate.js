@@ -7,7 +7,24 @@ $(document).ready(function () {
         "Loại dự án": "typeProject",
         "Giá"       : "price",
         "Hướng"     : "direction",
-        "Chi tiết"  : "details"
+        "Sổ đỏ"     : "landCertificates",
+        "Sổ hồng"   : "certificateOfHousing",
+        "Môi trường": "enviroment",
+        "Phòng tắm" : "bathroom",
+        "Chi tiết"  : "details",
+        "Phòng ngủ" : "bedroom",
+        "Nhà để xe" : "gara",
+        "Giường"    : "bed",
+        "An ninh"   : "security",
+        "Giao thông": "traffic",
+        "Giáo dục"  : "education",
+        "Y tế"      : "medical",
+        "Loại BDS"  : "typeRealEstate",
+        "Cửa hàng"  : "store",
+        "Trường học": "schools",
+        "Sân bay"   : "airport",
+      "Trung tâm TP": "cityCenter",
+        "Bệnh viện" : "hospital",
     }
     function valid(data){
         var valids = [];
@@ -29,30 +46,44 @@ $(document).ready(function () {
         });
     }
     function returnValueInput(data) {
-        $("#landNumber").val((typeof data==="string")?data:data["Lô số"])
-        $("#location").val((typeof data==="string")?data:data["Vị trí"])
-        $("#area").val((typeof data==="string")?data:data["Khu"])
-        $("#typeProject").val((typeof data==="string")?data:data["Loại dự án"])
-        $("#price").val((typeof data==="string")?data:data["Giá"])
-        $("#acreage").val((typeof data==="string")?data:data["Diện tích"])
-        $("#direction").val((typeof data==="string")?data:data["Hướng"])
-        $("#details").val((typeof data==="string")?data:data["Chi tiết"])
-        $("#details").val((typeof data==="string")?data:data["Sổ đỏ"])
+        if(typeof data==="string"){
+            $.each(convertLanguage, function(index, val) {
+                if(val==="landCertificates"||val==="certificateOfHousing"){
+                    $(`#${val}`).prop("checked", false)
+                }else if(val==="direction"){
+                    $(`#${val}1`).val(data)
+                    $(`#${val}2`).val(data)
+                }else{
+                    $(`#${val}`).val(data)
+                }
+            });
+        }else{
+            $.each(data, function(index, el) {
+                if(index==="_id"){
+                }else if(index==="Sổ đỏ"||index==="Sổ hồng"){
+                    $(`#${convertLanguage[index]}`).prop("checked", (data[index]==="true")?true:false)
+                }else if(index==="Hướng"){
+                    $(`#${convertLanguage[index]}1`).val(el[0])
+                    $(`#${convertLanguage[index]}2`).val(el[1])
+                }else{
+                    $(`#${convertLanguage[index]}`).val(data[index])
+                }
+            });
+        }
     }
     function createData(id) {
-        return {
-            "Diện tích" : $("#acreage").val(),
-            "Lô số"     : $("#landNumber").val(),
-            "Vị trí"    : $("#location").val(),
-            "Khu"       : $("#area").val(),
-            "Loại dự án": $("#typeProject").val(),
-            "Giá"       : $("#price").val(),
-            "Hướng"     : $("#direction").val(),
-            "Chi tiết"  : $("#details").val(),
-            "Sổ đỏ"     : $("#landCertificates").is(':checked'),
-            "_id"       : (id)?id:""
-        }
-        
+        var data = new Object();
+        $.each(convertLanguage, function(index, val) {
+            if(val==="landCertificates"||val==="certificateOfHousing"){
+                data[index] = $(`#${val}`).is(":checked")
+            }else if(val==="direction"){
+                data[index] = [$(`#${val}1`).val(),$(`#${val}2`).val()]
+            }else{
+                data[index] = $(`#${val}`).val()
+            }
+        });
+        data._id = (id)?id:"";
+        return data;
     }
     function successUpdate(data){
         let id = data._id;
@@ -75,10 +106,10 @@ $(document).ready(function () {
                                 <td>${data["Khu"]}</td>
                                 <td>${(data["Sổ đỏ"])?"có":"không"}</td>
                                 <td>
-                                    <button disabled type="button" class="btn-primary btn 5be47af1405d9709d4d7801a">
+                                    <button disabled type="button" class="btn-primary btn">
                                         <i class="fa fa-edit"></i>
                                     </button>
-                                    <button disabled type="button" class="btn-danger btn 5be47af1405d9709d4d7801a">
+                                    <button disabled type="button" class="btn-danger btn">
                                         <i class="fa fa-trash"></i>
                                     </button>
                                 </td>
@@ -91,7 +122,6 @@ $(document).ready(function () {
             alertError(valid(data))
         }else{
             $.each(data, function(index, val) {
-                console.log(data)
                 $(`[name='${index}']`).removeClass('null')
             });
             $.post(window.location.pathname.split("admin").join(subParams), data, function(res, textStatus, xhr) {
@@ -116,14 +146,20 @@ $(document).ready(function () {
             if(typeof res==="object"){
                 returnValueInput(res)
                 $("#submit").unbind('click');
+                $("#destroy").remove();
                 $("#submit").text("Save").attr("id","btn-save");
                 $("#form-add").append(`<button type="submit" id="destroy" class="btn btn-primary waves-effect w-md waves-light m-b-5 m-t-5">Hủy</button>`)
                 $("#destroy").click(function(event) {
                     initEventCreateArea();
+                    $("#destroy").unbind('click');
+                    $("#destroy").remove();
                 })
                 $("#btn-save").click(function(event) {
                     $("#btn-save").unbind('click')
                     let data = createData(id.id)
+                    $("#destroy").unbind('click');
+                    $("#destroy").remove();
+                    $("#btn-save").text("Gửi").attr("id","submit");
                     submitForm(createData(id.id), "update", successUpdate(data))
                     initEventCreateArea();
                 });

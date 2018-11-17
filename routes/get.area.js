@@ -7,12 +7,16 @@ const pathMongodb = require("./mongodb.path.js");
 /* GET home page. */
 router.get('/:area', function(req, res, next) {
 	// if(req.user){
+		var ojb = {
+			
+		}
 		mongo.connect(pathMongodb,(err, db)=>{
 			assert.equal(null, err);
 			db.collection("happy-real-Area").find({"Khu Vực":req.params.area}).toArray((err, result)=>{
 				assert.equal(null, err);
 				db.close();
 				if(!err){
+					console.log(result);
 					res.render("khu-vuc-happy-real",{"result": result})
 				}else{
 					res.send(err)

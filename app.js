@@ -3,7 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var sassMiddleware = require('node-sass-middleware');
+// var sassMiddleware = require('node-sass-middleware');
 var passport = require("passport")
 var infoAPI = require("./routes/apiInfo.js");
 var session = require("express-session");
@@ -28,16 +28,16 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.use(logger('dev'));
+// app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(sassMiddleware({
-  src: path.join(__dirname, 'public'),
-  dest: path.join(__dirname, 'public'),
-  indentedSyntax: false, // true = .sass and false = .scss
-  sourceMap: true
-}));
+// app.use(sassMiddleware({
+//   src: path.join(__dirname, 'public'),
+//   dest: path.join(__dirname, 'public'),
+//   indentedSyntax: false, // true = .sass and false = .scss
+//   sourceMap: true
+// }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use(session(
@@ -73,7 +73,7 @@ app.use('/destroy', destroyAreaRouter);
 app.use('/find', findRouter);
 app.use('/update', updateRouter);
 app.use('/huonggiachu', huonggiachu);
-app.use('/details', details);
+app.use('/chi-tiet', details);
 app.use('/receive-email', receiveEmailRouter);
 app.use('/admin/email-happy-real', emailRouter);
 
