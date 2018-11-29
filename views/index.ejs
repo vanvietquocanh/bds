@@ -23,6 +23,14 @@ img.emoji {
 	background: none !important;
 	padding: 0 !important;
 }
+	 #map {
+	    height: 40em;
+	  }
+	  html, body {
+	    height: 100%;
+	    margin: 0;
+	    padding: 0;
+	  }
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.woff">
@@ -39,7 +47,7 @@ img.emoji {
 <link rel="stylesheet" id="pictopro-css" href="./content/themes/HappyReal/assets/libraries/fonts/PictoPro/style.css?ver=4.4.1" type="text/css" media="all">
 <link rel="stylesheet" id="HappyReal-css-css" href="./content/themes/HappyReal/assets/css/HappyReal.css?ver=20170117" type="text/css" media="all">
 <link rel="stylesheet" id="style-css" href="./content/themes/HappyReal/style.css?ver=4.4.1" type="text/css" media="all">
-<!-- <script type="text/javascript" src="//maps.googleapis.com/maps/api/js?key=AIzaSyD86DebZJbh6ErVo_W_RcM5eyvRL9VH7Xo&amp;libraries=weather%2Cgeometry%2Cvisualization%2Cplaces%2Cdrawing&amp;ver=4.4.1"></script> -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCe1F9nnU_h75yopZAOtHw-atE4Ix54YcM&libraries=places"></script>
 <script type="text/javascript" src="./includes/js/jquery/jquery.js?ver=1.11.3"></script>
 <script type="text/javascript" src="./includes/js/jquery/jquery-migrate.min.js?ver=1.2.1"></script>
 <script type="text/javascript" src="./content/plugins/HappyReal/libraries/jquery.chained.remote.custom.min.js?ver=4.4.1"></script>
@@ -110,8 +118,7 @@ img.emoji {
 						</a>
 									</div><!-- /.container -->
 			</div><!-- /.header-top -->
-
-			
+		
 							<div class="header-bottom">
 					<div class="container">
 						<div class="menu-primary-container">
@@ -194,11 +201,12 @@ img.emoji {
 				</div><!-- /.header-bottom -->
 					</nav>
 	</div><!-- /.header -->
-
+<script>
+	var data = <%-JSON.stringify(arrArea)%>;
+</script>
 	<div class="main">
-		
-
-
+<script src="./js/events/happy-real-controls-map.js"></script>
+<div id="map"></div>
 		<div class="container">
 				<div class="sidebar-top">
 		
@@ -1103,7 +1111,6 @@ img.emoji {
 <script type="text/javascript" src="./content/plugins/HappyReal/libraries/jquery-google-map/markerclusterer.js?ver=4.4.1"></script>
 <script type="text/javascript" src="./content/plugins/HappyReal/libraries/mapescape/js/mapescape.js?ver=4.4.1"></script>
 <script type="text/javascript" src="./content/plugins/HappyReal/libraries/jquery-google-map/jquery-google-map.js?ver=0.8.6"></script> -->
-<script type="text/javascript" src="./content/plugins/HappyReal/assets/js/realia.js?ver=1.2.1"></script>
 <script type="text/javascript" src="./content/plugins/contact-form-7/includes/js/jquery.form.min.js?ver=3.51.0-2014.06.20"></script>
 <script type="text/javascript">
 /* <![CDATA[ */
@@ -1115,7 +1122,6 @@ var _wpcf7 = {"loaderUrl":"http:\/\/preview.byaviators.com\/theme\/realia\/wp-co
 <script type="text/javascript" src="./content/themes/HappyReal/assets/libraries/colorbox/jquery.colorbox-min.js?ver=4.4.1"></script>
 <script type="text/javascript" src="./includes/js/wp-embed.min.js?ver=4.4.1"></script>
 <script type="text/javascript" src="./js/events/controler.js"></script>
-
 
 
 <div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none;"></div></div>
