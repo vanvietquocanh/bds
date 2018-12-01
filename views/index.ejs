@@ -208,34 +208,71 @@ img.emoji {
 <script src="./js/events/happy-real-controls-map.js"></script>
 <div id="map"></div>
 		<div class="container">
-				<div class="sidebar-top">
+				<div class="sidebar-top" style="margin-top: 1em;">
 		
 
-<div id="filter_rent_sale_widget-2" class="widget widget_filter_rent_sale_widget">
+
+<!-- table -->
+<div class="row">
+	<div class="content col-sm-12 col-md-12" style="padding: 0px">
+		<div class="container" style="padding: 0px">
+		<table id="table-pagination" class="table table-striped table-hover table-success" cellspacing="0">
+			<thead>
+			    <tr>
+	                <th scope="col" class="hidden-320px show-640px">#</th>
+	                <th scope="col" class="hidden-320px show-720px">Ngày</th>
+	                <th scope="col" class="hidden-320px show-568px">Lô số</th>
+	                <th scope="col" class="hidden-320px show-720px">Loại dự án</th>
+	                <th scope="col">Giá (tỉ VNĐ)</th>
+	                <th scope="col">Hướng</th>
+	                <th scope="col">Diện tích(m2)</th>
+	                <th scope="col">Khu</th>
+	                <th scope="col" class="hidden-320px show-568px">Sổ đỏ</th>
+	            </tr>
+			</thead>
+			<tbody>
+				<%for (var i = 0; i < arrArea.length; i++) {%>
+				<%var arrName = ["nguyen-tri-phuong-happy-real","dao-vip-happy-real","nam-hoa-xuan-happy-real","hoa-xuan-1a-happy-real","lang-chau-au-1-happy-real","lang-chau-au-2-happy-real"]%>
+				<%var realName = ["Nguyễn Tri Phương","Đảo Vip","Nam Hòa Xuân","Hòa Xuân 1A","Làng Châu Âu 1","Làng Châu Âu 2"]%>
+				    <tr>
+				      	<th scope="row" class="hidden-320px show-640px"><%-i%></th>
+				      	<td class="hidden-320px show-720px"><%-arrArea[i]['Ngày']%></td>
+				      	<td class="hidden-320px show-568px"><%-arrArea[i]['Lô số']%></td>
+				      	<td class="hidden-320px show-720px"><%-arrArea[i]['Loại dự án']%></td>
+				      	<td><%-arrArea[i]['Giá']%></td>
+				      	<td><%-arrArea[i]['Hướng']%></td>
+				      	<td><%-arrArea[i]["Diện tích"]%></td>
+				      	<td><%-realName[arrName.indexOf(arrArea[i]["Khu Vực"])]%></td>
+				      	<td class="hidden-320px show-568px"><%-(arrArea[i]["Sổ đỏ"]=="true")?"có":"không"%></td>
+				    </tr>
+				<%}%>
+		  	</tbody>
+		</table>
+		<div class="showmore">
+	 		<input class="form-control bg-primary" min="0" max="" type="number" name="state" id="maxRows">
+			<label for="maxRows">Số hàng</label>
+		</div>
+		<div class='pagination-container' >
+				<nav>
+				  <ul class="pagination">
+            
+            <li data-page="prev" >
+								     <span> < <span class="sr-only">(current)</span></span>
+								    </li>
+				   <!--	Here the JS Function Will Add the Rows -->
+        <li data-page="next" id="prev">
+								       <span> > <span class="sr-only">(current)</span></span>
+								    </li>
+				  </ul>
+				</nav>
+			</div>
+
+</div> <!-- 		End of Container -->
+<div class="container sidebar-top">
+	<div id="filter_rent_sale_widget-2" class="widget widget_filter_rent_sale_widget">
 
 <div class="tabs">
-	<ul class="tabs-navigation custom-tabs-navigation">
-		<li class="rent active custom-active"><a href="#filter_rent_sale_widget-2-rent">Mua</a></li>
-		<li class="link last custom-links">
-		    <a href="?than=3b">VIP > 3 Tỷ</a>
-		</li>
-		<li class="link custom-links">
-		    <a href="?from=2b&to=3b">2 - 3 Tỷ</a>
-		</li>
-		<li class="link custom-links">
-		    <a href="?from=1.6b&to=2b">1.6 - 2 Tỷ</a>
-		</li>
 
-		<li class="link custom-links">
-		    <a href="?book=1">Đã có sổ đỏ</a>
-		</li>
-		<li class="link custom-links">
-		    <a href="?corner=1">Lô góc</a>
-		</li>
-		<li class="link custom-links">
-		    <a href="?villa=1">Lô Biệt Thự</a>
-		</li>
-	</ul>
 
 	
 	<div class="tabs-content">
@@ -338,62 +375,7 @@ img.emoji {
 </div>
 
 </div>	</div><!-- /.sidebar -->
-<!-- table -->
-<div class="row">
-	<div class="content col-sm-12 col-md-12">
-		<div class="container">
-		<table id="table-pagination" class="table table-striped table-hover table-success" cellspacing="0">
-			<thead>
-			    <tr>
-	                <th scope="col" class="hidden-320px show-640px">#</th>
-	                <th scope="col" class="hidden-320px show-720px">Ngày</th>
-	                <th scope="col" class="hidden-320px show-568px">Lô số</th>
-	                <th scope="col" class="hidden-320px show-720px">Loại dự án</th>
-	                <th scope="col">Giá (tỉ VNĐ)</th>
-	                <th scope="col">Hướng</th>
-	                <th scope="col">Diện tích(m2)</th>
-	                <th scope="col">Khu</th>
-	                <th scope="col" class="hidden-320px show-568px">Sổ đỏ</th>
-	            </tr>
-			</thead>
-			<tbody>
-				<%for (var i = 0; i < arrArea.length; i++) {%>
-				<%var arrName = ["nguyen-tri-phuong-happy-real","dao-vip-happy-real","nam-hoa-xuan-happy-real","hoa-xuan-1a-happy-real","lang-chau-au-1-happy-real","lang-chau-au-2-happy-real"]%>
-				<%var realName = ["Nguyễn Tri Phương","Đảo Vip","Nam Hòa Xuân","Hòa Xuân 1A","Làng Châu Âu 1","Làng Châu Âu 2"]%>
-				    <tr>
-				      	<th scope="row" class="hidden-320px show-640px"><%-i%></th>
-				      	<td class="hidden-320px show-720px"><%-arrArea[i]['Ngày']%></td>
-				      	<td class="hidden-320px show-568px"><%-arrArea[i]['Lô số']%></td>
-				      	<td class="hidden-320px show-720px"><%-arrArea[i]['Loại dự án']%></td>
-				      	<td><%-arrArea[i]['Giá']%></td>
-				      	<td><%-arrArea[i]['Hướng']%></td>
-				      	<td><%-arrArea[i]["Diện tích"]%></td>
-				      	<td><%-realName[arrName.indexOf(arrArea[i]["Khu Vực"])]%></td>
-				      	<td class="hidden-320px show-568px"><%-(arrArea[i]["Sổ đỏ"]=="true")?"có":"không"%></td>
-				    </tr>
-				<%}%>
-		  	</tbody>
-		</table>
-		<div class="showmore">
-	 		<input class="form-control bg-primary" min="0" max="" type="number" name="state" id="maxRows">
-			<label for="maxRows">Sổ hàng</label>
-		</div>
-		<div class='pagination-container' >
-				<nav>
-				  <ul class="pagination">
-            
-            <li data-page="prev" >
-								     <span> < <span class="sr-only">(current)</span></span>
-								    </li>
-				   <!--	Here the JS Function Will Add the Rows -->
-        <li data-page="next" id="prev">
-								       <span> > <span class="sr-only">(current)</span></span>
-								    </li>
-				  </ul>
-				</nav>
-			</div>
-
-</div> <!-- 		End of Container -->
+</div>
 	</div>
 
 </div>	
@@ -1093,7 +1075,7 @@ img.emoji {
 				<div class="container">
 					<div class="footer-bottom-inner">
 						<div class="footer-bottom-left">
-									<div id="text-2" class="widget widget_text">			<div class="textwidget"><%-new Date().getFullYear()%> © Happy Real.<span class="separator">/</span> Created by <a href="https://www.facebook.com/quocanh.vanviet" target="_blank">&nbsp;Van Viet Quoc Anh</a> <span class="separator">/</span> Powered by <a href="http://nodejs.org" target="_blank">Node.js</a></div>
+									<div id="text-2" class="widget widget_text">			<div class="textwidget"><%-new Date().getFullYear()%> © Happy Real.<span class="separator">/</span> Powered by <a href="http://nodejs.org" target="_blank">Node.js</a></div>
 		</div>								</div><!-- /.footer-bottom-left -->
 							
 															<div class="footer-bottom-right">
@@ -1151,4 +1133,7 @@ var _wpcf7 = {"loaderUrl":"http:\/\/preview.byaviators.com\/theme\/realia\/wp-co
 
     });
 </script>
+<div style="position: fixed">
+	<div class="fix-icon-zalo"></div> <a href="http://zalo.me/0902476116‬">0902476116‬</a>
+</div>
 </body></html>
