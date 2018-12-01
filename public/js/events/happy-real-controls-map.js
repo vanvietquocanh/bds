@@ -70,9 +70,23 @@ jQuery(document).ready(function($) {
       }
       if(detectmob()){
       	zoom = 11;
-        $("#map").css("height","400px")
+        $("#map").css("height","0px")
       }else{
-      	zoom = 12;
+        zoom = 12;
+        $("#map").css("height","0px")
       }
       initMap(zoom);
+      $(".fa.fa-map").click(function(event) {
+        if($("#map").css("height")==="0px"){
+          if(detectmob()){
+            zoom = 11;
+            $("#map").css("height","300px")
+          }else{
+            zoom = 12;
+            $("#map").css("height","500px")
+          }
+        }else{
+          $("#map").css("height","0px")
+        }
+      });
 });

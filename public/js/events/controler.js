@@ -165,5 +165,5 @@ jQuery(document).ready(function($) {
     
   
 								// END OF PAGINATION 
-	}	
+	}
 });
