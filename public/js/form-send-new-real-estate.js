@@ -191,4 +191,21 @@ $(document).ready(function () {
             }
         }
     })
+    var numberImage = 1;
+    function create(arguments) {
+        
+    }
+    $(`.title-image-${numberImage}`).keyup(function(event) {
+        if($(`#image-${numberImage}`).prop('files').length){
+            $(`.title-image-${numberImage}`).unbind('keyup')
+            console.log(numberImage);
+            numberImage=numberImage+1;
+            $(".form-group.row").append(`<div class="col-xs-2">
+                                            <input type="file" placeholder="Bệnh viện(km)" name="image-${numberImage}" id="image-1" class="form-control m-b-5 col-xs-3 image">
+                                        </div>
+                                        <div class="col-xs-2">
+                                            <input type="text" placeholder="title" name="title-${numberImage}" id="title-image" class="form-control m-b-5 col-xs-3 title-image-${numberImage}">
+                                        </div>`);
+        }
+    });
 });
