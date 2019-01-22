@@ -24,7 +24,9 @@ $(document).ready(function () {
         "Trường học": "schools",
         "Sân bay"   : "airport",
       "Trung tâm TP": "cityCenter",
-        "Bệnh viện" : "hospital",
+      "Ảnh chi tiết": "image",
+      "Tiêu đề ảnh" : "title-image",
+        "Bệnh viện" : "hospital"
     }
     function valid(data){
         var valids = [];
@@ -74,6 +76,7 @@ $(document).ready(function () {
     function createData(id) {
         var data = new Object();
         $.each(convertLanguage, function(index, val) {
+            console.log(val)
             if(val==="landCertificates"||val==="certificateOfHousing"){
                 data[index] = $(`#${val}`).is(":checked")
             }else if(val==="direction"){
@@ -138,6 +141,7 @@ $(document).ready(function () {
         $("#submit").click(e=>{
             let data = createData(false)
             delete data._id;
+            console.log(data);
             submitForm(data, "new-area", successInsert(data))
         })
     }
@@ -178,9 +182,9 @@ $(document).ready(function () {
             }
         })
     }
-    $.get('/huonggiachu',function(data, textStatus, xhr) {
-        console.log(data);
-    });
+    // $.get('/huonggiachu',function(data, textStatus, xhr) {
+    //     console.log(data);
+    // });
     initEventCreateArea()
     $(".btn").click(e=>{
         if($(e.currentTarget).attr("class").split(" ").length===3){
@@ -198,13 +202,12 @@ $(document).ready(function () {
     $(`.title-image-${numberImage}`).keyup(function(event) {
         if($(`#image-${numberImage}`).prop('files').length){
             $(`.title-image-${numberImage}`).unbind('keyup')
-            console.log(numberImage);
             numberImage=numberImage+1;
             $(".form-group.row").append(`<div class="col-xs-2">
-                                            <input type="file" placeholder="Bệnh viện(km)" name="image-${numberImage}" id="image-1" class="form-control m-b-5 col-xs-3 image">
+                                            <input type="file" name="image-${numberImage}" id="image-${numberImage}" class="form-control m-b-5 col-xs-3 image">
                                         </div>
                                         <div class="col-xs-2">
-                                            <input type="text" placeholder="title" name="title-${numberImage}" id="title-image" class="form-control m-b-5 col-xs-3 title-image-${numberImage}">
+                                            <input type="text" placeholder="title-${numberImage}" name="title-${numberImage}" id="title-image-${numberImage}" class="form-control m-b-5 col-xs-3 title-image-${numberImage}">
                                         </div>`);
         }
     });

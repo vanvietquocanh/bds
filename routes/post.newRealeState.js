@@ -8,6 +8,7 @@ const valid = require("./valid.js");
 /* POST new real estate. */
 router.post('/:area', function(req, res, next) {
 	// if(req.user){
+		console.log(req.body);
 		if(valid(req.body).length>0){
 			res.send({"error": valid(req.body)});
 		}else{
@@ -18,6 +19,7 @@ router.post('/:area', function(req, res, next) {
 				req.body["Hướng"] = direction;
 				req.body["Khu Vực"] = req.params.area;
 				req.body["Ngày"]    = Date.now();
+				console.log(req.body)
 				for (var i = 0; i < Object.values(req.body).length; i++) {
 					if(!isNaN(Object.values(req.body)[i])&&Object.keys(req.body)[i]!=="Ngày"){
 						req.body[Object.keys(req.body)[i]] = Number(Object.values(req.body)[i].replace(/^0+/, ''));

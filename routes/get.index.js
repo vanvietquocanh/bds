@@ -7,23 +7,34 @@ const pathMongodb = require("./mongodb.path.js");
 /* GET home page. */
 router.get('/', function(req, res, next) {
 	try{
-		for (var i = 0; i < Object.keys(req.query).length; i++) {
-			if(Object.values(req.query)[i].split(";").length>1&&Object.values(req.query)[i].split(";")){
-				req.query[Object.keys(req.query)[i]] = {
-					"$gt" : Math.min(Object.values(req.query)[i].split(";")),
-					"$lt" : Math.max(Object.values(req.query)[i].split(";"))
+		var query = {}
+		for (var i = Object.keys(req.query).length - 1; i >= 0; i--) {
+			if(Object.values(req.query)[i]!==""){
+				query[`${Object.keys(req.query)[i]}`] = Object.values(req.query)[i];
+			}
+		}
+		if(Object.keys(req.query).length>0){
+			if(query["Giá"]&&query["Giá"].indexOf(";")!==-1){
+				let gt = Number(query["Giá"].split(";")[0]);
+				let lt = Number(query["Giá"].split(";")[1]);
+				query["Giá"] = {
+					$gt : gt,
+					$lt : lt
 				}
-			}else{
-				// if()
 			}
 		}
 		mongo.connect(pathMongodb,(err, db)=>{
-			db.collection("happy-real-Area").find().sort({_id:1}).limit(20).toArray((err, result)=>{
-				// console.log(result);
-				res.render("index",{"chatbox":chatbox,"arrArea":result,"nameCompany":"happy-real"})
+			db.collection("happy-real-Area").find(query).sort({_id:1}).limit(20).toArray((err, result)=>{
+				db.close();
+				if(!err){
+					res.render("index",{"chatbox":chatbox,"arrArea":result,"nameCompany":"happy-real"})
+				}else{
+					res.redirect("/error")
+				}
 			})
 		})
 	}catch(e){
+		console.log(e);
 		res.redirect("/")
 	}
 });

@@ -53,12 +53,7 @@ img.emoji {
 <script type="text/javascript" src="./content/plugins/HappyReal/libraries/jquery.chained.remote.custom.min.js?ver=4.4.1"></script>
 <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="./content/themes/HappyReal/assets/js/HappyReal.js?ver=20161017"></script>
-<link rel="https://api.w.org/" href="./json/">
-<link rel="EditURI" type="application/rsd+xml" title="RSD" href="./php?rsd">
-<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="./includes/wlwmanifest.xml"> 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.0.0-beta.3/owl.carousel.min.js"></script>
-
-<meta name="generator" content="WordPress 4.4.1">
 <link rel="canonical" href="./<link rel="shortlink" href="./<script type="text/javascript">
 <link rel="https://github.com/WP-API/WP-API" href="./json">
 <link rel="stylesheet" href="./css/normalize.css" />
@@ -88,7 +83,7 @@ img.emoji {
 		<div>
 			<div class="fix-icon-zalo" style="width: 35px; height: 35px; margin-right: 0;"></div>
 		</div>
-		<div style="border-radius: .5em; background: #02344a; ">
+		<div id="showmap" style="border-radius: .5em; background: #02344a; ">
 			<div class="fa fa-globe" style="font-size: 29px; border: 1px solid #fff; border-radius: .4em; padding: .2em; color:#fff"></div>
 		</div>
 	</div>
@@ -214,6 +209,7 @@ img.emoji {
 </script>
 	<div class="main">
 <script src="./js/events/happy-real-controls-map.js"></script>
+<script src="./js/events/happy-real-script.js"></script>
 <div id="map"></div>
 		<div class="container">
 				<div class="sidebar-top" style="margin-top: 1em;">
@@ -228,7 +224,7 @@ img.emoji {
 			<thead>
 			    <tr>
 	                <th scope="col" class="hidden-320px show-640px">#</th>
-	                <th scope="col" class="hidden-320px show-720px">Ngày</th>
+	                <th scope="col" class="hidden-320px show-720px">Ngày đăng</th>
 	                <th scope="col" class="hidden-320px show-568px">Lô số</th>
 	                <th scope="col" class="hidden-320px show-720px">Loại dự án</th>
 	                <th scope="col">Giá (tỉ VNĐ)</th>
@@ -242,8 +238,8 @@ img.emoji {
 				<%for (var i = 0; i < arrArea.length; i++) {%>
 				<%var arrName = ["nguyen-tri-phuong-happy-real","dao-vip-happy-real","nam-hoa-xuan-happy-real","hoa-xuan-1a-happy-real","lang-chau-au-1-happy-real","lang-chau-au-2-happy-real"]%>
 				<%var realName = ["Nguyễn Tri Phương","Đảo Vip","Nam Hòa Xuân","Hòa Xuân 1A","Làng Châu Âu 1","Làng Châu Âu 2"]%>
-				    <tr>
-				      	<th scope="row" class="hidden-320px show-640px"><%-i%></th>
+				    <tr class="clickShowDetails" id="<%-arrArea[i]._id%>">
+				      	<th scope="row" class="hidden-320px show-640px"><%-i+1%></th>
 				      	<td class="hidden-320px show-720px"><%-arrArea[i]['Ngày']%></td>
 				      	<td class="hidden-320px show-568px"><%-arrArea[i]['Lô số']%></td>
 				      	<td class="hidden-320px show-720px"><%-arrArea[i]['Loại dự án']%></td>
@@ -258,7 +254,7 @@ img.emoji {
 		</table>
 		<div class="showmore">
 	 		<input class="form-control bg-primary" min="0" max="" type="number" name="state" id="maxRows">
-			<label for="maxRows">Số hàng</label>
+			<labe id="lb-show" for="maxRows">Số hàng</label>
 		</div>
 		<div class='pagination-container' >
 				<nav>
@@ -287,9 +283,9 @@ img.emoji {
 
 			
 		<div class="tab-content rent-tab active" id="filter_rent_sale_widget-2-rent">
-			<form method="get" action="/" accept-charset="utf-8" accept="application/json">
+			<form method="get" action="/?" accept-charset="utf-8" accept="application/json">
 				<div class="form-group">
-					<select class="form-control" name="Vị trí" id="rent_filter_rent_sale_widget-2_location">
+					<select class="form-control" name="Khu Vực" id="rent_filter_rent_sale_widget-2_location">
 						<option value="">
 											Vị Trí									</option>
 
@@ -313,13 +309,13 @@ img.emoji {
 			
 			<option value="">
 									Loại bất động sản							</option>					
-																									<option value="19">
+																									<option value="Đất">
 						Khu vực xây dựng					</option>					
-																									<option value="34">
+																									<option value="Nhà">
 						Nhà ở					</option>
 
 					
-																									<option value="49">
+																									<option value="Biệt Thự">
 						Biệt thự					</option>
 
 					

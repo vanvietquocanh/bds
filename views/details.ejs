@@ -1,3 +1,20 @@
+<% var arrName = 	[
+						"nam-hoa-xuan",
+						"nguyen-tri-phuong",
+						"dao-vip",
+						"hoa-xuan-1a",
+						"lang-chau-au-1",
+						"lang-chau-au-2"
+					]
+	var cvtName =   [
+						"Nam Hoà Xuân",
+						"Nguyễn Tri Phương",
+						"Đảo VIP",
+						"Hoà Xuân 1A",
+						"Làng Châu Âu 1",
+						"Làng Châu Âu 2",
+					]
+%>
 <!DOCTYPE html>
 <html lang="en-US"><head><style type="text/css">.gm-control-active img{box-sizing:content-box;pointer-events:none}.gm-control-active:hover img:nth-child(1),.gm-control-active:active img:nth-child(1),.gm-control-active:active img:nth-child(2){display:none}
 </style><link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700"><style type="text/css">.gm-ui-hover-effect{opacity:.7}.gm-ui-hover-effect:hover{opacity:1}
@@ -55,7 +72,9 @@ img.emoji {
 <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="./includes/wlwmanifest.xml"> 
 <meta name="generator" content="WordPress 4.4.1">
 <link rel="canonical" href="./<link rel="shortlink" href="./<script type="text/javascript">
-<link rel="https://github.com/WP-API/WP-API" href="./json">
+<link rel="stylesheet" href="./css/ion.rangeSlider.css" />
+<link rel="stylesheet" href="./css/ion.rangeSlider.skinFlat.css" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.0.0-beta.3/owl.carousel.min.js"></script>
  <style>
     #sync1 .item {
@@ -232,80 +251,43 @@ img.emoji {
 					</nav>
 	</div><!-- /.header -->
 
-	<div class="main">
+	<div class="container">
+		<div class="sidebar-top" style="margin-top: 0em;">
 		
 
 
-		<div class="container">
-				<div class="sidebar-top">
-		
+<!-- table -->
+<div class="row">
+	<div class="content col-sm-12 col-md-12" style="padding: 0px">
+		<div class="container" style="padding: 0px">
 
-<div id="filter_rent_sale_widget-2" class="widget widget_filter_rent_sale_widget">
+</div> <!-- 		End of Container -->
+<div class="container sidebar-top">
+	<div id="filter_rent_sale_widget-2" class="widget widget_filter_rent_sale_widget">
 
 <div class="tabs">
-	<ul class="tabs-navigation custom-tabs-navigation">
-		<li class="rent active custom-active"><a href="#filter_rent_sale_widget-2-rent">Mua</a></li>
-		<li class="link last custom-links">
-		    <a href="./?filter-sticky=1">VIP > 3 Tỷ</a>
-		</li>
-		<li class="link custom-links">
-		    <a href="./?filter-sold=1">2 - 3 Tỷ</a>
-		</li>
-		<li class="link custom-links">
-		    <a href="./?filter-reduced=1">1.6 - 2 Tỷ</a>
-		</li>
 
-		<li class="link custom-links">
-		    <a href="./?filter-featured=1">Đã có sổ đỏ</a>
-		</li>
-		<li class="link custom-links">
-		    <a href="./">Lô góc</a>
-		</li>
-		<li class="link custom-links">
-		    <a href="./">Lô Biệt Thự</a>
-		</li>
-	</ul>
 
 	
 	<div class="tabs-content">
 
 			
 		<div class="tab-content rent-tab active" id="filter_rent_sale_widget-2-rent">
-			<form method="get" action="./">
-				
-															<input type="hidden" name="fbclid" value="IwAR1Na500MHKnbIueVl7oeqegxPrp6gtbVko7PkVcmmu0FjVl31kHJ1RjIXQ">
-									
-				<input type="hidden" name="filter-contract" value="RENT">
-
-				
-				
-																																																												<div class="form-group">
-			
-			<select class="form-control" name="filter-location" id="rent_filter_rent_sale_widget-2_location">
-				<option value="">
+			<form method="get" action="/?" accept-charset="utf-8" accept="application/json">
+				<div class="form-group">
+					<select class="form-control" name="Khu Vực" id="rent_filter_rent_sale_widget-2_location">
+						<option value="">
 											Vị Trí									</option>
 
 				
-															<option value="40">TP.Đà Nẵng</option>
+															<option value="DN">TP.Đà Nẵng</option>
 
 						
-																					<option value="51">
-									»&nbsp; Nam Hòa Xuân								</option>
-
-								
-																																								<option value="52">
-									»&nbsp; Đảo VIP								</option>
-
-								
-																																								<option value="42">
-									»&nbsp; Làng Châu Âu								</option>
-
-								
-																																								<option value="46">
-									»&nbsp; Làng Châu Âu 2								</option>
-
-								
-																																								<option value="48">
+																					<option value="nam-hoa-xuan-happy-real">
+									»&nbsp; Nam Hòa Xuân								</option>																																								<option value="dao-vip-happy-real">
+									»&nbsp; Đảo VIP								</option>																																								<option value="lang-chau-au-1-happy-real">
+									»&nbsp; Làng Châu Âu 1								</option>																																								<option value="lang-chau-au-2-happy-real">
+									»&nbsp; Làng Châu Âu 2								</option>																																								<option value="nguyen-tri-phuong-happy-real">
 									»&nbsp; Nguyễn Tri Phương								</option>
 
 								
@@ -313,45 +295,28 @@ img.emoji {
 		</div><!-- /.form-group -->
 																					<div class="form-group">
 		
-		<select class="form-control" name="filter-property-type" id="rent_filter_rent_sale_widget-2_property_type">
+		<select class="form-control" name="Loại BDS" id="rent_filter_rent_sale_widget-2_property_type">
 			
 			<option value="">
-									Loại bất động sản							</option>
-
-												<option value="13">
-						Căn hộ, Chung cư					</option>
-
-					
-																									<option value="19">
-						Khu vực xây dựng					</option>
-
-					
-																									<option value="24">
-						Chung cư					</option>
-
-					
-																									<option value="34">
+									Loại bất động sản							</option>					
+																									<option value="Đất">
+						Khu vực xây dựng					</option>					
+																									<option value="Nhà">
 						Nhà ở					</option>
 
 					
-																									<option value="49">
+																									<option value="Biệt Thự">
 						Biệt thự					</option>
 
 					
 																									</select>
 	</div><!-- /.form-group -->
-																																																																													<div class="form-group">
-		
-		<input type="number" min="0" pattern="\d*" name="filter-price-from" placeholder="Giá từ (VNĐ)" class="form-control" value="" id="rent_filter_rent_sale_widget-2_price_from">
-	</div><!-- /.form-group -->
-
-	<div class="form-group">
-		
-		<input type="number" min="0" pattern="\d*" name="filter-price-to" placeholder="Đến giá (VNĐ)" class="form-control" value="" id="rent_filter_rent_sale_widget-2_price_to">
+	<div class="form-group fix-fg-40">
+        <span class="irs js-irs-0"><span class="irs"><span class="irs-line" tabindex="0"><span class="irs-line-left"></span><span class="irs-line-mid"></span><span class="irs-line-right"></span></span><span class="irs-min" style="display: none; visibility: hidden;">0</span><span class="irs-max" style="display: none; visibility: visible;">1</span><span class="irs-from" style="visibility: visible; left: -4.7486%;">0 TỈ VNĐ</span><span class="irs-to" style="visibility: visible; left: 42.1788%;">50 TỈ VNĐ</span><span class="irs-single" style="visibility: hidden; left: 11.0335%;">0 TỈ VNĐ — 50 TỈ VNĐ</span></span><span class="irs-grid"></span><span class="irs-bar" style="left: 2.23464%; width: 47.7654%;"></span><span class="irs-shadow shadow-from" style="display: none;"></span><span class="irs-shadow shadow-to" style="display: none;"></span><span class="irs-slider from" style="left: 0%;"></span><span class="irs-slider to type_last" style="left: 47.7654%;"></span></span><input type="text" id="range" value="" name="Giá" class="irs-hidden-input" tabindex="-1" readonly="">
 	</div><!-- /.form-group -->
 																																																																																																																																																																																																																					
 									<div class="form-group">
-						<button class="button">Lọc bất động sản</button>
+						<button class="button">Tìm kiếm</button>
 					</div><!-- /.form-group -->
 							</form>
 		</div>
@@ -404,6 +369,11 @@ img.emoji {
 </div>
 
 </div>	</div><!-- /.sidebar -->
+</div>
+	</div>
+
+</div>
+	</div>
 <div class="row">
 	<div class="content col-sm-8 col-md-9">
 		
@@ -411,12 +381,13 @@ img.emoji {
 
 <article id="post-145" class="post-145 property type-property status-publish has-post-thumbnail hentry amenities-air-conditioning amenities-bedding amenities-cable-tv amenities-dvd amenities-fan amenities-hairdryer amenities-internet amenities-juicer amenities-lift statuses-available locations-brooklyn locations-new-york-city materials-block property_types-villa">
 	<header class="entry-header">
-		<h1 class="entry-title property-title">South Mervin Boulevard</h1>	</header><!-- .entry-header -->
+		<h1 class="entry-title property-title"><%-details["Loại dự án"]%></h1>	</header><!-- .entry-header -->
 	<div class="property-detail-subtitle">
 							<div class="property-location">
-				<a href="http://preview.byaviators.com/theme/realia/location/new-york-city/">New York City</a> <span class="separator">,</span> <a href="http://preview.byaviators.com/theme/realia/location/new-york-city/brooklyn/">Brooklyn</a>			</div>
-									<div class="property-price">
-				$ 220,000			</div>
+				<a href="http://preview.byaviators.com/theme/realia/location/new-york-city/">
+					<%-cvtName[arrName.indexOf(details["Khu Vực"].split("-happy-real").join(""))]%>
+				</a> <span class="separator">&nbsp;- </span> <a href=""><%-details["Hướng"]%></a>			</div>
+									<div class="property-price"><%-details["Giá"]%> tỉ VNĐ			</div>
 			</div>
 	<div id="sync1" class="owl-carousel owl-theme">
       	<div class="item">
@@ -472,21 +443,95 @@ img.emoji {
 	</div>
 <script src="./js/slider-details.js"></script>
 <div class="property-content">
-    <h2>Overview</h2>
+    <h2>Tổng Quan</h2>
     <div class="property-overview">
         <dl>
-            <dt>Price</dt><dd>$ 220,000</dd>
+            <dt>Giá</dt><dd><%-details["Giá"]%> tỉ VNĐ</dd>
+		</dl>
+        <dl>
+            <dt><i class="fas fa-bookmark"></i> &nbsp;&nbsp;Loại Bất động sản</dt><dd><%-details["Loại BDS"]%></dd>
+		</dl>
+        <dl>
+            <dt><i class="fas fa-book" style="color: red"></i> &nbsp;Sổ đỏ</dt><dd><%-(details["Sổ đỏ"]==="true")?"có":"không"%></dd>
+		</dl>
+        <dl>
+            <dt><i class="fas fa-book" style="color: pink"></i> &nbsp;Sổ hồng</dt><dd><%-(details["Sổ hồng"]==="true")?"có":"không"%></dd>
+		</dl>
+        <dl>
+            <dt><i class="fas fa-tree" style="color: green"></i> &nbsp;Môi trường</dt><dd><div class="progress progress-md" style="background: #fff">
+	                                            <div class="progress-bar progress-bar-pink" role="progressbar" aria-valuenow="<%-details["Môi trường"]%>" aria-valuemin="0" aria-valuemax="100" style="width: <%-details["Môi trường"]%>%;">
+	                                                <%-details["Môi trường"]%>%
+	                                            </div>
+	                                        </div></dd>
+		</dl>
+        <dl>
+            <dt><i class="fas fa-shield-alt"></i> &nbsp;An ninh</dt><dd><div class="progress progress-md" style="background: #fff">
+	                                            <div class="progress-bar progress-bar-pink" role="progressbar" aria-valuenow="<%-details["An ninh"]%>" aria-valuemin="0" aria-valuemax="100" style="width: <%-details["An ninh"]%>%;">
+	                                                <%-details["An ninh"]%>%
+	                                            </div>
+	                                        </div></dd>
+		</dl>
+        <dl>
+            <dt><i class="fas fa-traffic-light"></i> &nbsp;&nbsp;Giao thông</dt><dd><div class="progress progress-md" style="background: #fff">
+	                                            <div class="progress-bar progress-bar-pink" role="progressbar" aria-valuenow="<%-details["Giao thông"]%>" aria-valuemin="0" aria-valuemax="100" style="width: <%-details["Giao thông"]%>%;">
+	                                                <%-details["Giao thông"]%>%
+	                                            </div>
+	                                        </div></dd>
+		</dl>
+        <dl>
+            <dt><i class="fas fa-ambulance"></i> &nbsp;Y tế</dt><dd><div class="progress progress-md" style="background: #fff">
+	                                            <div class="progress-bar progress-bar-pink" role="progressbar" aria-valuenow="<%-details["Y tế"]%>" aria-valuemin="0" aria-valuemax="100" style="width: <%-details["Y tế"]%>%;">
+	                                                <%-details["Y tế"]%>%
+	                                            </div>
+	                                        </div></dd>
+		</dl>
+        <dl>
+            <dt><i class="fas fa-graduation-cap"></i> &nbsp;Giáo dục</dt><dd><div class="progress progress-md" style="background: #fff">
+	                                            <div class="progress-bar progress-bar-pink" role="progressbar" aria-valuenow="<%-details["Giáo dục"]%>" aria-valuemin="0" aria-valuemax="100" style="width: <%-details["Giáo dục"]%>%;">
+	                                                <%-details["Giáo dục"]%>%
+	                                            </div>
+	                                        </div></dd>
+		</dl>
+        <dl>
+            <dt><i class="fas fa-bath"></i> &nbsp;Phòng tắm</dt><dd><%-details["Phòng tắm"]%></dd>
+		</dl>
+        <dl>
+            <dt><i class="fas fa-person-booth"></i> &nbsp;Phòng ngủ</dt><dd><%-details["Phòng ngủ"]%></dd>
+		</dl>
+        <dl>
+            <dt><i class="fas fa-warehouse"></i> &nbsp;Nhà để xe</dt><dd><%-details["Nhà để xe"]%></dd>
+		</dl>
+        <dl>
+            <dt><i class="fas fa-bed"></i> &nbsp;Giường</dt><dd><%-details["Giường"]%></dd>
+		</dl>
+		<dl>
+            <dt><i class="fas fa-school"></i> &nbsp;Trường học</dt><dd><%-details["Trường học"]%>Km</dd>
+		</dl>
+        <dl>
+            <dt><i class="fas fa-store"></i>&nbsp;&nbsp;Cửa hàng</dt><dd><%-details["Cửa hàng"]%>Km</dd>
+		</dl>
+        <dl>
+            <dt><i class="fas fa-plane-departure"></i>&nbsp;&nbsp;Sân bay</dt><dd><%-details["Sân bay"]%>Km</dd>
+		</dl>
+        <dl>
+            <dt><i class="fas fa-city"></i>&nbsp;&nbsp;Trung tâm TP</dt><dd><%-details["Trung tâm TP"]%>Km</dd>
+		</dl>
+        <dl>
+            <dt><i class="fas fa-hospital-alt"></i>&nbsp;&nbsp;Bệnh viện</dt><dd><%-details["Bệnh viện"]%>Km</dd>
+		</dl>
+        <dl>
+            <dt><i class="far fa-calendar-alt"></i>&nbsp;&nbsp;&nbsp;Ngày đăng</dt><dd><%-new Date(details["Ngày"]).getDate()+1%>/<%-new Date(details["Ngày"]).getMonth()+1%>/<%-new Date(details["Ngày"]).getFullYear()%></dd>
 		</dl>
     </div><!-- /.property-overview -->
 </div><!-- /.property-content --><div class="property-content">
     <div class="property-description">
-        <h2>Description</h2>        <p><%%></p>
+        <h2>Mô tả chi tiết</h2><p><%-details["Chi tiết"]%></p>
     </div><!-- /.property-description -->
 </div><!-- /.property-content -->
 <div class="property-content">
     
             <div class="property-floor-plans">
-            <h2>Floor Plans</h2>
+            <h2>Hình ảnh</h2>
                             <a href="http://preview.byaviators.com/theme/megareal/wp-content/uploads/2015/03/plan.jpg" rel="property-plans" class="cboxElement">
                     <img width="150" height="150" src="http://preview.byaviators.com/theme/realia/wp-content/uploads/2015/03/plan-150x150.jpg" class="attachment-thumbnail size-thumbnail" alt="plan">                </a>
                             <a href="http://preview.byaviators.com/theme/megareal/wp-content/uploads/2015/03/plan3.jpg" rel="property-plans" class="cboxElement">

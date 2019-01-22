@@ -3,10 +3,11 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-// var sassMiddleware = require('node-sass-middleware');
+var sassMiddleware = require('node-sass-middleware');
 var passport = require("passport")
 var infoAPI = require("./routes/apiInfo.js");
 var session = require("express-session");
+var multer = require("multer");
 var FacebookStrategy = require('passport-facebook');
 var indexRouter = require('./routes/get.index');
 var usersRouter = require('./routes/users');
@@ -16,11 +17,13 @@ var areaRouter = require('./routes/get.area');
 var emailRouter = require('./routes/get.email');
 var destroyAreaRouter = require('./routes/post.destroy');
 var newRealEstateRouter = require('./routes/post.newRealeState');
-var findRouter = require('./routes/post.find');
+// var findRouter = require('./routes/get.find');
 var updateRouter = require('./routes/post.update');
 var receiveEmailRouter = require('./routes/post.receive-email');
 var details = require('./routes/get.details');
 var huonggiachu = require('./routes/huonggiachu');
+
+var upload = multer({dest:"./public/uploads/"})
 
 var app = express();
 
@@ -32,12 +35,12 @@ app.set('view engine', 'ejs');
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-// app.use(sassMiddleware({
-//   src: path.join(__dirname, 'public'),
-//   dest: path.join(__dirname, 'public'),
-//   indentedSyntax: false, // true = .sass and false = .scss
-//   sourceMap: true
-// }));
+app.use(sassMiddleware({
+  src: path.join(__dirname, 'public'),
+  dest: path.join(__dirname, 'public'),
+  indentedSyntax: false, // true = .sass and false = .scss
+  sourceMap: true
+}));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use(session(
@@ -70,7 +73,7 @@ app.use('/admin', dashboardRouter);
 app.use('/admin', areaRouter);
 app.use('/new-area', newRealEstateRouter);
 app.use('/destroy', destroyAreaRouter);
-app.use('/find', findRouter);
+// app.use('/find', findRouter);
 app.use('/update', updateRouter);
 app.use('/huonggiachu', huonggiachu);
 app.use('/chi-tiet', details);

@@ -51,6 +51,7 @@ body #GoTop::before {
     font-size: 2.5em;
 }
 .showmore{
+    position: relative;
     width: 100%;
     height: 32px;
     line-height: 2em;
@@ -111,6 +112,14 @@ body #GoTop::before {
 }
 .custom-links{
     width: 50%;
+}
+#lb-show{
+    top: 9px;
+    right: 35px;
+    position: absolute;
+}
+#showmap{
+    cursor: pointer;
 }
 @media screen and (min-width: 568px){
     .show-568px{
