@@ -41,14 +41,18 @@ jQuery(document).ready(function($) {
                   icons = "house"
                 break;
             }
-          	location[i].geometry = {
-          		location:{
-          			lat : parseFloat(location[i]["Vị trí"].split(", ")[0]),
-          			lng : parseFloat(location[i]["Vị trí"].split(", ")[1]),
-          		},
-              icons : `/icon-map/${icons}.svg`
-          	};
+          	try{
+              location[i].geometry = {
+                location:{
+                  lat : parseFloat(location[i]["Vị trí"].split(", ")[0]),
+                  lng : parseFloat(location[i]["Vị trí"].split(", ")[1]),
+                },
+                icons : `/icon-map/${icons}.svg`
+              };
             createMarker(location[i]);
+            }catch(e){
+              console.log("error");
+            }
           }
       }
       var infowindow = new google.maps.InfoWindow({

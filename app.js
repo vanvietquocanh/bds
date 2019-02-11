@@ -18,12 +18,10 @@ var emailRouter = require('./routes/get.email');
 var destroyAreaRouter = require('./routes/post.destroy');
 var newRealEstateRouter = require('./routes/post.newRealeState');
 // var findRouter = require('./routes/get.find');
-var updateRouter = require('./routes/post.update');
 var receiveEmailRouter = require('./routes/post.receive-email');
 var details = require('./routes/get.details');
 var huonggiachu = require('./routes/huonggiachu');
 
-var upload = multer({dest:"./public/uploads/"})
 
 var app = express();
 
@@ -74,7 +72,7 @@ app.use('/admin', areaRouter);
 app.use('/new-area', newRealEstateRouter);
 app.use('/destroy', destroyAreaRouter);
 // app.use('/find', findRouter);
-app.use('/update', updateRouter);
+// app.use('/update', updateRouter);
 app.use('/huonggiachu', huonggiachu);
 app.use('/chi-tiet', details);
 app.use('/receive-email', receiveEmailRouter);
