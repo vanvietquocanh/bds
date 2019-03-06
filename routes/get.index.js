@@ -3,6 +3,7 @@ var router = express.Router();
 var chatbox = require("./chatbox.js");
 const assert = require('assert');
 var mongo = require("mongodb");
+var infoCompany = require("./infoCompany.js")
 const pathMongodb = require("./mongodb.path.js");
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -27,7 +28,7 @@ router.get('/', function(req, res, next) {
 			db.collection("happy-real-Area").find(query).sort({_id:1}).limit(20).toArray((err, result)=>{
 				db.close();
 				if(!err){
-					res.render("index",{"chatbox":chatbox,"arrArea":result,"nameCompany":"happy-real"})
+					res.render("index",{"chatbox":chatbox,"arrArea":result,"infoCompany":infoCompany})
 				}else{
 					res.redirect("/error")
 				}

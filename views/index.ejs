@@ -7,8 +7,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
-	<title>Happy Real – Đà Nẵng - Bất động sản</title>
-<meta property="og:title" content="Recent Properties"><link rel="alternate" type="application/rss+xml" title="Happy Real » Feed" href="./">
+	<title><%-infoCompany.companyName%> – Đà Nẵng - Bất động sản</title>
+<meta property="og:title" content="Recent Properties"><link rel="alternate" type="application/rss+xml" title="<%-infoCompany.companyName%> » Feed" href="./">
 		<script src="./includes/js/wp-emoji-release.min.js?ver=4.4.1" type="text/javascript"></script>
 		<style type="text/css">
 img.wp-smiley,
@@ -59,6 +59,7 @@ img.emoji {
 <link rel="stylesheet" href="./css/normalize.css" />
 <link rel="stylesheet" href="./css/ion.rangeSlider.css" />
 <link rel="stylesheet" href="./css/ion.rangeSlider.skinFlat.css" />
+<link rel="stylesheet" href="./assets/css/fixer.css" />
 </head>
 <style type="text/css" media="screen">
 	.fix-zalo{
@@ -79,7 +80,7 @@ img.emoji {
 	}
 </style>
 <body class="home page page-id-268 page-template-default">
-	<div class="" style="position: fixed; right: 0px; bottom: 12em; z-index: 999999;">
+	<div class="" style="position: fixed; right: 0px; bottom: 10em; z-index: 999999;">
 		<div>
 			<div class="fix-icon-zalo" style="width: 35px; height: 35px; margin-right: 0;"></div>
 		</div>
@@ -94,33 +95,29 @@ img.emoji {
 			<div class="header-top">
 				<div class="container">
 					<div class="navbar-header">
-						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#primary-menu" >
+						<a class="navbar-brand" href="./"><img class="fix-logo" src="./logo/logo.jpg" alt="Home">							
+							<span><%-infoCompany.companyName%></span>
+						</a>
+						<button type="button" class="navbar-toggle collapsed fix-pos" data-toggle="collapse" data-target="#primary-menu" >
 							<span class="sr-only">Toggle navigation</span>
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
 
-						<a class="navbar-brand" href="./"><img src="./content/uploads/2015/07/logo.png" alt="Home">
-							
-							<span>Happy Real</span>
-						</a>
-
-											</div><!-- /.navbar-header -->
-
-											<div class="navbar-info">
-							<i class="pp pp-normal-phone"></i> <a href="tel:0902476116‬">0902476116‬</a>						</div><!-- /.navbar-info -->
-											<div class="navbar-info">
-							<i class="pp pp-normal-pencil"></i> <a href="mailto:happyreal@gmail.com">happyreal@gmail.com</a>						</div><!-- /.navbar-info -->
-					
-						<div class="navbar-info fix-zalo">
-							<div class="fix-icon-zalo"></div> <a href="http://zalo.me/0902476116‬">0902476116‬</a>
+					</div><!-- /.navbar-header -->
+						<div class="navbar-info">
+							<i class="pp pp-normal-phone"></i> <a href="tel:<%-infoCompany.phoneNumber%>‬‬"><%-infoCompany.phoneNumber%>‬‬</a>						
 						</div><!-- /.navbar-info -->
-					
-
+						<div class="navbar-info">
+							<i class="pp pp-normal-pencil"></i> <a href="mailto:<%-infoCompany.email%>"><%-infoCompany.email%></a>						
+						</div><!-- /.navbar-info -->
+						<div class="navbar-info fix-zalo">
+							<div class="fix-icon-zalo"></div> <a href="http://zalo.me/<%-infoCompany.phoneNumber%>‬‬"><%-infoCompany.phoneNumber%>‬‬</a>
+						</div><!-- /.navbar-info -->
 						</a>
 									</div><!-- /.container -->
-			</div><!-- /.header-top -->
+					</div><!-- /.header-top -->
 		
 							<div class="header-bottom">
 					<div class="container">
@@ -136,57 +133,57 @@ img.emoji {
 										<a style="cursor: pointer">Nguyễn Tri Phương</a>
 										<ul class="dropdown-menu sub-menu">
 											<li id="menu-item-457" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-457">
-												<a href="/gioi-thieu-<%-nameCompany%>?">Giới Thiệu</a>
+												<a href="/gioi-thieu-<%-infoCompany.nameCompany%>?">Giới Thiệu</a>
 											</li>
 											<li id="menu-item-460" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-460">
-												<a href="/so-do-bang-gia-<%-nameCompany%>?">Bảng giá và sơ đồ</a>
+												<a href="/so-do-bang-gia-<%-infoCompany.nameCompany%>?">Bảng giá và sơ đồ</a>
 											</li>
 											<li id="menu-item-456" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-456">
-												<a href="/tien-do-du-an-<%-nameCompany%>?">Tiến độ</a>
+												<a href="/tien-do-du-an-<%-infoCompany.nameCompany%>?">Tiến độ</a>
 											</li>
 											<li id="menu-item-458" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-458">
-												<a href="/cac-lo-dang-ban-<%-nameCompany%>?">Các lô đang bán</a>
+												<a href="/cac-lo-dang-ban-<%-infoCompany.nameCompany%>?">Các lô đang bán</a>
 											</li>
 										</ul>
 									</li>
 									<li id="menu-item-454" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-454"><a style="cursor: pointer">Nam Hòa Xuân</a>
 										<ul class="dropdown-menu sub-menu">
-											<li id="menu-item-457" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-457"><a href="/gioi-thieu-<%-nameCompany%>?">Giới Thiệu</a></li>
-											<li id="menu-item-460" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-460"><a href="/so-do-bang-gia-<%-nameCompany%>?">Bảng giá và sơ đồ</a></li>
-											<li id="menu-item-456" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-456"><a href="/tien-do-du-an-<%-nameCompany%>?">Tiến độ</a></li>
-											<li id="menu-item-458" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-458"><a href="/cac-lo-dang-ban-<%-nameCompany%>?">Các lô đang bán</a></li>
+											<li id="menu-item-457" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-457"><a href="/gioi-thieu-<%-infoCompany.nameCompany%>?">Giới Thiệu</a></li>
+											<li id="menu-item-460" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-460"><a href="/so-do-bang-gia-<%-infoCompany.nameCompany%>?">Bảng giá và sơ đồ</a></li>
+											<li id="menu-item-456" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-456"><a href="/tien-do-du-an-<%-infoCompany.nameCompany%>?">Tiến độ</a></li>
+											<li id="menu-item-458" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-458"><a href="/cac-lo-dang-ban-<%-infoCompany.nameCompany%>?">Các lô đang bán</a></li>
 										</ul>
 									</li>
 	<li id="menu-item-455" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-455"><a style="cursor: pointer">Đảo VIP</a>
 		<ul class="dropdown-menu sub-menu">
-			<li id="menu-item-457" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-457"><a href="/gioi-thieu-<%-nameCompany%>?">Giới Thiệu</a></li>
-			<li id="menu-item-460" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-460"><a href="/so-do-bang-gia-<%-nameCompany%>?">Bảng giá và sơ đồ</a></li>
-			<li id="menu-item-456" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-456"><a href="/tien-do-du-an-<%-nameCompany%>?">Tiến độ</a></li>
-			<li id="menu-item-458" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-458"><a href="/cac-lo-dang-ban-<%-nameCompany%>?">Các lô đang bán</a></li>
+			<li id="menu-item-457" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-457"><a href="/gioi-thieu-<%-infoCompany.nameCompany%>?">Giới Thiệu</a></li>
+			<li id="menu-item-460" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-460"><a href="/so-do-bang-gia-<%-infoCompany.nameCompany%>?">Bảng giá và sơ đồ</a></li>
+			<li id="menu-item-456" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-456"><a href="/tien-do-du-an-<%-infoCompany.nameCompany%>?">Tiến độ</a></li>
+			<li id="menu-item-458" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-458"><a href="/cac-lo-dang-ban-<%-infoCompany.nameCompany%>?">Các lô đang bán</a></li>
 		</ul>
 	</li>
 	<li id="menu-item-480" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-480"><a style="cursor: pointer">Hòa Xuân 1A</a>
 		<ul class="dropdown-menu sub-menu">
-			<li id="menu-item-457" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-457"><a href="/gioi-thieu-<%-nameCompany%>?">Giới Thiệu</a></li>
-			<li id="menu-item-460" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-460"><a href="/so-do-bang-gia-<%-nameCompany%>?">Bảng giá và sơ đồ</a></li>
-			<li id="menu-item-456" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-456"><a href="/tien-do-du-an-<%-nameCompany%>?">Tiến độ</a></li>
-			<li id="menu-item-458" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-458"><a href="/cac-lo-dang-ban-<%-nameCompany%>?">Các lô đang bán</a></li>
+			<li id="menu-item-457" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-457"><a href="/gioi-thieu-<%-infoCompany.nameCompany%>?">Giới Thiệu</a></li>
+			<li id="menu-item-460" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-460"><a href="/so-do-bang-gia-<%-infoCompany.nameCompany%>?">Bảng giá và sơ đồ</a></li>
+			<li id="menu-item-456" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-456"><a href="/tien-do-du-an-<%-infoCompany.nameCompany%>?">Tiến độ</a></li>
+			<li id="menu-item-458" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-458"><a href="/cac-lo-dang-ban-<%-infoCompany.nameCompany%>?">Các lô đang bán</a></li>
 		</ul>
 	</li>
 	<li id="menu-item-487" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-487"><a style="cursor: pointer">Làng Châu Âu</a>
 		<ul class="dropdown-menu sub-menu">
-			<li id="menu-item-488" class="menu-item menu-item-type-taxonomy menu-item-object-statuses menu-item-488"><a href="/gioi-thieu-<%-nameCompany%>?">Giới Thiệu</a></li>
-			<li id="menu-item-489" class="menu-item menu-item-type-taxonomy menu-item-object-statuses menu-item-489"><a href="/so-do-bang-gia-<%-nameCompany%>?">Bảng giá & sơ đồ</a></li>
-			<li id="menu-item-490" class="menu-item menu-item-type-taxonomy menu-item-object-statuses menu-item-490"><a href="/tien-do-du-an-<%-nameCompany%>?">Tiến độ</a></li>
+			<li id="menu-item-488" class="menu-item menu-item-type-taxonomy menu-item-object-statuses menu-item-488"><a href="/gioi-thieu-<%-infoCompany.nameCompany%>?">Giới Thiệu</a></li>
+			<li id="menu-item-489" class="menu-item menu-item-type-taxonomy menu-item-object-statuses menu-item-489"><a href="/so-do-bang-gia-<%-infoCompany.nameCompany%>?">Bảng giá & sơ đồ</a></li>
+			<li id="menu-item-490" class="menu-item menu-item-type-taxonomy menu-item-object-statuses menu-item-490"><a href="/tien-do-du-an-<%-infoCompany.nameCompany%>?">Tiến độ</a></li>
 			<li id="menu-item-491" class="menu-item menu-item-type-taxonomy menu-item-object-statuses menu-item-491"><a href="./sell-agreed/">Các lô đang bán</a></li>
 		</ul>
 	</li>
 	<li id="menu-item-479" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-479"><a style="cursor: pointer">Làng Châu Âu 2</a>
 		<ul class="dropdown-menu sub-menu">
-			<li id="menu-item-488" class="menu-item menu-item-type-taxonomy menu-item-object-statuses menu-item-488"><a href="/gioi-thieu-<%-nameCompany%>?">Giới Thiệu</a></li>
-			<li id="menu-item-489" class="menu-item menu-item-type-taxonomy menu-item-object-statuses menu-item-489"><a href="/so-do-bang-gia-<%-nameCompany%>?">Bảng giá & sơ đồ</a></li>
-			<li id="menu-item-490" class="menu-item menu-item-type-taxonomy menu-item-object-statuses menu-item-490"><a href="/tien-do-du-an-<%-nameCompany%>?">Tiến độ</a></li>
-			<li id="menu-item-491" class="menu-item menu-item-type-taxonomy menu-item-object-statuses menu-item-491"><a href="/cac-lo-dang-ban-<%-nameCompany%>?">Các lô đang bán</a></li>
+			<li id="menu-item-488" class="menu-item menu-item-type-taxonomy menu-item-object-statuses menu-item-488"><a href="/gioi-thieu-<%-infoCompany.nameCompany%>?">Giới Thiệu</a></li>
+			<li id="menu-item-489" class="menu-item menu-item-type-taxonomy menu-item-object-statuses menu-item-489"><a href="/so-do-bang-gia-<%-infoCompany.nameCompany%>?">Bảng giá & sơ đồ</a></li>
+			<li id="menu-item-490" class="menu-item menu-item-type-taxonomy menu-item-object-statuses menu-item-490"><a href="/tien-do-du-an-<%-infoCompany.nameCompany%>?">Tiến độ</a></li>
+			<li id="menu-item-491" class="menu-item menu-item-type-taxonomy menu-item-object-statuses menu-item-491"><a href="/cac-lo-dang-ban-<%-infoCompany.nameCompany%>?">Các lô đang bán</a></li>
 		</ul>
 	</li>
 </ul>
@@ -194,12 +191,12 @@ img.emoji {
 <li id="menu-item-466" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-496"><a href="#">Video</a></li>
 <li id="menu-item-453" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-453"><a style="cursor: pointer">Tin Tức</a>
 <ul class="dropdown-menu sub-menu">
-	<li id="menu-item-496" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-496"><a href="/tin-tuc-<%-nameCompany%>">Tin trong ngành</a></li>
-	<li id="menu-item-496" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-496"><a href="/tin-tuc-<%-nameCompany%>">Tin dự án</a></li>
-	<li id="menu-item-496" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-496"><a href="/tin-tuc-<%-nameCompany%>">Giới thiệu dự án</a></li>
+	<li id="menu-item-496" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-496"><a href="/tin-tuc-<%-infoCompany.companyName.split(' ').join('-').toLowerCase()%>">Tin trong ngành</a></li>
+	<li id="menu-item-496" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-496"><a href="/tin-tuc-<%-infoCompany.companyName.split(' ').join('-').toLowerCase()%>">Tin dự án</a></li>
+	<li id="menu-item-496" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-496"><a href="/tin-tuc-<%-infoCompany.companyName.split(' ').join('-').toLowerCase()%>">Giới thiệu dự án</a></li>
 </ul>
 </li>
-<li id="menu-item-494" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-494"><a href="/lien-he-<%-nameCompany%>">Liên Hệ</a></li>
+<li id="menu-item-494" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-494"><a href="/lien-he-<%-infoCompany.companyName.split(' ').join('-').toLowerCase()%>">Liên Hệ</a></li>
 </ul></div></div><!-- /.container -->
 				</div><!-- /.header-bottom -->
 					</nav>
@@ -1027,7 +1024,7 @@ img.emoji {
         <div class="fullwidth background-secondary">
             <div class="row">
                 <div class="call-to-action-text col-sm-12 col-md-12">
-                    <b>Happy Real</b>  &nbsp; luôn cố gắng hết mình vì niềm tin của bạn giao phó              </div>
+                    <b><%-infoCompany.companyName%></b>  &nbsp; luôn cố gắng hết mình vì niềm tin của bạn giao phó              </div>
             </div><!-- /.row -->
         </div><!-- /.fullwidth -->
 
@@ -1045,8 +1042,8 @@ img.emoji {
 									<div id="text-3" class="widget widget_text"><h2 class="widgettitle">Thông tin liên hệ:</h2>
 			<div class="textwidget">Mọi trao đổi và giải đáp mọi thông tin chi tiết vui lòng liên hệ:  
 <dl>
-<dt><i class="pp pp-normal-map-pointer"></i>Số 10 Đường Xô Viết Nghệ Tĩnh</dt><dd>Hải châu - Đà Nẵng</dd>
-<dt><i class="pp pp-normal-phone"></i> <a href="tel:0902476116‬" style="color:#fff">0902476116‬</a> </dt><dd><a href="mailto:happyreal@gmail.com" style="color: rgba(255, 255, 255, 0.7)">happyreal@gmail.com</a></dd>
+<dt><i class="pp pp-normal-map-pointer"></i><%-infoCompany.location.street%></dt><dd><%-infoCompany.location.contryCity%></dd>
+<dt><i class="pp pp-normal-phone"></i> <a href="tel:<%-infoCompany.phoneNumber%>‬‬" style="color:#fff"><%-infoCompany.phoneNumber%>‬‬</a> </dt><dd><a href="mailto:<%-infoCompany.email%>" style="color: rgba(255, 255, 255, 0.7)"><%-infoCompany.email%></a></dd>
 <dt><i class="pp pp-normal-clock"></i> Thứ 2 - Thứ 7</dt><dd>8:00 - 18:00</dd>
 </dl></div>
 		</div>								</div>
@@ -1079,7 +1076,7 @@ img.emoji {
 				<div class="container">
 					<div class="footer-bottom-inner">
 						<div class="footer-bottom-left">
-									<div id="text-2" class="widget widget_text">			<div class="textwidget"><%-new Date().getFullYear()%> © Happy Real.<span class="separator">/</span> Powered by <a href="http://nodejs.org" target="_blank">Node.js</a></div>
+									<div id="text-2" class="widget widget_text">			<div class="textwidget"><%-new Date().getFullYear()%> © <%-infoCompany.companyName%><span class="separator">/</span> Powered by <a href="http://nodejs.org" target="_blank">Node.js</a></div>
 		</div>								</div><!-- /.footer-bottom-left -->
 							
 															<div class="footer-bottom-right">

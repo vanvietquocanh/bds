@@ -1231,6 +1231,9 @@ p {
   font-weight: 300;
   line-height: 1.4; }
   @media (min-width: 768px) {
+    .navbar-info {
+      margin: 68px 0 0 60px !important; }
+    }
     .lead {
       font-size: 21px; } }
 
@@ -7398,12 +7401,12 @@ button.close {
     .navbar .navbar-text {
       display: none; } }
 
-.navbar-info {
-  color: #707070;
-  float: left;
-  font-size: 18px;
-  font-weight: 300;
-  margin: 40px 0 0 60px; }
+  .navbar-info {
+    color: #707070;
+    float: left;
+    font-size: 18px;
+    font-weight: 300;
+    margin: 45px 0 0 60px; }
   @media (max-width: 991px) {
     .navbar-info {
       display: none; } }

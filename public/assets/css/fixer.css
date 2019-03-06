@@ -1,0 +1,16 @@
+.fix-pos{
+	position: absolute;
+	right: 0px;
+}
+.fix-logo{
+	width: 50px;
+}
+.navbar-header{
+	display: flex;
+	flex-wrap: nowrap;
+}
+@media screen and (min-width: 1024px) {
+	.fix-logo{
+		width: 100px;
+	}
+}
