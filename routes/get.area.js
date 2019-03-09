@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 var mongo = require("mongodb");
 const assert = require('assert');
+var chatbox = require("./chatbox.js");
+var infoCompany = require("./infoCompany.js")
 const pathMongodb = require("./mongodb.path.js");
 
 /* GET home page. */
@@ -15,7 +17,8 @@ router.get('/:area', function(req, res, next) {
 					assert.equal(null, err);
 					db.close();
 					if(!err){
-						res.render("video-happy-real",{"result": result})
+						let nameFile = `admin-video-${infoCompany.companyName.split(" ").join("-").toLowerCase()}`;
+						res.render(nameFile, {"result": result, chatbox:chatbox,"infoCompany":infoCompany})
 					}else{
 						res.send(err)
 					}
@@ -29,7 +32,7 @@ router.get('/:area', function(req, res, next) {
 					assert.equal(null, err);
 					db.close();
 					if(!err){
-						res.render("khu-vuc-happy-real",{"result": result})
+						res.render("khu-vuc-happy-real", {"result": result, "infoCompany":infoCompany})
 					}else{
 						res.send(err)
 					}

@@ -5,7 +5,8 @@ var infoCompany = require("./infoCompany.js")
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-	res.render("contact-happy-real",{chatbox:chatbox, "infoCompany":infoCompany})
+	let nameFile = `contact-${infoCompany.companyName.split(" ").join("-").toLowerCase()}`;
+	res.render(nameFile ,{chatbox:chatbox, "infoCompany":infoCompany})
 });
 
 module.exports = router;

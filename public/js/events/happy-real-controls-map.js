@@ -62,6 +62,7 @@ jQuery(document).ready(function($) {
           map: map,
           icon: place.geometry.icons,
           position: place.geometry.location,
+          label  : "cặc",
           title: 'Uluru (Ayers Rock)'
         });
         google.maps.event.addListener(marker, 'click', function() {
