@@ -57,12 +57,11 @@ jQuery(document).ready(function($) {
       }
       var infowindow = new google.maps.InfoWindow({
       });
-      function createMarker(place, icon) {
+      function createMarker(place) {
         var marker = new google.maps.Marker({
           map: map,
           icon: place.geometry.icons,
           position: place.geometry.location,
-          label  : "cặc",
           title: 'Uluru (Ayers Rock)'
         });
         google.maps.event.addListener(marker, 'click', function() {

@@ -5,11 +5,11 @@ jQuery(document).ready(function($) {
      * Background image
      */
     $('*[data-background-image]').each(function() {
+        console.log($(this).data('background-image'));
         $(this).css({
             'background-image': 'url(' + $(this).data('background-image') + ')'
         });
     });
-
     /**
      * Detail gallery
      */

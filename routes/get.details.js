@@ -5,6 +5,7 @@ var chatbox = require("./chatbox.js");
 const assert = require('assert');
 var mongo = require("mongodb");
 var ObjectId = require('mongodb').ObjectId;
+var infoCompany = require("./infoCompany.js")
 const pathMongodb = require("./mongodb.path.js");
 
 /* GET home page. */
@@ -17,7 +18,7 @@ router.get('/', function(req, res, next) {
 					if(!err){
 						if(result){
 							console.log(result);
-							res.render("details",{"chatbox":chatbox, details: result})
+							res.render("details",{"chatbox":chatbox, details: result, infoCompany:infoCompany})
 						}else{
 							res.redirect("/error")
 						}

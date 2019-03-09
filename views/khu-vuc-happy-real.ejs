@@ -189,7 +189,8 @@
                             <div class="col-sm-12">
                                 <div class="card-box">
                                     <div class="form-horizontal text-right" id="form-add">
-                                        <form action="" method="post" accept-charset="utf-8"></form>
+                                        <form id="formAddArea" action="" method="post" enctype="multipart/form-data">
+                                            <input type="number" id="date" style="display: none" name="Ngày">
                                         <div class="form-group row">
                                             <div class="col-xs-2">
                                                 <input type="text" placeholder="Lô số" name="Lô số" id="landNumber" class="form-control m-b-5 col-xs-3">
@@ -201,7 +202,7 @@
                                                 <input type="text" placeholder="Loại dự án" name="Loại dự án" id="typeProject" class="form-control m-b-5 col-xs-3">
                                             </div>
                                             <div class="col-xs-2">
-                                                <select name="typeRealEstate" id="typeRealEstate" class="form-control m-b-5 col-xs-3">
+                                                <select name="Loại BDS" id="typeRealEstate" class="form-control m-b-5 col-xs-3">
                                                     <option value="">Loại bất động sản</option>
                                                     <option value="Biệt Thự">Biệt thự</option>
                                                     <option value="Đất">Đất</option>
@@ -212,7 +213,7 @@
                                                 <input type="number" placeholder="Giá (tỉ VNĐ)" name="Giá" id="price" min="0" class="form-control m-b-5 col-xs-3">
                                             </div>
                                             <div class="col-xs-2">
-                                                <select name="Hướng" id="direction1" class="form-control m-b-5 col-xs-3">
+                                                <select name="Hướng1" id="direction1" class="form-control m-b-5 col-xs-3">
                                                     <option value="">Hướng</option>
                                                     <option value="Bắc">Bắc</option>
                                                     <option value="Nam">Nam</option>
@@ -225,7 +226,7 @@
                                                 </select>
                                             </div>
                                             <div class="col-xs-2">
-                                                <select name="Hướng" id="direction2" class="form-control m-b-5 col-xs-3">
+                                                <select name="Hướng2" id="direction2" class="form-control m-b-5 col-xs-3">
                                                     <option value="">Hướng</option>
                                                     <option value="Bắc">Bắc</option>
                                                     <option value="Nam">Nam</option>
@@ -298,40 +299,40 @@
                                                 <input type="number" min="0" max="100" placeholder="Bệnh viện(km)" name="Bệnh viện" id="hospital" class="form-control m-b-5 col-xs-3">
                                             </div>
                                             <div class="col-xs-2">
-                                                <input type="file" name="image-1" id="image-1" class="form-control m-b-5 col-xs-3 image">
+                                                <input type="file" name="photos" id="image-1" class="form-control m-b-5 col-xs-3 image">
                                             </div>
                                             <div class="col-xs-2">
-                                                <input type="file" name="image-1" id="image-1" class="form-control m-b-5 col-xs-3 image">
+                                                <input type="file" name="photos" id="image-2" class="form-control m-b-5 col-xs-3 image">
                                             </div>
                                             <div class="col-xs-2">
-                                                <input type="file" name="image-1" id="image-1" class="form-control m-b-5 col-xs-3 image">
+                                                <input type="file" name="photos" id="image-3" class="form-control m-b-5 col-xs-3 image">
                                             </div>
                                             <div class="col-xs-2">
-                                                <input type="file" name="image-1" id="image-1" class="form-control m-b-5 col-xs-3 image">
+                                                <input type="file" name="photos" id="image-4" class="form-control m-b-5 col-xs-3 image">
                                             </div>
                                             <div class="col-xs-2">
-                                                <input type="file" name="image-1" id="image-1" class="form-control m-b-5 col-xs-3 image">
+                                                <input type="file" name="photos" id="image-5" class="form-control m-b-5 col-xs-3 image">
                                             </div>
                                             <div class="col-xs-2">
-                                                <input type="file" name="image-1" id="image-1" class="form-control m-b-5 col-xs-3 image">
+                                                <input type="file" name="photos" id="image-6" class="form-control m-b-5 col-xs-3 image">
                                             </div>
                                             <div class="col-xs-2">
-                                                <input type="file" name="image-1" id="image-1" class="form-control m-b-5 col-xs-3 image">
+                                                <input type="file" name="photos" id="image-7" class="form-control m-b-5 col-xs-3 image">
                                             </div>
                                             <div class="col-xs-2">
-                                                <input type="file" name="image-1" id="image-1" class="form-control m-b-5 col-xs-3 image">
+                                                <input type="file" name="photos" id="image-8" class="form-control m-b-5 col-xs-3 image">
                                             </div>
                                             <div class="col-xs-2">
-                                                <input type="file" name="image-1" id="image-1" class="form-control m-b-5 col-xs-3 image">
+                                                <input type="file" name="photos" id="image-9" class="form-control m-b-5 col-xs-3 image">
                                             </div>
                                             <div class="col-xs-2">
-                                                <input type="file" name="image-1" id="image-1" class="form-control m-b-5 col-xs-3 image">
+                                                <input type="file" name="photos" id="image-10" class="form-control m-b-5 col-xs-3 image">
                                             </div>
                                             <div class="col-xs-2">
-                                                <input type="file" name="image-1" id="image-1" class="form-control m-b-5 col-xs-3 image">
+                                                <input type="file" name="photos" id="image-11" class="form-control m-b-5 col-xs-3 image">
                                             </div>
                                             <div class="col-xs-2">
-                                                <input type="file" name="image-1" id="image-1" class="form-control m-b-5 col-xs-3 image">
+                                                <input type="file" name="photos" id="image-12" class="form-control m-b-5 col-xs-3 image">
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -339,6 +340,7 @@
                                             <textarea class="form-control" placeholder="Mô tả chi tiết..." name="Chi tiết" style="resize: none;" id="details"></textarea>
                                         </div>
                                         <button type="submit" id="submit" class="btn btn-primary waves-effect w-md waves-light m-b-5 m-t-5">Gửi</button>
+                                    </form>
                                     </div>
                                 </div>
                             </div>
@@ -466,5 +468,6 @@
         <script src="../assets/js/jquery.core.js"></script>
         <script src="../assets/js/jquery.app.js"></script>
         <script type="text/javascript" src="../js/form-text-word.js"></script>
+        <script type="text/javascript" src="../js/form-send-new-real-estate.js"></script>
     </body>
 </html>

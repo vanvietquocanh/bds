@@ -31,6 +31,10 @@ img.emoji {
 	    margin: 0;
 	    padding: 0;
 	  }
+	  .icon-image-up{
+	  	max-height: 226px;
+	  	max-width: 270px;
+	  }
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.woff">
@@ -237,7 +241,7 @@ img.emoji {
 				<%var realName = ["Nguyễn Tri Phương","Đảo Vip","Nam Hòa Xuân","Hòa Xuân 1A","Làng Châu Âu 1","Làng Châu Âu 2"]%>
 				    <tr class="clickShowDetails" id="<%-arrArea[i]._id%>">
 				      	<th scope="row" class="hidden-320px show-640px"><%-i+1%></th>
-				      	<td class="hidden-320px show-720px"><%-new Date(arrArea[i]['Ngày']).getDate()%>/<%-(new Date(arrArea[i]['Ngày']).getMonth()+1<=9)?"0"+(new Date(arrArea[i]['Ngày']).getMonth()+1):new Date(arrArea[i]['Ngày']).getMonth()+1%>/<%-new Date(arrArea[i]['Ngày']).getFullYear()%></td>
+				      	<td class="hidden-320px show-720px"><%-(new Date(Number(arrArea[i]['Ngày'])).getDate()<=9)?"0"+new Date(Number(arrArea[i]['Ngày'])).getDate():new Date(Number(arrArea[i]['Ngày'])).getDate()%>/<%-(new Date(Number(arrArea[i]['Ngày'])).getMonth()+1<=9)?"0"+(new Date(Number(arrArea[i]['Ngày'])).getMonth()+1):new Date(Number(arrArea[i]['Ngày'])).getMonth()+1%>/<%-new Date(Number(arrArea[i]['Ngày'])).getFullYear()%></td>
 				      	<td class="hidden-320px show-568px"><%-arrArea[i]['Lô số']%></td>
 				      	<td class="hidden-320px show-720px"><%-arrArea[i]['Loại dự án']%></td>
 				      	<td><%-arrArea[i]['Giá']%></td>
@@ -406,323 +410,65 @@ img.emoji {
 	
 			
 		<div class="type-box item-per-row-3">
-						<div class="properties-row">
-				
-												<div class="property-container">
-										
+						<div class="properties-row">				
+																			</div><div class="properties-row">
+			<%var count%>
+			<%if(arrArea.length<=12){%>
+				<%count = arrArea.length%>
+			<%}else{%>
+				<%count = 12}%>
+			<%for (var j = 0; j < count; j++) {%>
+				<%var arrName = ["nguyen-tri-phuong-happy-real","dao-vip-happy-real","nam-hoa-xuan-happy-real","hoa-xuan-1a-happy-real","lang-chau-au-1-happy-real","lang-chau-au-2-happy-real"]%>
+				<%var realName = ["Nguyễn Tri Phương","Đảo Vip","Nam Hòa Xuân","Hòa Xuân 1A","Làng Châu Âu 1","Làng Châu Âu 2"]%>
 
+				<div class="property-container">
+					<div class="property-box">
+					    <div class="property-box-image ">
+					        <a href="/chi-tiet?area=<%-arrArea[j]._id%>" class="property-box-image-inner ">
+								
+					            				<img width="270" height="226" src="<%-arrArea[j].image[0]%>" class="attachment-property-box-thumbnail size-property-box-thumbnail wp-post-image icon-image-up" alt="interiors">            
+								<div class="property-box-image-price">
+					    <%-arrArea[j]['Giá']%> tỉ VND</div>
+					    <!-- /.property-box-image-price -->
+					            
+					                    </a>
+					    </div><!-- /.property-image -->
 
-<div class="property-box">
-    <div class="property-box-image ">
-        <a href="./south-mervin-boulevard/" class="property-box-image-inner ">
-			
-            				<img width="270" height="226" src="./content/uploads/2015/06/5388662544_96ca3f71c1_o-270x226.jpg" class="attachment-property-box-thumbnail size-property-box-thumbnail wp-post-image" alt="interiors">            
-			<div class="property-box-image-price">
-    $ 220,000</div><!-- /.property-box-image-price -->
+					    <div class="property-box-content">
+					        <div class="property-box-title">
+						        
+					            <h3><a href="/chi-tiet?area=<%-arrArea[j]._id%>"><%-arrArea[j]['Loại dự án']%></a></h3>
 
-                        
-                            <span class="property-badge">Featured / Reduced</span>
-            
-                            <span class="property-badge property-badge-sticky">TOP</span>
-                    </a>
-    </div><!-- /.property-image -->
+						                </div><!-- /.property-box-title -->
 
-    <div class="property-box-content">
-        <div class="property-box-title">
-	        
-            <h3><a href="./south-mervin-boulevard/">South Mervin Boulevard</a></h3>
+						    <div class="property-box-body">
+							    
+						        	        	            <div class="property-box-type">
+						                <%-arrArea[j]['Loại BDS']%>	            </div><!-- /.property-box-type -->
+						        
+						        	        	            <div class="property-box-price">
+						                <%-arrArea[j]['Giá']%> tỉ VND	            </div><!-- /.property-box-price -->
+						        
+							    <div class="property-box-read-more">
+								    <a href="/chi-tiet?area=<%-arrArea[j]._id%>">Read More</a>
+							    </div><!-- /.property-box-price -->
 
-	                </div><!-- /.property-box-title -->
-
-	    <div class="property-box-body">
-		    
-	        	        	            <div class="property-box-type">
-	                Villa	            </div><!-- /.property-box-type -->
-	        
-	        	        	            <div class="property-box-price">
-	                $ 220,000	            </div><!-- /.property-box-price -->
-	        
-		    <div class="property-box-read-more">
-			    <a href="./south-mervin-boulevard/">Read More</a>
-		    </div><!-- /.property-box-price -->
-
-		    <div class="property-box-meta">
-                <span class="property-box-meta-item property-box-meta-item-area">
-            <i class="pp pp-normal-cursor-scale-up"></i> 140 sqft        </span><!-- /.property-box-meta-item -->
-    
-                <span class="property-box-meta-item property-box-meta-item-beds">
-            <i class="pp pp-normal-bed"></i> 3        </span><!-- /.property-box-meta-item -->
-    
-                <span class="property-box-meta-item property-box-meta-item-baths">
-            <i class="pp pp-normal-shower"></i> 4        </span><!-- /.property-box-meta-item -->
-    </div><!-- /.property-box-meta -->
-	    </div><!-- /.property-box-body -->
-    </div><!-- /.property-box-content -->
-</div>
+							    <div class="property-box-meta">
+					                <span class="property-box-meta-item property-box-meta-item-area">
+					            <i class="pp pp-normal-cursor-scale-up"></i> <%-arrArea[j]['Diện tích']%> m2    </span><!-- /.property-box-meta-item -->
+					    
+					                <span class="property-box-meta-item property-box-meta-item-beds">
+					            <i class="pp pp-normal-bed"></i> <%-arrArea[j]['Số phòng ngủ']%>        </span><!-- /.property-box-meta-item -->
+					    
+					                <span class="property-box-meta-item property-box-meta-item-baths">
+					            <i class="pp pp-normal-shower"></i> <%-arrArea[j]['Số phòng tắm']%>        </span><!-- /.property-box-meta-item -->
+					    </div><!-- /.property-box-meta -->
+						    </div><!-- /.property-box-body -->
+					    </div><!-- /.property-box-content -->
+					</div>
 				</div><!-- /.property-container -->
-
-				
-												<div class="property-container">
-										
-
-
-<div class="property-box">
-    <div class="property-box-image ">
-        <a href="./north-parchmore-street/" class="property-box-image-inner ">
-			
-            				<img width="270" height="226" src="./content/uploads/2015/06/5388661724_859d557469_o-270x226.jpg" class="attachment-property-box-thumbnail size-property-box-thumbnail wp-post-image" alt="interiors">            
-			<div class="property-box-image-price">
-    $ 340,000</div><!-- /.property-box-image-price -->
-
-                        
-            
-                    </a>
-    </div><!-- /.property-image -->
-
-    <div class="property-box-content">
-        <div class="property-box-title">
-	        
-            <h3><a href="./north-parchmore-street/">North Parchmore Street</a></h3>
-
-	                </div><!-- /.property-box-title -->
-
-	    <div class="property-box-body">
-		    
-	        	        	            <div class="property-box-type">
-	                House	            </div><!-- /.property-box-type -->
-	        
-	        	        	            <div class="property-box-price">
-	                $ 340,000	            </div><!-- /.property-box-price -->
-	        
-		    <div class="property-box-read-more">
-			    <a href="./north-parchmore-street/">Read More</a>
-		    </div><!-- /.property-box-price -->
-
-		    <div class="property-box-meta">
-                <span class="property-box-meta-item property-box-meta-item-area">
-            <i class="pp pp-normal-cursor-scale-up"></i> 150 sqft        </span><!-- /.property-box-meta-item -->
-    
-                <span class="property-box-meta-item property-box-meta-item-beds">
-            <i class="pp pp-normal-bed"></i> 2        </span><!-- /.property-box-meta-item -->
-    
-                <span class="property-box-meta-item property-box-meta-item-baths">
-            <i class="pp pp-normal-shower"></i> 3        </span><!-- /.property-box-meta-item -->
-    </div><!-- /.property-box-meta -->
-	    </div><!-- /.property-box-body -->
-    </div><!-- /.property-box-content -->
-</div>
-				</div><!-- /.property-container -->
-
-				
-												<div class="property-container">
-										
-
-
-<div class="property-box">
-    <div class="property-box-image ">
-        <a href="./apricot-west-britford-arch/" class="property-box-image-inner ">
-			
-            				<img width="270" height="226" src="./content/uploads/2015/06/5388658984_72f0ca75aa_o-1-270x226.jpg" class="attachment-property-box-thumbnail size-property-box-thumbnail wp-post-image" alt="interiors">            
-			<div class="property-box-image-price">
-    $ 125,000</div><!-- /.property-box-image-price -->
-
-                        
-                            <span class="property-badge">Featured</span>
-            
-                            <span class="property-badge property-badge-sticky">TOP</span>
-                    </a>
-    </div><!-- /.property-image -->
-
-    <div class="property-box-content">
-        <div class="property-box-title">
-	        
-            <h3><a href="./apricot-west-britford-arch/">Apricot West Britford Arch</a></h3>
-
-	                </div><!-- /.property-box-title -->
-
-	    <div class="property-box-body">
-		    
-	        	        	            <div class="property-box-type">
-	                Apartment	            </div><!-- /.property-box-type -->
-	        
-	        	        	            <div class="property-box-price">
-	                $ 125,000	            </div><!-- /.property-box-price -->
-	        
-		    <div class="property-box-read-more">
-			    <a href="./apricot-west-britford-arch/">Read More</a>
-		    </div><!-- /.property-box-price -->
-
-		    <div class="property-box-meta">
-                <span class="property-box-meta-item property-box-meta-item-area">
-            <i class="pp pp-normal-cursor-scale-up"></i> 125 sqft        </span><!-- /.property-box-meta-item -->
-    
-                <span class="property-box-meta-item property-box-meta-item-beds">
-            <i class="pp pp-normal-bed"></i> 3        </span><!-- /.property-box-meta-item -->
-    
-                <span class="property-box-meta-item property-box-meta-item-baths">
-            <i class="pp pp-normal-shower"></i> 4        </span><!-- /.property-box-meta-item -->
-    </div><!-- /.property-box-meta -->
-	    </div><!-- /.property-box-body -->
-    </div><!-- /.property-box-content -->
-</div>
-				</div><!-- /.property-container -->
-
-							</div><div class="properties-row">
-				
-												<div class="property-container">
-										
-
-
-<div class="property-box">
-    <div class="property-box-image ">
-        <a href="./south-celler-court/" class="property-box-image-inner ">
-			
-            				<img width="270" height="226" src="./content/uploads/2015/06/5388655270_3a8c3c8799_o-270x226.jpg" class="attachment-property-box-thumbnail size-property-box-thumbnail wp-post-image" alt="interiors">            
-			<div class="property-box-image-price">
-    $ 225,000</div><!-- /.property-box-image-price -->
-
-                        
-            
-                    </a>
-    </div><!-- /.property-image -->
-
-    <div class="property-box-content">
-        <div class="property-box-title">
-	        
-            <h3><a href="./south-celler-court/">South Celler Court</a></h3>
-
-	                </div><!-- /.property-box-title -->
-
-	    <div class="property-box-body">
-		    
-	        	        	            <div class="property-box-type">
-	                Building area	            </div><!-- /.property-box-type -->
-	        
-	        	        	            <div class="property-box-price">
-	                $ 225,000	            </div><!-- /.property-box-price -->
-	        
-		    <div class="property-box-read-more">
-			    <a href="./south-celler-court/">Read More</a>
-		    </div><!-- /.property-box-price -->
-
-		    <div class="property-box-meta">
-                <span class="property-box-meta-item property-box-meta-item-area">
-            <i class="pp pp-normal-cursor-scale-up"></i> 160 sqft        </span><!-- /.property-box-meta-item -->
-    
-                <span class="property-box-meta-item property-box-meta-item-beds">
-            <i class="pp pp-normal-bed"></i> 4        </span><!-- /.property-box-meta-item -->
-    
-                <span class="property-box-meta-item property-box-meta-item-baths">
-            <i class="pp pp-normal-shower"></i> 5        </span><!-- /.property-box-meta-item -->
-    </div><!-- /.property-box-meta -->
-	    </div><!-- /.property-box-body -->
-    </div><!-- /.property-box-content -->
-</div>
-				</div><!-- /.property-container -->
-
-				
-												<div class="property-container">
-										
-
-
-<div class="property-box">
-    <div class="property-box-image ">
-        <a href="./ely-parkway/" class="property-box-image-inner ">
-			
-            				<img width="270" height="226" src="./content/uploads/2015/06/5388654584_646ed56dd3_o-270x226.jpg" class="attachment-property-box-thumbnail size-property-box-thumbnail wp-post-image" alt="interiors">            
-			<div class="property-box-image-price">
-    $ 350,000</div><!-- /.property-box-image-price -->
-
-                        
-            
-                    </a>
-    </div><!-- /.property-image -->
-
-    <div class="property-box-content">
-        <div class="property-box-title">
-	        
-            <h3><a href="./ely-parkway/">Ely Parkway</a></h3>
-
-	                </div><!-- /.property-box-title -->
-
-	    <div class="property-box-body">
-		    
-	        	        	            <div class="property-box-type">
-	                Apartment	            </div><!-- /.property-box-type -->
-	        
-	        	        	            <div class="property-box-price">
-	                $ 350,000	            </div><!-- /.property-box-price -->
-	        
-		    <div class="property-box-read-more">
-			    <a href="./ely-parkway/">Read More</a>
-		    </div><!-- /.property-box-price -->
-
-		    <div class="property-box-meta">
-                <span class="property-box-meta-item property-box-meta-item-area">
-            <i class="pp pp-normal-cursor-scale-up"></i> 250 sqft        </span><!-- /.property-box-meta-item -->
-    
-                <span class="property-box-meta-item property-box-meta-item-beds">
-            <i class="pp pp-normal-bed"></i> 4        </span><!-- /.property-box-meta-item -->
-    
-                <span class="property-box-meta-item property-box-meta-item-baths">
-            <i class="pp pp-normal-shower"></i> 5        </span><!-- /.property-box-meta-item -->
-    </div><!-- /.property-box-meta -->
-	    </div><!-- /.property-box-body -->
-    </div><!-- /.property-box-content -->
-</div>
-				</div><!-- /.property-container -->
-
-				
-												<div class="property-container">
-										
-
-
-<div class="property-box">
-    <div class="property-box-image ">
-        <a href="./eaton-garth/" class="property-box-image-inner ">
-			
-            				<img width="270" height="226" src="./content/uploads/2015/06/5388654148_447f6f2289_o-270x226.jpg" class="attachment-property-box-thumbnail size-property-box-thumbnail wp-post-image" alt="interiors">            
-			<div class="property-box-image-price">
-    $ 90,000</div><!-- /.property-box-image-price -->
-
-                        
-            
-                    </a>
-    </div><!-- /.property-image -->
-
-    <div class="property-box-content">
-        <div class="property-box-title">
-	        
-            <h3><a href="./eaton-garth/">Eaton Garth</a></h3>
-
-	                </div><!-- /.property-box-title -->
-
-	    <div class="property-box-body">
-		    
-	        	        	            <div class="property-box-type">
-	                Villa	            </div><!-- /.property-box-type -->
-	        
-	        	        	            <div class="property-box-price">
-	                $ 90,000	            </div><!-- /.property-box-price -->
-	        
-		    <div class="property-box-read-more">
-			    <a href="./eaton-garth/">Read More</a>
-		    </div><!-- /.property-box-price -->
-
-		    <div class="property-box-meta">
-                <span class="property-box-meta-item property-box-meta-item-area">
-            <i class="pp pp-normal-cursor-scale-up"></i> 350 sqft        </span><!-- /.property-box-meta-item -->
-    
-                <span class="property-box-meta-item property-box-meta-item-beds">
-            <i class="pp pp-normal-bed"></i> 2        </span><!-- /.property-box-meta-item -->
-    
-                <span class="property-box-meta-item property-box-meta-item-baths">
-            <i class="pp pp-normal-shower"></i> 1        </span><!-- /.property-box-meta-item -->
-    </div><!-- /.property-box-meta -->
-	    </div><!-- /.property-box-body -->
-    </div><!-- /.property-box-content -->
-</div>
-				</div><!-- /.property-container -->
+				    
+				<%}%>
 
 				
 								
@@ -1089,11 +835,6 @@ img.emoji {
 			</div><!-- /.footer-bottom -->
 			</div><!-- /.footer -->
 </div><!-- /.page-wrapper -->
-
-<!-- <script type="text/javascript" src="./content/plugins/HappyReal/libraries/jquery-google-map/infobox.js?ver=4.4.1"></script>
-<script type="text/javascript" src="./content/plugins/HappyReal/libraries/jquery-google-map/markerclusterer.js?ver=4.4.1"></script>
-<script type="text/javascript" src="./content/plugins/HappyReal/libraries/mapescape/js/mapescape.js?ver=4.4.1"></script>
-<script type="text/javascript" src="./content/plugins/HappyReal/libraries/jquery-google-map/jquery-google-map.js?ver=0.8.6"></script> -->
 <script type="text/javascript" src="./content/plugins/contact-form-7/includes/js/jquery.form.min.js?ver=3.51.0-2014.06.20"></script>
 <script type="text/javascript">
 /* <![CDATA[ */

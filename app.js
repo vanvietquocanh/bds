@@ -7,7 +7,7 @@ var sassMiddleware = require('node-sass-middleware');
 var passport = require("passport")
 var infoAPI = require("./routes/apiInfo.js");
 var session = require("express-session");
-var multer = require("multer");
+var multer  = require('multer')
 var FacebookStrategy = require('passport-facebook');
 var indexRouter = require('./routes/get.index');
 var usersRouter = require('./routes/users');
@@ -23,9 +23,18 @@ var addLinkVideoRouter = require('./routes/post.addLinkVideo');
 var removeLinkVideoRouter = require('./routes/post.removeLinkVideo');
 // var findRouter = require('./routes/get.find');
 var receiveEmailRouter = require('./routes/post.receive-email');
+var produceImage = require('./routes/produce.image.js');
 var details = require('./routes/get.details');
 var huonggiachu = require('./routes/huonggiachu');
+const valid = require("./routes/valid.js");
 
+
+var mongo = require("mongodb");
+const assert = require('assert');
+const pathMongodb = require("./routes/mongodb.path.js");
+
+const storage = multer.diskStorage(produceImage)
+const upload = multer( { storage: storage } );
 
 var app = express();
 
@@ -72,8 +81,8 @@ app.route("/facebook").get(passport.authenticate("facebook"));
 app.use('/signin', signinRouter);
 app.use('/users', usersRouter);
 app.use('/admin', dashboardRouter);
-app.use('/admin', areaRouter);
 app.use('/new-area', newRealEstateRouter);
+app.use('/admin', areaRouter);
 app.use('/view-video-happy-real', videoRouter);
 app.use('/lien-he-happy-real', contactRouter);
 app.use('/destroy', destroyAreaRouter);

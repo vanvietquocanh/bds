@@ -9,6 +9,7 @@ const pathMongodb = require("./mongodb.path.js");
 router.get('/', function(req, res, next) {
 	try{
 		var query = {}
+		var queryPrice = {}
 		for (var i = Object.keys(req.query).length - 1; i >= 0; i--) {
 			if(Object.values(req.query)[i]!==""){
 				query[`${Object.keys(req.query)[i]}`] = Object.values(req.query)[i];
@@ -25,7 +26,8 @@ router.get('/', function(req, res, next) {
 			}
 		}
 		mongo.connect(pathMongodb,(err, db)=>{
-			db.collection("happy-real-Area").find(query).sort({_id:1}).limit(20).toArray((err, result)=>{
+			db.collection("happy-real-Area").find(query).sort({'Ngày':1}).toArray((err, result)=>{
+				db.collection("happy-real-Area").findOne(query)
 				db.close();
 				if(!err){
 					res.render("index",{"chatbox":chatbox,"arrArea":result,"infoCompany":infoCompany})
