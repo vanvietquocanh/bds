@@ -77,6 +77,10 @@ img.emoji {
 		background: url('./assets/images/zalo.png') no-repeat center center;
 		background-size: 100%;
 	}
+	th{
+		font-weight: normal;
+		font-family: roboto !important;
+	}
 	@media screen and (min-width: 768px){
 		.fix-zalo{
 			display: flex;
@@ -226,12 +230,12 @@ img.emoji {
 			    <tr>
 	                <th scope="col" class="hidden-320px show-640px">#</th>
 	                <th scope="col" class="hidden-320px show-720px">Ngày đăng</th>
-	                <th scope="col" class="hidden-320px show-568px">Lô số</th>
-	                <th scope="col" class="hidden-320px show-720px">Loại dự án</th>
-	                <th scope="col">Giá (tỉ VNĐ)</th>
-	                <th scope="col">Hướng</th>
-	                <th scope="col">Diện tích(m2)</th>
+	                <th scope="col" class="">Dự án</th>
 	                <th scope="col">Khu</th>
+	                <th scope="col" class="">Lô</th>
+	                <th scope="col">Giá</th>
+	                <th scope="col">Diện tích</th>
+	                <th scope="col">Hướng</th>
 	                <th scope="col" class="hidden-320px show-568px">Sổ đỏ</th>
 	            </tr>
 			</thead>
@@ -242,12 +246,12 @@ img.emoji {
 				    <tr class="clickShowDetails" id="<%-arrArea[i]._id%>">
 				      	<th scope="row" class="hidden-320px show-640px"><%-i+1%></th>
 				      	<td class="hidden-320px show-720px"><%-(new Date(Number(arrArea[i]['Ngày'])).getDate()<=9)?"0"+new Date(Number(arrArea[i]['Ngày'])).getDate():new Date(Number(arrArea[i]['Ngày'])).getDate()%>/<%-(new Date(Number(arrArea[i]['Ngày'])).getMonth()+1<=9)?"0"+(new Date(Number(arrArea[i]['Ngày'])).getMonth()+1):new Date(Number(arrArea[i]['Ngày'])).getMonth()+1%>/<%-new Date(Number(arrArea[i]['Ngày'])).getFullYear()%></td>
-				      	<td class="hidden-320px show-568px"><%-arrArea[i]['Lô số']%></td>
-				      	<td class="hidden-320px show-720px"><%-arrArea[i]['Loại dự án']%></td>
-				      	<td><%-arrArea[i]['Giá']%></td>
-				      	<td><%-arrArea[i]['Hướng']%></td>
-				      	<td><%-arrArea[i]["Diện tích"]%></td>
+				      	<td class=""><%-arrArea[i]['Loại dự án']%></td>
 				      	<td><%-realName[arrName.indexOf(arrArea[i]["Khu Vực"])]%></td>
+				      	<td class=""><%-arrArea[i]['Lô số']%></td>
+				      	<td><%-arrArea[i]['Giá']%> tỉ</td>
+				      	<td><%-arrArea[i]["Diện tích"]%>m2</td>
+				      	<td><%-arrArea[i]['Hướng']%></td>
 				      	<td class="hidden-320px show-568px"><%-(arrArea[i]["Sổ đỏ"]=="true")?"có":"không"%></td>
 				    </tr>
 				<%}%>
@@ -550,77 +554,34 @@ img.emoji {
 	
 			
 		<div class="type-small item-per-row-1">
-			
+			<%var count%>
+			<%if(resultPrice.length<=3){%>
+				<%count = resultPrice.length%>
+			<%}else{%>
+				<%count = 3}%>
+			<%for (var j = 0; j < count; j++) {%>		
 												<div class="property-container">
 										
 <div class="property-small">
 	<div class="property-small-image ">
-					<a href="./south-mervin-boulevard/">
-				<img width="150" height="150" src="./content/uploads/2015/06/5388662544_96ca3f71c1_o-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="interiors">			</a>
+					<a href="/chi-tiet?area=<%-resultPrice[j]._id%>">
+				<img width="150" height="150" src="<%-resultPrice[j].image[0]%>" class="attachment-thumbnail size-thumbnail wp-post-image" alt="interiors">			</a>
 			</div><!-- /.property-small-image -->
-
+	
 	<div class="property-small-content">
 							<div class="property-small-type">
-				Villa			</div><!-- /.property-small-type -->
+				<%-resultPrice[j]['Loại BDS']%>			</div><!-- /.property-small-type -->
 		
 		<h3 class="property-small-title">
-			<a href="./south-mervin-boulevard/">South Mervin Boulevard</a>
+			<a href="/chi-tiet?area=<%-resultPrice[j]._id%>"><%-resultPrice[j]['Loại dự án']%></a>
 		</h3><!-- /.property-small-title -->
 
 							<div class="property-small-price">
-				$ 220,000			</div><!-- /.property-small-price -->
+				<%-resultPrice[j]['Giá']%> tỉ VND			</div><!-- /.property-small-price -->
 			</div><!-- /.property-small-content -->
 </div><!-- /.property-small -->
 				</div><!-- /.property-container -->
-
-				
-												<div class="property-container">
-										
-<div class="property-small">
-	<div class="property-small-image ">
-					<a href="./north-parchmore-street/">
-				<img width="150" height="150" src="./content/uploads/2015/06/5388661724_859d557469_o-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="interiors">			</a>
-			</div><!-- /.property-small-image -->
-
-	<div class="property-small-content">
-							<div class="property-small-type">
-				House			</div><!-- /.property-small-type -->
-		
-		<h3 class="property-small-title">
-			<a href="./north-parchmore-street/">North Parchmore Street</a>
-		</h3><!-- /.property-small-title -->
-
-							<div class="property-small-price">
-				$ 340,000			</div><!-- /.property-small-price -->
-			</div><!-- /.property-small-content -->
-</div><!-- /.property-small -->
-				</div><!-- /.property-container -->
-
-				
-												<div class="property-container">
-										
-<div class="property-small">
-	<div class="property-small-image ">
-					<a href="./apricot-west-britford-arch/">
-				<img width="150" height="150" src="./content/uploads/2015/06/5388658984_72f0ca75aa_o-1-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="interiors">			</a>
-			</div><!-- /.property-small-image -->
-
-	<div class="property-small-content">
-							<div class="property-small-type">
-				Apartment			</div><!-- /.property-small-type -->
-		
-		<h3 class="property-small-title">
-			<a href="./apricot-west-britford-arch/">Apricot West Britford Arch</a>
-		</h3><!-- /.property-small-title -->
-
-							<div class="property-small-price">
-				$ 125,000			</div><!-- /.property-small-price -->
-			</div><!-- /.property-small-content -->
-</div><!-- /.property-small -->
-				</div><!-- /.property-container -->
-
-				
-								
+				<%}%>		
 						</div>
 	
 	
@@ -630,6 +591,12 @@ img.emoji {
 			
         <div id="property_carousel_widget-2" class="widget widget_property_carousel_widget">
 		    <div class="owl-carousel owl-theme">
+			    	<%var count%>
+			<%if(resultDowntown.length<=6){%>
+				<%count = resultDowntown.length%>
+			<%}else{%>
+				<%count = 6}%>
+			<%for (var j = 0; j < count; j++) {%>
 			    <div class="item">
 					<div class="property-container">
 															
@@ -637,11 +604,11 @@ img.emoji {
 
 					<div class="property-box">
 					    <div class="property-box-image ">
-					        <a href="./north-parchmore-street/" class="property-box-image-inner ">
+					        <a href="/chi-tiet?area=<%-resultDowntown[j]._id%>" class="property-box-image-inner ">
 								
-					            				<img width="270" height="226" src="./content/uploads/2015/06/5388661724_859d557469_o-270x226.jpg" class="attachment-property-box-thumbnail size-property-box-thumbnail wp-post-image" alt="interiors">            
+					            				<img width="270" height="226" src="<%-resultDowntown[j].image[0]%>" class="attachment-property-box-thumbnail size-property-box-thumbnail wp-post-image" alt="interiors">            
 								<div class="property-box-image-price">
-					    $ 340,000</div><!-- /.property-box-image-price -->
+					    <%-resultDowntown[j]['Giá']%> tỉ VND</div><!-- /.property-box-image-price -->
 
 					                        
 					            
@@ -651,38 +618,39 @@ img.emoji {
 					    <div class="property-box-content">
 					        <div class="property-box-title">
 						        
-					            <h3><a href="./north-parchmore-street/">North Parchmore Street</a></h3>
+					            <h3><a href="/chi-tiet?area=<%-resultDowntown[j]._id%>"><%-resultDowntown[j]['Loại dự án']%></a></h3>
 
 						                </div><!-- /.property-box-title -->
 
 						    <div class="property-box-body">
 							    
 						        	        	            <div class="property-box-type">
-						                House	            </div><!-- /.property-box-type -->
+						                <%-resultDowntown[j]['Loại BDS']%>	            </div><!-- /.property-box-type -->
 						        
 						        	        	            <div class="property-box-price">
-						                $ 340,000	            </div><!-- /.property-box-price -->
+						                <%-resultDowntown[j]['Giá']%> tỉ VND	            </div><!-- /.property-box-price -->
 						        
 							    <div class="property-box-read-more">
-								    <a href="./north-parchmore-street/">Read More</a>
+								    <a href="/chi-tiet?area=<%-resultDowntown[j]._id%>">Read More</a>
 							    </div><!-- /.property-box-price -->
 
 							    <div class="property-box-meta">
 					                <span class="property-box-meta-item property-box-meta-item-area">
-					            <i class="pp pp-normal-cursor-scale-up"></i> 150 sqft        </span><!-- /.property-box-meta-item -->
+					            <i class="pp pp-normal-cursor-scale-up"></i> <%-resultDowntown[j]['Diện tích']%> m2       </span><!-- /.property-box-meta-item -->
 					    
 					                <span class="property-box-meta-item property-box-meta-item-beds">
-					            <i class="pp pp-normal-bed"></i> 2        </span><!-- /.property-box-meta-item -->
+					            <i class="pp pp-normal-bed"></i> <%-resultDowntown[j]['Số phòng ngủ']%>        </span><!-- /.property-box-meta-item -->
 					    
 					                <span class="property-box-meta-item property-box-meta-item-baths">
-					            <i class="pp pp-normal-shower"></i> 3        </span><!-- /.property-box-meta-item -->
+					            <i class="pp pp-normal-shower"></i> <%-resultDowntown[j]['Số phòng tắm']%>        </span><!-- /.property-box-meta-item -->
 					    </div><!-- /.property-box-meta -->
 						    </div><!-- /.property-box-body -->
 					    </div><!-- /.property-box-content -->
 					</div>
 									</div>
-
 			    </div>
+				<%}%>
+
 			</div>
         </div>
 	<script>

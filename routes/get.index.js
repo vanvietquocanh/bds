@@ -9,7 +9,6 @@ const pathMongodb = require("./mongodb.path.js");
 router.get('/', function(req, res, next) {
 	try{
 		var query = {}
-		var queryPrice = {}
 		for (var i = Object.keys(req.query).length - 1; i >= 0; i--) {
 			if(Object.values(req.query)[i]!==""){
 				query[`${Object.keys(req.query)[i]}`] = Object.values(req.query)[i];
@@ -26,14 +25,23 @@ router.get('/', function(req, res, next) {
 			}
 		}
 		mongo.connect(pathMongodb,(err, db)=>{
-			db.collection("happy-real-Area").find(query).sort({'Ngày':1}).toArray((err, result)=>{
-				db.collection("happy-real-Area").findOne(query)
-				db.close();
-				if(!err){
-					res.render("index",{"chatbox":chatbox,"arrArea":result,"infoCompany":infoCompany})
-				}else{
-					res.redirect("/error")
-				}
+			db.collection("happy-real-Area").find(query).sort({'Ngày':-1}).toArray((err, result)=>{
+				db.collection("happy-real-Area").find().sort({'Giá':1}).limit(3).toArray((err, resultPrice)=>{
+					db.collection("happy-real-Area").find().sort({'Trung tâm TP':-1}).limit(6).toArray((err, resultDowntown)=>{
+						db.close();
+						if(!err){
+							res.render("index",{
+								"chatbox"		:chatbox,
+								"arrArea"	 	:result,
+								"infoCompany"	:infoCompany,
+								"resultPrice"	:resultPrice,
+								"resultDowntown":resultDowntown
+							})
+						}else{
+							res.redirect("/error")
+						}
+					})
+				})
 			})
 		})
 	}catch(e){

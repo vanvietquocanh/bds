@@ -192,8 +192,11 @@
                                         <form id="formAddArea" action="" method="post" enctype="multipart/form-data">
                                             <input type="number" id="date" style="display: none" name="Ngày">
                                         <div class="form-group row">
-                                            <div class="col-xs-2">
-                                                <input type="text" placeholder="Lô số" name="Lô số" id="landNumber" class="form-control m-b-5 col-xs-3">
+                                            <div class="col-xs-1">
+                                                <input type="number" placeholder="Lô số" name="Lô số" id="landNumber" class="form-control m-b-5 col-xs-3">
+                                            </div>
+                                            <div class="col-xs-1">
+                                                <input type="text" placeholder="Khu" name="k" id="landNumber" class="form-control m-b-5 col-xs-3">
                                             </div>
                                             <div class="col-xs-2">
                                                 <input type="text" placeholder="Vị trí" name="Vị trí" id="location" class="form-control m-b-5 col-xs-3">
@@ -210,7 +213,7 @@
                                                 </select>
                                             </div>
                                             <div class="col-xs-2">
-                                                <input type="number" placeholder="Giá (tỉ VNĐ)" name="Giá" id="price" min="0" class="form-control m-b-5 col-xs-3">
+                                                <input type="number" step="0.001" placeholder="Giá (tỉ VNĐ)" name="Giá" id="price" min="0" class="form-control m-b-5 col-xs-3">
                                             </div>
                                             <div class="col-xs-2">
                                                 <select name="Hướng1" id="direction1" class="form-control m-b-5 col-xs-3">
@@ -239,7 +242,7 @@
                                                 </select>
                                             </div>
                                             <div class="col-xs-2">
-                                                <input type="number" placeholder="Diện tích (m2)" name="Diện tích" id="acreage" min="0" class="form-control m-b-5 col-xs-3">
+                                                <input type="number" placeholder="Diện tích (m2)" step="0.01" name="Diện tích" id="acreage" min="0" class="form-control m-b-5 col-xs-3">
                                             </div>
                                             <div class="col-xs-1 checkbox checkbox-primary">
                                                 <input id="landCertificates" type="checkbox">
@@ -254,49 +257,49 @@
                                                 </label>
                                             </div>
                                             <div class="col-xs-2">
-                                                <input type="text" placeholder="Khu" name="Khu" id="area" class="form-control m-b-5 col-xs-3">
+                                                <input type="text" placeholder="Khu vực" name="Khu" id="area" class="form-control m-b-5 col-xs-3">
                                             </div>
                                             <div class="col-xs-2">
-                                                <input type="number" placeholder="Số phòng tắm" name="Số phòng tắm" id="bathroom" class="form-control m-b-5 col-xs-3">
+                                                <input type="number" step="0.01" placeholder="Số phòng tắm" name="Số phòng tắm" id="bathroom" class="form-control m-b-5 col-xs-3">
                                             </div>
                                             <div class="col-xs-2">
-                                                <input type="number" placeholder="Số phòng ngủ" name="Số phòng ngủ" id="bedroom" class="form-control m-b-5 col-xs-3">
+                                                <input type="number" step="0.01" placeholder="Số phòng ngủ" name="Số phòng ngủ" id="bedroom" class="form-control m-b-5 col-xs-3">
                                             </div>
                                             <div class="col-xs-2">
-                                                <input type="number" placeholder="Nhà để xe" name="Nhà để xe" id="gara" class="form-control m-b-5 col-xs-3">
+                                                <input type="number" step="0.01" placeholder="Nhà để xe" name="Nhà để xe" id="gara" class="form-control m-b-5 col-xs-3">
                                             </div>
                                             <div class="col-xs-2">
-                                                <input type="number" placeholder="Giường" name="Giường" id="bed" class="form-control m-b-5 col-xs-3">
+                                                <input type="number" step="0.01" placeholder="Giường" name="Giường" id="bed" class="form-control m-b-5 col-xs-3">
                                             </div>
                                             <div class="col-xs-2">
-                                                <input type="number" min="0" max="100" placeholder="Môi trường(%)" name="Môi trường" id="enviroment" class="form-control m-b-5 col-xs-3">
+                                                <input type="number" step="0.01" min="0" max="100" placeholder="Môi trường(%)" name="Môi trường" id="enviroment" class="form-control m-b-5 col-xs-3">
                                             </div>
                                             <div class="col-xs-2">
-                                                <input type="number" min="0" max="100" placeholder="An ninh(%)" name="An ninh" id="security" class="form-control m-b-5 col-xs-3">
+                                                <input type="number" step="0.01" min="0" max="100" placeholder="An ninh(%)" name="An ninh" id="security" class="form-control m-b-5 col-xs-3">
                                             </div>
                                             <div class="col-xs-2">
-                                                <input type="number" min="0" max="100" placeholder="Giao thông(%)" name="Giao thông" id="traffic" class="form-control m-b-5 col-xs-3">
+                                                <input type="number" step="0.01" min="0" max="100" placeholder="Giao thông(%)" name="Giao thông" id="traffic" class="form-control m-b-5 col-xs-3">
                                             </div>
                                             <div class="col-xs-2">
-                                                <input type="number" min="0" max="100" placeholder="Giáo dục(%)" name="Giáo dục" id="education" class="form-control m-b-5 col-xs-3">
+                                                <input type="number" step="0.01" min="0" max="100" placeholder="Giáo dục(%)" name="Giáo dục" id="education" class="form-control m-b-5 col-xs-3">
                                             </div>
                                             <div class="col-xs-2">
-                                                <input type="number" min="0" max="100" placeholder="Y tế(%)" name="Y tế" id="medical" class="form-control m-b-5 col-xs-3">
+                                                <input type="number" step="0.01" min="0" max="100" placeholder="Y tế(%)" name="Y tế" id="medical" class="form-control m-b-5 col-xs-3">
                                             </div>
                                             <div class="col-xs-2">
-                                                <input type="number" min="0" max="100" placeholder="Cửa hàng(km)" name="Cửa hàng" id="store" class="form-control m-b-5 col-xs-3">
+                                                <input type="number" step="0.01" min="0" max="100" placeholder="Cửa hàng(km)" name="Cửa hàng" id="store" class="form-control m-b-5 col-xs-3">
                                             </div>
                                             <div class="col-xs-2">
-                                                <input type="number" min="0" max="100" placeholder="Trường học(km)" name="Trường học" id="schools" class="form-control m-b-5 col-xs-3">
+                                                <input type="number" step="0.01" min="0" max="100" placeholder="Trường học(km)" name="Trường học" id="schools" class="form-control m-b-5 col-xs-3">
                                             </div>
                                             <div class="col-xs-2">
-                                                <input type="number" min="0" max="100" placeholder="Sân bay(km)" name="Sân bay" id="airport" class="form-control m-b-5 col-xs-3">
+                                                <input type="number" step="0.01" min="0" max="100" placeholder="Sân bay(km)" name="Sân bay" id="airport" class="form-control m-b-5 col-xs-3">
                                             </div>
                                             <div class="col-xs-2">
-                                                <input type="number" min="0" max="100" placeholder="Trung tâm TP(km)" name="Trung tâm TP" id="cityCenter" class="form-control m-b-5 col-xs-3">
+                                                <input type="number" step="0.01" min="0" max="100" placeholder="Trung tâm TP(km)" name="Trung tâm TP" id="cityCenter" class="form-control m-b-5 col-xs-3">
                                             </div>
                                             <div class="col-xs-2">
-                                                <input type="number" min="0" max="100" placeholder="Bệnh viện(km)" name="Bệnh viện" id="hospital" class="form-control m-b-5 col-xs-3">
+                                                <input type="number" step="0.01" min="0" max="100" placeholder="Bệnh viện(km)" name="Bệnh viện" id="hospital" class="form-control m-b-5 col-xs-3">
                                             </div>
                                             <div class="col-xs-2">
                                                 <input type="file" name="photos" id="image-1" class="form-control m-b-5 col-xs-3 image">
