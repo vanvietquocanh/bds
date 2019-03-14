@@ -57,35 +57,78 @@ jQuery(document).ready(function($) {
 			$("#linkVideo").addClass('null');
 		}
 	}
-	$(".fa-trash").parent().click(function(event) {
-		if(confirm("Bạn chắc chắn muốn xoá?")){
-			var elementRemove = $(this);
-			$.post('/removevideo', {id: $(this).attr("class").split(" btn ")[1]}, function(res, textStatus, xhr) {
-				if(res==="success"){
-					elementRemove.parent().parent().remove();
+	function initEventVideo() {
+		$(".fa-trash").parent().click(function(event) {
+			if(confirm("Bạn chắc chắn muốn xoá?")){
+				var elementRemove = $(this);
+				$.post('/removevideo', {id: $(this).attr("class").split(" btn ")[1]}, function(res, textStatus, xhr) {
+					if(res==="success"){
+						elementRemove.parent().parent().remove();
+					}else{
+						alert(res);
+					}
+				});
+			}
+		});
+		$(".fa-edit").parent().click(function(event) {
+			var elementEdit = $(this);
+			$("#videoName").val(elementEdit.parent().prev().prev().text())
+			$("#linkVideo").val(elementEdit.parent().prev().text())
+			$("#idVideo").val(elementEdit.attr("class").split(" btn ")[1])
+		});
+		$("#submit").click(function(event) {
+			postForm();
+		});
+		$("#videoName").keydown(function(event) {
+			if(event.key==="Enter"||event.keyCode===13){
+				$("#submit").click();
+			}
+		});
+		$("#linkVideo").keydown(function(event) {
+			if(event.key==="Enter"||event.keyCode===13){
+				$("#submit").click();
+			}
+		});
+	}
+	function acitveDropGuest(path, data, btn) {
+		$.post(path, data, function(res, textStatus, xhr) {
+			if(res==="success"){
+				if(path.indexOf("remove")!==-1){
+					btn.parent().parent().remove()
 				}else{
-					alert(res);
+					if (btn.attr("class").indexOf("btn-warning")!==-1) {
+						btn.removeClass("btn-warning")
+						btn.addClass("btn-success")
+						btn.children().removeClass('fa-lock')
+						btn.children().addClass('fa-unlock')
+					}else{
+						btn.removeClass("btn-success")
+						btn.addClass("btn-warning")
+						btn.children().removeClass('fa-unlock')
+						btn.children().addClass('fa-lock')
+					}
 				}
-			});
-		}
-	});
-	$(".fa-edit").parent().click(function(event) {
-		var elementEdit = $(this);
-		$("#videoName").val(elementEdit.parent().prev().prev().text())
-		$("#linkVideo").val(elementEdit.parent().prev().text())
-		$("#idVideo").val(elementEdit.attr("class").split(" btn ")[1])
-	});
-	$("#submit").click(function(event) {
-		postForm();
-	});
-	$("#videoName").keydown(function(event) {
-		if(event.key==="Enter"||event.keyCode===13){
-			$("#submit").click();
-		}
-	});
-	$("#linkVideo").keydown(function(event) {
-		if(event.key==="Enter"||event.keyCode===13){
-			$("#submit").click();
-		}
-	});
+			}else{
+				alert(res)
+			}
+		});
+	}
+	function initEventDropActive() {
+		$(".btn").click(function(event) {
+			if($(this).attr("class").indexOf("btn-danger")!==-1){
+				acitveDropGuest("/area-guest/remove", {id : $(this).attr("class").split("btn ")[1]}, $(this))
+			}else if($(this).attr("class").indexOf("btn-warning btn ")!==-1||$(this).attr("class").indexOf("btn-success btn ")!==-1){
+				acitveDropGuest("/area-guest/update", 
+					{
+						"id" 	: $(this).attr("class").split("btn ")[1],
+						"status": ($(this).attr("class").split(" btn")[0]==="btn-warning")?"active":"inactive"
+					}, $(this))
+			}
+		});
+	}
+	if(window.location.pathname==="/admin/gui-ban-happy-real"){
+		initEventDropActive();
+	}else{
+		initEventVideo();
+	}
 });

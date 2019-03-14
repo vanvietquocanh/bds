@@ -8,4 +8,12 @@ module.exports = `	<script type="text/javascript">
 						s1.setAttribute('crossorigin','*');
 						s0.parentNode.insertBefore(s1,s0);
 						})();
-					</script>`
+					</script>
+					<div class="" style="position: fixed; right: 0px; bottom: 10em; z-index: 999999;">
+						<div>
+							<div class="fix-icon-zalo" style="width: 35px; height: 35px; margin-right: 0;"></div>
+						</div>
+						<div id="showmap" style="border-radius: .5em; background: #02344a; ">
+							<div class="fa fa-globe" style="font-size: 29px; border: 1px solid #fff; border-radius: .4em; padding: .2em; color:#fff"></div>
+						</div>
+					</div>`

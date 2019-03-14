@@ -30,12 +30,10 @@ router.post('/:area', upload.array('photos', 12), function(req, res, next) {
         req.body["Khu Vực"] = req.params.area;
         req.body["Ngày"] = Number(req.body["Ngày"])
         for (var i = 0; i < Object.values(req.body).length; i++) {
-          console.log(!isNaN(Object.values(req.body)[i]), Object.keys(req.body)[i]!=="Ngày", req.body[i]);
           if(!isNaN(Object.values(req.body)[i])&&Object.keys(req.body)[i]!=="Vị trí"){
             req.body[Object.keys(req.body)[i]] = parseFloat(Object.values(req.body)[i]);
           }
         }
-        console.log(req.body);
         db.collection("happy-real-Area").insertOne(req.body, (err, result)=>{
           assert.equal(null, err);
           db.close();

@@ -9,6 +9,15 @@
 	display: flex;
 	flex-wrap: nowrap;
 }
+.form-group div{
+	padding-bottom: 1em;	
+}
+textarea.form-control{
+	height: 120px;
+}
+.w-100{
+	width: 100%;
+}
 @media screen and (min-width: 1024px) {
 	.fix-logo{
 		width: 100px;

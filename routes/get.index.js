@@ -28,18 +28,21 @@ router.get('/', function(req, res, next) {
 			db.collection("happy-real-Area").find(query).sort({'Ngày':-1}).toArray((err, result)=>{
 				db.collection("happy-real-Area").find().sort({'Giá':1}).limit(3).toArray((err, resultPrice)=>{
 					db.collection("happy-real-Area").find().sort({'Trung tâm TP':-1}).limit(6).toArray((err, resultDowntown)=>{
-						db.close();
-						if(!err){
-							res.render("index",{
-								"chatbox"		:chatbox,
-								"arrArea"	 	:result,
-								"infoCompany"	:infoCompany,
-								"resultPrice"	:resultPrice,
-								"resultDowntown":resultDowntown
-							})
-						}else{
-							res.redirect("/error")
-						}
+						db.collection("buyUrgently").find({status:"active"}).toArray((err, areaGuest)=>{
+							db.close();
+							if(!err){
+								res.render("index",{
+									"chatbox"		:chatbox,
+									"arrArea"	 	:result,
+									"infoCompany"	:infoCompany,
+									"resultPrice"	:resultPrice,
+									"resultDowntown":resultDowntown,
+									"areaGuest" 	:areaGuest
+								})
+							}else{
+								res.redirect("/error")
+							}
+						})
 					})
 				})
 			})
