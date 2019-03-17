@@ -16,7 +16,7 @@
 					]
 %>
 <!DOCTYPE html>
-<html lang="en-US"><head><style type="text/css">.gm-control-active img{box-sizing:content-box;pointer-events:none}.gm-control-active:hover img:nth-child(1),.gm-control-active:active img:nth-child(1),.gm-control-active:active img:nth-child(2){display:none}
+<html lang="vi"><head><style type="text/css">.gm-control-active img{box-sizing:content-box;pointer-events:none}.gm-control-active:hover img:nth-child(1),.gm-control-active:active img:nth-child(1),.gm-control-active:active img:nth-child(2){display:none}
 </style><link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700"><style type="text/css">.gm-ui-hover-effect{opacity:.7}.gm-ui-hover-effect:hover{opacity:1}
 </style><style type="text/css">.gm-style .gm-style-cc span,.gm-style .gm-style-cc a,.gm-style .gm-style-mtc div{font-size:10px;box-sizing:border-box}
 </style><style type="text/css">@media print {  .gm-style .gmnoprint, .gmnoprint {    display:none  }}@media screen {  .gm-style .gmnoscreen, .gmnoscreen {    display:none  }}</style><style type="text/css">.gm-style-pbc{transition:opacity ease-in-out;background-color:rgba(0,0,0,0.45);text-align:center}.gm-style-pbt{font-size:22px;color:white;font-family:Roboto,Arial,sans-serif;position:relative;margin:0;top:50%;-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%)}
@@ -25,8 +25,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="./php">
-
-	<title>Happy Real – Đà Nẵng - Bất động sản</title>
+	<%-infoCompany.metaSEO%>
+	<link rel="canonical" href="<%-href%>">
+	<title><%-infoCompany.companyName%> – Mua bán hỗ trợ giao dịch <%-cvtName[arrName.indexOf(details["Khu Vực"].split("-happy-real").join(""))]%> <%-infoCompany.location.city%> - Bất động sản Đĩa Ốc</title>
 <meta property="og:title" content="Recent Properties"><link rel="alternate" type="application/rss+xml" title="Happy Real » Feed" href="./">
 <link rel="alternate" type="application/rss+xml" title="Happy Real » Comments Feed" href="./feed/">
 <link rel="alternate" type="application/rss+xml" title="Happy Real » Recent Properties Comments Feed" href="./map/feed/">
@@ -44,6 +45,18 @@ img.emoji {
 	background: none !important;
 	padding: 0 !important;
 }
+#map {
+	    height: 40em;
+	  }
+	  html, body {
+	    height: 100%;
+	    margin: 0;
+	    padding: 0;
+	  }
+	  .icon-image-up{
+	  	max-height: 226px;
+	  	max-width: 270px;
+	  }
 </style>
 <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -61,6 +74,7 @@ img.emoji {
 <link rel="stylesheet" id="pictopro-css" href="./content/themes/HappyReal/assets/libraries/fonts/PictoPro/style.css?ver=4.4.1" type="text/css" media="all">
 <link rel="stylesheet" id="HappyReal-css-css" href="./content/themes/HappyReal/assets/css/HappyReal.css?ver=20170117" type="text/css" media="all">
 <link rel="stylesheet" id="style-css" href="./content/themes/HappyReal/style.css?ver=4.4.1" type="text/css" media="all">
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCe1F9nnU_h75yopZAOtHw-atE4Ix54YcM&libraries=places"></script>
 <!-- <script type="text/javascript" src="//maps.googleapis.com/maps/api/js?key=AIzaSyD86DebZJbh6ErVo_W_RcM5eyvRL9VH7Xo&amp;libraries=weather%2Cgeometry%2Cvisualization%2Cplaces%2Cdrawing&amp;ver=4.4.1"></script> -->
 <script type="text/javascript" src="./includes/js/jquery/jquery.js?ver=1.11.3"></script>
 <script type="text/javascript" src="./includes/js/jquery/jquery-migrate.min.js?ver=1.2.1"></script>
@@ -156,6 +170,9 @@ img.emoji {
 <body class="home page page-id-268 page-template-default">
 	<%-chatbox%>
 <div class="page-wrapper">
+	<script>
+		var data = [<%-JSON.stringify(details)%>];
+	</script>
 	<div class="header">
 		<nav class="navbar navbar-default">
 			<div class="header-top">
@@ -192,67 +209,32 @@ img.emoji {
 							<div class="header-bottom">
 					<div class="container"><div class="menu-primary-container"><ul id="primary-menu" class="nav navbar-nav navbar-right collapse navbar-collapse"><li id="menu-item-449" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-496"><a href="/">Trang chủ</a>
 </li>
-<li id="menu-item-450" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-450"><a href="/theme/HappyReal/properties/">Sơ đồ bảng giá</a>
-<ul class="dropdown-menu sub-menu">
-	<li id="menu-item-454" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-454"><a href="#">Nguyễn Tri Phương</a>
-		<ul class="dropdown-menu sub-menu">
-			<li id="menu-item-457" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-457"><a href="./new-york-city/brooklyn/">Giới Thiệu</a></li>
-			<li id="menu-item-460" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-460"><a href="./new-york-city/the-bronx/">Bảng giá và sơ đồ</a></li>
-			<li id="menu-item-456" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-456"><a href="./new-york-city/manhattan/">Tiến độ</a></li>
-			<li id="menu-item-458" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-458"><a href="./new-york-city/queens/">Các lô đang bán</a></li>
-		</ul>
-	</li>
-	<li id="menu-item-454" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-454"><a href="#">Nam Hòa Xuân</a>
-		<ul class="dropdown-menu sub-menu">
-			<li id="menu-item-457" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-457"><a href="./new-york-city/brooklyn/">Giới Thiệu</a></li>
-			<li id="menu-item-460" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-460"><a href="./new-york-city/the-bronx/">Bảng giá và sơ đồ</a></li>
-			<li id="menu-item-456" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-456"><a href="./new-york-city/manhattan/">Tiến độ</a></li>
-			<li id="menu-item-458" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-458"><a href="./new-york-city/queens/">Các lô đang bán</a></li>
-		</ul>
-	</li>
-	<li id="menu-item-455" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-455"><a href="#">Đảo VIP</a>
-		<ul class="dropdown-menu sub-menu">
-			<li id="menu-item-457" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-457"><a href="./new-york-city/brooklyn/">Giới Thiệu</a></li>
-			<li id="menu-item-460" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-460"><a href="./new-york-city/the-bronx/">Bảng giá và sơ đồ</a></li>
-			<li id="menu-item-456" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-456"><a href="./new-york-city/manhattan/">Tiến độ</a></li>
-			<li id="menu-item-458" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-458"><a href="./new-york-city/queens/">Các lô đang bán</a></li>
-		</ul>
-	</li>
-	<li id="menu-item-480" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-480"><a href="#">Hòa Xuân 1A</a>
-		<ul class="dropdown-menu sub-menu">
-			<li id="menu-item-457" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-457"><a href="./new-york-city/brooklyn/">Giới Thiệu</a></li>
-			<li id="menu-item-460" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-460"><a href="./new-york-city/the-bronx/">Bảng giá và sơ đồ</a></li>
-			<li id="menu-item-456" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-456"><a href="./new-york-city/manhattan/">Tiến độ</a></li>
-			<li id="menu-item-458" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-458"><a href="./new-york-city/queens/">Các lô đang bán</a></li>
-		</ul>
-	</li>
-	<li id="menu-item-487" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-487"><a href="#">Làng Châu Âu</a>
-		<ul class="dropdown-menu sub-menu">
-			<li id="menu-item-488" class="menu-item menu-item-type-taxonomy menu-item-object-statuses menu-item-488"><a href="./available/">Giới Thiệu</a></li>
-			<li id="menu-item-489" class="menu-item menu-item-type-taxonomy menu-item-object-statuses menu-item-489"><a href="./rent-agreed/">Bảng giá & sơ đồ</a></li>
-			<li id="menu-item-490" class="menu-item menu-item-type-taxonomy menu-item-object-statuses menu-item-490"><a href="./reserved/">Tiến độ</a></li>
-			<li id="menu-item-491" class="menu-item menu-item-type-taxonomy menu-item-object-statuses menu-item-491"><a href="./sell-agreed/">Các lô đang bán</a></li>
-		</ul>
-	</li>
-	<li id="menu-item-479" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-479"><a href="#">Làng Châu Âu 2</a>
-		<ul class="dropdown-menu sub-menu">
-			<li id="menu-item-488" class="menu-item menu-item-type-taxonomy menu-item-object-statuses menu-item-488"><a href="./available/">Giới Thiệu</a></li>
-			<li id="menu-item-489" class="menu-item menu-item-type-taxonomy menu-item-object-statuses menu-item-489"><a href="./rent-agreed/">Bảng giá & sơ đồ</a></li>
-			<li id="menu-item-490" class="menu-item menu-item-type-taxonomy menu-item-object-statuses menu-item-490"><a href="./reserved/">Tiến độ</a></li>
-			<li id="menu-item-491" class="menu-item menu-item-type-taxonomy menu-item-object-statuses menu-item-491"><a href="./sell-agreed/">Các lô đang bán</a></li>
-		</ul>
-	</li>
-</ul>
-</li>
-<li id="menu-item-466" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-496"><a href="#">Video</a></li>
-<li id="menu-item-453" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-453"><a href="#">Tin Tức</a>
-<ul class="dropdown-menu sub-menu">
-	<li id="menu-item-496" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-496"><a href="./property/">Tin trong ngành</a></li>
-	<li id="menu-item-496" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-496"><a href="./property/">Tin dự án</a></li>
-	<li id="menu-item-496" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-496"><a href="./property/">Giới thiệu dự án</a></li>
-</ul>
-</li>
-<li id="menu-item-494" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-494"><a href="./">Liên Hệ</a></li>
+<li id="menu-item-450" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-450">
+									<a style="cursor: pointer">Các khu vực</a>
+									<ul class="dropdown-menu sub-menu">
+										<li id="menu-item-454" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-454">
+											<a href="?Khu+Vực=nguyen-tri-phuong-happy-real" style="cursor: pointer">Nguyễn Tri Phương</a>
+										</li>
+										<li id="menu-item-454" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-454">
+											<a href="?Khu+Vực=nam-hoa-xuan-happy-real" style="cursor: pointer">Nam Hòa Xuân</a>
+										</li>
+										<li id="menu-item-455" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-455">
+											<a href="?Khu+Vực=dao-vip-happy-real" style="cursor: pointer">Đảo VIP</a>
+										</li>
+										<li id="menu-item-480" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-480">
+											<a href="?Khu+Vực=hoa-xuan-1a-happy-real" style="cursor: pointer">Hòa Xuân 1A</a>
+										</li>
+										<li id="menu-item-487" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-487">
+											<a href="?Khu+Vực=lang-chau-au-1-happy-real" style="cursor: pointer">Làng Châu Âu</a>
+										</li>
+										<li id="menu-item-479" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-479">
+											<a href="?Khu+Vực=lang-chau-au-2-happy-real" style="cursor: pointer">Làng Châu Âu 2</a>
+										</li>
+									</ul>
+								</li>
+<li id="menu-item-466" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-496"><a href="/view-video-<%-infoCompany.companyName.split(' ').join('-').toLowerCase()%>">Video</a></li>
+<li id="menu-item-496" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-496"><a href="/gui-ban-<%-infoCompany.companyName.split(' ').join('-').toLowerCase()%>">Gửi Bán</a></li>
+<li id="menu-item-494" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-494"><a href="/lien-he-<%-infoCompany.companyName.split(' ').join('-').toLowerCase()%>">Liên Hệ</a></li>
 </ul></div></div><!-- /.container -->
 				</div><!-- /.header-bottom -->
 					</nav>
@@ -286,12 +268,9 @@ img.emoji {
 						<option value="">
 											Vị Trí									</option>
 
-				
-															<option value="DN">TP.Đà Nẵng</option>
-
-						
 																					<option value="nam-hoa-xuan-happy-real">
-									»&nbsp; Nam Hòa Xuân								</option>																																								<option value="dao-vip-happy-real">
+									»&nbsp; Nam Hòa Xuân								</option>	<option value="hoa-xuan-1-happy-real">
+									»&nbsp; Hòa Xuân 1A								</option>																																								<option value="dao-vip-happy-real">
 									»&nbsp; Đảo VIP								</option>																																								<option value="lang-chau-au-1-happy-real">
 									»&nbsp; Làng Châu Âu 1								</option>																																								<option value="lang-chau-au-2-happy-real">
 									»&nbsp; Làng Châu Âu 2								</option>																																								<option value="nguyen-tri-phuong-happy-real">
@@ -381,6 +360,12 @@ img.emoji {
 
 </div>
 	</div>
+<script src="./js/events/happy-real-controls-map.js"></script>
+
+<script src="./js/events/happy-real-script.js"></script>
+
+<div id="map"></div>
+
 <div class="row">
 	<div class="content col-sm-8 col-md-9">
 		
@@ -391,7 +376,7 @@ img.emoji {
 		<h1 class="entry-title property-title"><%-details["Loại dự án"]%></h1>	</header><!-- .entry-header -->
 	<div class="property-detail-subtitle">
 							<div class="property-location">
-				<a href="http://preview.byaviators.com/theme/realia/location/new-york-city/">
+				<a>
 					<%-cvtName[arrName.indexOf(details["Khu Vực"].split("-happy-real").join(""))]%>
 				</a> <span class="separator">&nbsp;- </span> <a href=""><%-details["Hướng"]%></a>			</div>
 									<div class="property-price"><%-details["Giá"]%> tỉ VNĐ			</div>
@@ -556,233 +541,73 @@ img.emoji {
         
     
             <div class="similar-properties">
-            <h2>Xem thêm các bất động sản liên quan</h2>
+            <h2>Xem thêm các bất động sản liên quan </h2>
             <div class="row">
                                 
-                                
-                                <div class="col-md-4 col-sm-6">
-                    <div class="property-box-wrapper">
-                        
+                                <%var count%>
+			<%if(arrArea.length<=7){%>
+				<%count = arrArea.length%>
+			<%}else{%>
+				<%count = 7}%>
+			<%if(arrArea.length>=1){%>
+				<%for (var j = 0; j < count; j++) {%>
+					<%if(arrArea[j]._id.toString()!==details._id.toString()){%>
+				                                <div class="col-md-4 col-sm-6">
+				                    <div class="property-box-wrapper">
+				                        
 
 
-<div class="property-box">
-    <div class="property-box-image ">
-        <a href="" class="property-box-image-inner ">
-			
-            				<img width="270" height="226" src="http://preview.byaviators.com/theme/realia/wp-content/uploads/2015/06/5388658984_72f0ca75aa_o-1-270x226.jpg" class="attachment-property-box-thumbnail size-property-box-thumbnail wp-post-image" alt="interiors">            
-			<div class="property-box-image-price">
-    $ 125,000</div><!-- /.property-box-image-price -->
+				<div class="property-box">
+				    <div class="property-box-image ">
+				        <a href="/chi-tiet?area=<%-arrArea[j]._id%>" class="property-box-image-inner ">
+							
+				            				<img width="270" height="226" src="<%-arrArea[j].image[0]%>" class="attachment-property-box-thumbnail size-property-box-thumbnail wp-post-image" alt="interiors">            
+							<div class="property-box-image-price">
+				    <%-arrArea[j]['Giá']%> tỉ VND</div><!-- /.property-box-image-price -->
 
-                        
-                            <span class="property-badge">Featured</span>
-            
-                            <span class="property-badge property-badge-sticky">TOP</span>
-                    </a>
-    </div><!-- /.property-image -->
+				                        
+				                            <span class="property-badge">Featured</span>
+				            
+				                    </a>
+				    </div><!-- /.property-image -->
 
-    <div class="property-box-content">
-        <div class="property-box-title">
-	        
-            <h3><a href="http://preview.byaviators.com/theme/realia/properties/apricot-west-britford-arch/">Apricot West Britford Arch</a></h3>
+				    <div class="property-box-content">
+				        <div class="property-box-title">
+					        
+				            <h3><a href="/chi-tiet?area=<%-arrArea[j]._id%>"><%-arrArea[j]['Loại dự án']%></a></h3>
 
-	                </div><!-- /.property-box-title -->
+					                </div><!-- /.property-box-title -->
 
-	    <div class="property-box-body">
-		    
-	        	        	            <div class="property-box-type">
-	                Apartment	            </div><!-- /.property-box-type -->
-	        
-	        	        	            <div class="property-box-price">
-	                $ 125,000	            </div><!-- /.property-box-price -->
-	        
-		    <div class="property-box-read-more">
-			    <a href="http://preview.byaviators.com/theme/realia/properties/apricot-west-britford-arch/">Read More</a>
-		    </div><!-- /.property-box-price -->
+					    <div class="property-box-body">
+						    
+					        	        	            <div class="property-box-type">
+					                <%-arrArea[j]['Loại BDS']%>	            </div><!-- /.property-box-type -->
+					        
+					        	        	            <div class="property-box-price">
+					                <%-arrArea[j]['Giá']%> tỉ VND	            </div><!-- /.property-box-price -->
+					        
+						    <div class="property-box-read-more">
+							    <a href="/chi-tiet?area=<%-arrArea[j]._id%>">Read More</a>
+						    </div><!-- /.property-box-price -->
 
-		    <div class="property-box-meta">
-                <span class="property-box-meta-item property-box-meta-item-area">
-            <i class="pp pp-normal-cursor-scale-up"></i> 125 sqft        </span><!-- /.property-box-meta-item -->
-    
-                <span class="property-box-meta-item property-box-meta-item-beds">
-            <i class="pp pp-normal-bed"></i> 3        </span><!-- /.property-box-meta-item -->
-    
-                <span class="property-box-meta-item property-box-meta-item-baths">
-            <i class="pp pp-normal-shower"></i> 4        </span><!-- /.property-box-meta-item -->
-    </div><!-- /.property-box-meta -->
-	    </div><!-- /.property-box-body -->
-    </div><!-- /.property-box-content -->
-</div>
-                    </div>
-                </div><!-- /.col-sm-4 -->
-
-                
-                                                
-                                <div class="col-md-4 col-sm-6">
-                    <div class="property-box-wrapper">
-                        
-
-
-<div class="property-box">
-    <div class="property-box-image ">
-        <a href="http://preview.byaviators.com/theme/realia/properties/eaton-garth/" class="property-box-image-inner ">
-			
-            				<img width="270" height="226" src="http://preview.byaviators.com/theme/realia/wp-content/uploads/2015/06/5388654148_447f6f2289_o-270x226.jpg" class="attachment-property-box-thumbnail size-property-box-thumbnail wp-post-image" alt="interiors">            
-			<div class="property-box-image-price">
-    $ 90,000</div><!-- /.property-box-image-price -->
-
-                        
-            
-                    </a>
-    </div><!-- /.property-image -->
-
-    <div class="property-box-content">
-        <div class="property-box-title">
-	        
-            <h3><a href="http://preview.byaviators.com/theme/realia/properties/eaton-garth/">Eaton Garth</a></h3>
-
-	                </div><!-- /.property-box-title -->
-
-	    <div class="property-box-body">
-		    
-	        	        	            <div class="property-box-type">
-	                Villa	            </div><!-- /.property-box-type -->
-	        
-	        	        	            <div class="property-box-price">
-	                $ 90,000	            </div><!-- /.property-box-price -->
-	        
-		    <div class="property-box-read-more">
-			    <a href="http://preview.byaviators.com/theme/realia/properties/eaton-garth/">Read More</a>
-		    </div><!-- /.property-box-price -->
-
-		    <div class="property-box-meta">
-                <span class="property-box-meta-item property-box-meta-item-area">
-            <i class="pp pp-normal-cursor-scale-up"></i> 350 sqft        </span><!-- /.property-box-meta-item -->
-    
-                <span class="property-box-meta-item property-box-meta-item-beds">
-            <i class="pp pp-normal-bed"></i> 2        </span><!-- /.property-box-meta-item -->
-    
-                <span class="property-box-meta-item property-box-meta-item-baths">
-            <i class="pp pp-normal-shower"></i> 1        </span><!-- /.property-box-meta-item -->
-    </div><!-- /.property-box-meta -->
-	    </div><!-- /.property-box-body -->
-    </div><!-- /.property-box-content -->
-</div>
-                    </div>
-                </div><!-- /.col-sm-4 -->
-
-                
-                                                
-                                <div class="col-md-4 col-sm-6">
-                    <div class="property-box-wrapper">
-                        
-
-
-<div class="property-box">
-    <div class="property-box-image ">
-        <a href="http://preview.byaviators.com/theme/realia/properties/myuna-causeway/" class="property-box-image-inner ">
-			
-            				<img width="270" height="226" src="http://preview.byaviators.com/theme/realia/wp-content/uploads/2015/06/5388053335_55e53eefd1_o-270x226.jpg" class="attachment-property-box-thumbnail size-property-box-thumbnail wp-post-image" alt="interiors">            
-			<div class="property-box-image-price">
-    $ 165,000</div><!-- /.property-box-image-price -->
-
-                        
-                            <span class="property-badge">Reduced</span>
-            
-                    </a>
-    </div><!-- /.property-image -->
-
-    <div class="property-box-content">
-        <div class="property-box-title">
-	        
-            <h3><a href="http://preview.byaviators.com/theme/realia/properties/myuna-causeway/">Myuna Causeway</a></h3>
-
-	                </div><!-- /.property-box-title -->
-
-	    <div class="property-box-body">
-		    
-	        	        	            <div class="property-box-type">
-	                House	            </div><!-- /.property-box-type -->
-	        
-	        	        	            <div class="property-box-price">
-	                $ 165,000	            </div><!-- /.property-box-price -->
-	        
-		    <div class="property-box-read-more">
-			    <a href="http://preview.byaviators.com/theme/realia/properties/myuna-causeway/">Read More</a>
-		    </div><!-- /.property-box-price -->
-
-		    <div class="property-box-meta">
-                <span class="property-box-meta-item property-box-meta-item-area">
-            <i class="pp pp-normal-cursor-scale-up"></i> 350 sqft        </span><!-- /.property-box-meta-item -->
-    
-                <span class="property-box-meta-item property-box-meta-item-beds">
-            <i class="pp pp-normal-bed"></i> 2        </span><!-- /.property-box-meta-item -->
-    
-                <span class="property-box-meta-item property-box-meta-item-baths">
-            <i class="pp pp-normal-shower"></i> 1        </span><!-- /.property-box-meta-item -->
-    </div><!-- /.property-box-meta -->
-	    </div><!-- /.property-box-body -->
-    </div><!-- /.property-box-content -->
-</div>
-                    </div>
-                </div><!-- /.col-sm-4 -->
-
-                            </div><div class="properties-row">
-                
-                                                
-                                <div class="col-md-4 col-sm-6">
-                    <div class="property-box-wrapper">
-                        
-
-
-<div class="property-box">
-    <div class="property-box-image ">
-        <a href="http://preview.byaviators.com/theme/realia/properties/frankland-oval/" class="property-box-image-inner ">
-			
-            				<img width="270" height="226" src="http://preview.byaviators.com/theme/realia/wp-content/uploads/2015/06/5388052993_9814125d09_o-270x226.jpg" class="attachment-property-box-thumbnail size-property-box-thumbnail wp-post-image" alt="interiors">            
-			<div class="property-box-image-price">
-    $ 300,000</div><!-- /.property-box-image-price -->
-
-                        
-                            <span class="property-badge">Featured</span>
-            
-                    </a>
-    </div><!-- /.property-image -->
-
-    <div class="property-box-content">
-        <div class="property-box-title">
-	        
-            <h3><a href="http://preview.byaviators.com/theme/realia/properties/frankland-oval/">Frankland Oval</a></h3>
-
-	                </div><!-- /.property-box-title -->
-
-	    <div class="property-box-body">
-		    
-	        	        	            <div class="property-box-type">
-	                Condo	            </div><!-- /.property-box-type -->
-	        
-	        	        	            <div class="property-box-price">
-	                $ 300,000	            </div><!-- /.property-box-price -->
-	        
-		    <div class="property-box-read-more">
-			    <a href="http://preview.byaviators.com/theme/realia/properties/frankland-oval/">Read More</a>
-		    </div><!-- /.property-box-price -->
-
-		    <div class="property-box-meta">
-                <span class="property-box-meta-item property-box-meta-item-area">
-            <i class="pp pp-normal-cursor-scale-up"></i> 150 sqft        </span><!-- /.property-box-meta-item -->
-    
-                <span class="property-box-meta-item property-box-meta-item-beds">
-            <i class="pp pp-normal-bed"></i> 2        </span><!-- /.property-box-meta-item -->
-    
-                <span class="property-box-meta-item property-box-meta-item-baths">
-            <i class="pp pp-normal-shower"></i> 2        </span><!-- /.property-box-meta-item -->
-    </div><!-- /.property-box-meta -->
-	    </div><!-- /.property-box-body -->
-    </div><!-- /.property-box-content -->
-</div>
-                    </div>
-                </div><!-- /.col-sm-4 -->
-
+						    <div class="property-box-meta">
+				                <span class="property-box-meta-item property-box-meta-item-area">
+				            <i class="pp pp-normal-cursor-scale-up"></i> <%-arrArea[j]['Diện tích']%> m2        </span><!-- /.property-box-meta-item -->
+				    
+				                <span class="property-box-meta-item property-box-meta-item-beds">
+				            <i class="pp pp-normal-bed"></i> <%-arrArea[j]['Số phòng ngủ']%>        </span><!-- /.property-box-meta-item -->
+				    
+				                <span class="property-box-meta-item property-box-meta-item-baths">
+				            <i class="pp pp-normal-shower"></i> <%-arrArea[j]['Số phòng tắm']%>        </span><!-- /.property-box-meta-item -->
+				    </div><!-- /.property-box-meta -->
+					    </div><!-- /.property-box-body -->
+				    </div><!-- /.property-box-content -->
+				</div>
+				                    </div>
+				                </div><!-- /.col-sm-4 -->
+					<%}%>
+				<%}%>
+			<%}%>
                 
                                                             </div><!-- /.row -->
         </div><!-- /.similar-properties -->
@@ -836,79 +661,41 @@ img.emoji {
 
 <div id="properties_widget-2" class="widget widget_properties_widget">
 
-			<h2 class="widgettitle">		Liên quan		</h2>
+			<h2 class="widgettitle">		Nổi bật		</h2>
 	
 			
 		<div class="type-small item-per-row-1">
+			<%var count%>
+			<%if(lowestPrice.length<=4){%>
+				<%count = lowestPrice.length%>
+			<%}else{%>
+				<%count = 4}%>
+			<%for (var j = 0; j < count; j++) {%>	
+					<%if(lowestPrice[j]._id.toString()!==details._id.toString()){%>
 			
 												<div class="property-container">
 										
 <div class="property-small">
 	<div class="property-small-image ">
-					<a href="./south-mervin-boulevard/">
-				<img width="150" height="150" src="./content/uploads/2015/06/5388662544_96ca3f71c1_o-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="interiors">			</a>
+					<a href="/chi-tiet?area=<%-lowestPrice[j]._id%>" target="_blank">
+				<img width="150" height="150" src="<%-lowestPrice[j].image[0]%>" class="attachment-thumbnail size-thumbnail wp-post-image" alt="interiors">			</a>
 			</div><!-- /.property-small-image -->
 
 	<div class="property-small-content">
 							<div class="property-small-type">
-				Villa			</div><!-- /.property-small-type -->
+				<%-lowestPrice[j]['Loại BDS']%>			</div><!-- /.property-small-type -->
 		
 		<h3 class="property-small-title">
-			<a href="./south-mervin-boulevard/">South Mervin Boulevard</a>
+			<a href="/chi-tiet?area=<%-lowestPrice[j]._id%>" target="_blank"><%-lowestPrice[j]['Loại dự án']%></a>
 		</h3><!-- /.property-small-title -->
 
 							<div class="property-small-price">
-				$ 220,000			</div><!-- /.property-small-price -->
+				<%-lowestPrice[j]['Giá']%> tỉ VND			</div><!-- /.property-small-price -->
 			</div><!-- /.property-small-content -->
 </div><!-- /.property-small -->
 				</div><!-- /.property-container -->
-
-				
-												<div class="property-container">
-										
-<div class="property-small">
-	<div class="property-small-image ">
-					<a href="./north-parchmore-street/">
-				<img width="150" height="150" src="./content/uploads/2015/06/5388661724_859d557469_o-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="interiors">			</a>
-			</div><!-- /.property-small-image -->
-
-	<div class="property-small-content">
-							<div class="property-small-type">
-				House			</div><!-- /.property-small-type -->
-		
-		<h3 class="property-small-title">
-			<a href="./north-parchmore-street/">North Parchmore Street</a>
-		</h3><!-- /.property-small-title -->
-
-							<div class="property-small-price">
-				$ 340,000			</div><!-- /.property-small-price -->
-			</div><!-- /.property-small-content -->
-</div><!-- /.property-small -->
-				</div><!-- /.property-container -->
-
-				
-												<div class="property-container">
-										
-<div class="property-small">
-	<div class="property-small-image ">
-					<a href="./apricot-west-britford-arch/">
-				<img width="150" height="150" src="./content/uploads/2015/06/5388658984_72f0ca75aa_o-1-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="interiors">			</a>
-			</div><!-- /.property-small-image -->
-
-	<div class="property-small-content">
-							<div class="property-small-type">
-				Apartment			</div><!-- /.property-small-type -->
-		
-		<h3 class="property-small-title">
-			<a href="./apricot-west-britford-arch/">Apricot West Britford Arch</a>
-		</h3><!-- /.property-small-title -->
-
-							<div class="property-small-price">
-				$ 125,000			</div><!-- /.property-small-price -->
-			</div><!-- /.property-small-content -->
-</div><!-- /.property-small -->
-				</div><!-- /.property-container -->
-
+<%}%>
+<%}%>
 				
 								
 						</div>

@@ -8,9 +8,12 @@ const pathMongodb = require("./mongodb.path.js");
 /* GET home page. */
 router.get('/', function(req, res, next) {
 	try{
+		var date 			= new Date();
+		var beginDayNow 	= `${date.getDate()}/${date.getMonth()+1}/${date.getFullYear()}`
+		var beginMonthNow 	= `${date.getMonth()+1}/${date.getFullYear()}`
 		var query = {}
 		for (var i = Object.keys(req.query).length - 1; i >= 0; i--) {
-			if(Object.values(req.query)[i]!==""){
+			if(Object.values(req.query)[i]!==""&&Object.values(req.query)[i]!=="Khác"){
 				query[`${Object.keys(req.query)[i]}`] = Object.values(req.query)[i];
 			}
 		}
@@ -29,26 +32,28 @@ router.get('/', function(req, res, next) {
 				db.collection("happy-real-Area").find().sort({'Giá':1}).limit(3).toArray((err, resultPrice)=>{
 					db.collection("happy-real-Area").find().sort({'Trung tâm TP':-1}).limit(6).toArray((err, resultDowntown)=>{
 						db.collection("buyUrgently").find({status:"active"}).toArray((err, areaGuest)=>{
-							db.close();
-							if(!err){
-								res.render("index",{
-									"chatbox"		:chatbox,
-									"arrArea"	 	:result,
-									"infoCompany"	:infoCompany,
-									"resultPrice"	:resultPrice,
-									"resultDowntown":resultDowntown,
-									"areaGuest" 	:areaGuest
-								})
-							}else{
-								res.redirect("/error")
-							}
+							db.collection("connection").insertOne({time:Date.now(), day:beginDayNow, month:beginMonthNow},(err, re)=>{				
+								db.close();
+								if(!err){
+									res.render("index",{
+										"chatbox"		:chatbox,
+										"arrArea"	 	:result,
+										"infoCompany"	:infoCompany,
+										"resultPrice"	:resultPrice,
+										"resultDowntown":resultDowntown,
+										"areaGuest" 	:areaGuest,
+										"href" 			:`${req.protocol + '://' + req.get('host') + req.originalUrl}`
+									})
+								}else{
+									res.redirect("/error")
+								}
+							})
 						})
 					})
 				})
 			})
 		})
 	}catch(e){
-		console.log(e);
 		res.redirect("/")
 	}
 });

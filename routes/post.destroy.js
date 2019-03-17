@@ -8,7 +8,7 @@ const pathMongodb = require("./mongodb.path.js");
 /* POST new real estate. */
 router.post('/:area', function(req, res, next) {
 	// if(req.user){
-		if(req.body.id!==""){
+		if(req.body.id!==""&&/[a-f\d]{24}/.test(req.body.id)){
 			mongo.connect(pathMongodb,(err, db)=>{
 				assert.equal(null, err);
 				db.collection("happy-real-Area").deleteOne({_id:ObjectId(req.body.id)}, (err, result)=>{

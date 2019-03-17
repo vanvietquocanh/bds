@@ -17,6 +17,7 @@
         <!-- App css -->
         <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <link href="../assets/css/core.css" rel="stylesheet" type="text/css" />
+		<link href="../assets/css/pageload.css" rel="stylesheet" type="text/css" />
         <link href="../assets/css/components.css" rel="stylesheet" type="text/css" />
         <link href="../assets/css/icons.css" rel="stylesheet" type="text/css" />
         <link href="../assets/css/pages.css" rel="stylesheet" type="text/css" />
@@ -52,7 +53,7 @@
                                 </button>
                             </li>
                             <li>
-                                <h4 class="page-title">Nguyễn Tri Phương</h4>
+                                <h4 class="page-title"><%-NameRoute%></h4>
                             </li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
@@ -96,16 +97,17 @@
                             <li>
                                 <a href="/admin" class="waves-effect"><i class="zmdi zmdi-view-dashboard"></i> <span> Bảng điều khiển </span> </a>
                             </li>
-
                             <li>
-                                <a href="/admin/tin-tuc-happy-real" class="waves-effect"><i class="fa  fa-newspaper-o"></i> <span> Tin Tức </span> </a>
+                                <a href="/admin/can-mua-happy-real" class="waves-effect"><i class="fa  fa-newspaper-o"></i> <span> Danh sách cần mua </span> </a>
+                            </li>
+                            <li>
+                                <a href="/admin/can-ban-happy-real" class="waves-effect"><i class="fa  fa-newspaper-o"></i> <span> Danh sách cần bán </span> </a>
                             </li>
                             <li>
                                 <a href="/admin/admin-video-happy-real" class="waves-effect"><i class="fa fa-file-video-o"></i><span> Video </span></a>
                             </li>
-
                             <li>
-                                <a href="/admin/email-happy-real" class="waves-effect"><i class="zmdi zmdi-email"></i><span> Mail </span></a>
+                                <a href="/email-happy-real" class="waves-effect"><i class="zmdi zmdi-email"></i><span>Danh sách Email</span></a>
                             </li>
                             <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-plus"></i><span>Bất động sản </span> <span class="menu-arrow"></span></a>
@@ -113,7 +115,7 @@
                                     <li><a href="/admin/nguyen-tri-phuong-happy-real">Nguyễn Tri Phương</a></li>
                                     <li><a href="/admin/dao-vip-happy-real">Đảo VIP</a></li>
                                     <li><a href="/admin/nam-hoa-xuan-happy-real">Nam Hòa Xuân</a></li>
-                                    <li><a href="/admin/hoa-xuan-1a-happy-real">Hòa Xuân 1A</a></li>
+                                    <li><a href="/admin/hoa-xuan-1a-happy-real">Hoà Xuân 1A</a></li>
                                     <li><a href="/admin/lang-chau-au-1-happy-real">Làng Châu Âu 1</a></li>
                                     <li><a href="/admin/lang-chau-au-2-happy-real">Làng Châu Âu 2</a></li>
                                 </ul>
@@ -193,7 +195,7 @@
                                             <input type="number" id="date" style="display: none" name="Ngày">
                                         <div class="form-group row">
                                             <div class="col-xs-1">
-                                                <input type="number" placeholder="Lô số" name="Lô số" id="landNumber" class="form-control m-b-5 col-xs-3">
+                                                <input type="number" placeholder="Lô số" name="Lô số" step="0.000001" min="0.000001" id="landNumber" class="form-control m-b-5 col-xs-3">
                                             </div>
                                             <div class="col-xs-1">
                                                 <input type="text" placeholder="Khu" name="k" id="landNumber" class="form-control m-b-5 col-xs-3">
@@ -440,9 +442,14 @@
 
         </div>
         <!-- END wrapper -->
-
-
-
+        <div class='waitting-post d-none' id="waitHtml">
+            <div class="containerAnime">
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+            </div>
+        </div>
         <script>
             var resizefunc = [];
         </script>

@@ -23,6 +23,22 @@ const formControls = `<div class="col-sm-12">
                                 </div>
                             </div>
                         </div>`;
+var arrName = [
+				"nam-hoa-xuan-happy-real",
+				"dao-vip-happy-real",
+				"hoa-xuan-1a-happy-real",
+				"lang-chau-au-1-happy-real",
+				"lang-chau-au-2-happy-real",
+				"nguyen-tri-phuong-happy-real",
+			];
+var arrRealName =   [ 
+						"Nam Hòa Xuân",
+						"Đảo VIP",
+						"Hòa Xuân 1A",
+						"Làng Châu Âu 1",
+						"Làng Châu Âu 2",
+						"Nguyễn Tri Phương"
+					]
 /* GET home page. */
 router.get('/:area', function(req, res, next) {
 	// if(req.user){
@@ -40,23 +56,27 @@ router.get('/:area', function(req, res, next) {
 				})
 			})
 		}
-		if(req.params.area.indexOf("video")!==-1){
+		if(req.params.area.indexOf("video-happy-real")!==-1){
 			responDataFor("video", `admin-video-${infoCompany.companyName.split(" ").join("-").toLowerCase()}`, formControls);
-		}else if(req.params.area.indexOf("gui-ban")!==-1){
+		}else if(req.params.area.indexOf("can-mua-happy-real")!==-1){
 			responDataFor("buyUrgently", `admin-video-${infoCompany.companyName.split(" ").join("-").toLowerCase()}`, "");
-		}else{
+		}else if(req.params.area.indexOf("can-ban-happy-real")!==-1){
+			responDataFor("saleArea", `admin-video-${infoCompany.companyName.split(" ").join("-").toLowerCase()}`, "");
+		}else if(arrName.indexOf(req.params.area)!==-1){
 			mongo.connect(pathMongodb,(err, db)=>{
 				assert.equal(null, err);
 				db.collection("happy-real-Area").find({"Khu Vực":req.params.area}).toArray((err, result)=>{
 					assert.equal(null, err);
 					db.close();
 					if(!err){
-						res.render("khu-vuc-happy-real", {"result": result, "infoCompany":infoCompany})
+						res.render("khu-vuc-happy-real", {"result": result, "infoCompany":infoCompany, NameRoute:arrRealName[arrName.indexOf(req.params.area)]})
 					}else{
 						res.send(err)
 					}
 				})
 			})
+		}else{
+			res.redirect("/error")
 		}
 	// }else{
 	// 	res.redirect("/error")

@@ -19,6 +19,7 @@ router.post('/', function(req, res, next) {
 					query.videoname = req.body.id;
 				}
 				delete req.body.id;
+				req.body.time = Date.now();
 				db.collection("video").update(query, {$set: req.body}, {upsert:true}, (err, result)=>{
 					assert.equal(null, err);
 					db.close();

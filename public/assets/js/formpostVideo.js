@@ -113,12 +113,12 @@ jQuery(document).ready(function($) {
 			}
 		});
 	}
-	function initEventDropActive() {
+	function initEventDropActive(path) {
 		$(".btn").click(function(event) {
 			if($(this).attr("class").indexOf("btn-danger")!==-1){
-				acitveDropGuest("/area-guest/remove", {id : $(this).attr("class").split("btn ")[1]}, $(this))
+				acitveDropGuest(`${path}/remove`, {id : $(this).attr("class").split("btn ")[1]}, $(this))
 			}else if($(this).attr("class").indexOf("btn-warning btn ")!==-1||$(this).attr("class").indexOf("btn-success btn ")!==-1){
-				acitveDropGuest("/area-guest/update", 
+				acitveDropGuest(`${path}/update`, 
 					{
 						"id" 	: $(this).attr("class").split("btn ")[1],
 						"status": ($(this).attr("class").split(" btn")[0]==="btn-warning")?"active":"inactive"
@@ -126,8 +126,10 @@ jQuery(document).ready(function($) {
 			}
 		});
 	}
-	if(window.location.pathname==="/admin/gui-ban-happy-real"){
-		initEventDropActive();
+	if(window.location.pathname==="/admin/can-mua-happy-real"){
+		initEventDropActive("/area-guest");
+	}else if(window.location.pathname==="/admin/can-ban-happy-real"){
+		initEventDropActive("/sale-area-guest");
 	}else{
 		initEventVideo();
 	}

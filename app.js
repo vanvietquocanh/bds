@@ -21,8 +21,10 @@ var destroyAreaRouter = require('./routes/post.destroy');
 var newRealEstateRouter = require('./routes/post.newRealeState');
 var addLinkVideoRouter = require('./routes/post.addLinkVideo');
 var removeLinkVideoRouter = require('./routes/post.removeLinkVideo');
+var removeEmailClientRouter = require('./routes/post.removeEmailClient');
 var sendBuyRouter = require('./routes/post.sendBuy');
-var activeRemoveAreaGuset = require('./routes/post.activeRemoveAreaGuset');
+var activeRemoveAreaGuest = require('./routes/post.activeRemoveAreaGuest');
+var saleAreaGuest = require('./routes/post.removeSaleAreaGuest');
 // var findRouter = require('./routes/get.find');
 var receiveEmailRouter = require('./routes/post.receive-email');
 var produceImage = require('./routes/produce.image.js');
@@ -94,14 +96,16 @@ app.use('/gui-ban', postSendSale);
 app.use('/destroy', destroyAreaRouter);
 app.use('/linkvideo', addLinkVideoRouter);
 app.use('/removevideo', removeLinkVideoRouter);
-app.use('/area-guest', activeRemoveAreaGuset);
+app.use('/removeemail', removeEmailClientRouter);
+app.use('/area-guest', activeRemoveAreaGuest);
+app.use('/sale-area-guest', saleAreaGuest);
 app.use('/gui-mua', sendBuyRouter);
 // app.use('/find', findRouter);
 // app.use('/update', updateRouter);
 app.use('/huonggiachu', huonggiachu);
 app.use('/chi-tiet', details);
 app.use('/receive-email', receiveEmailRouter);
-app.use('/admin/email-happy-real', emailRouter);
+app.use('/email-happy-real', emailRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

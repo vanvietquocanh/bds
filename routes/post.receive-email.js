@@ -16,6 +16,7 @@ router.post('/', function(req, res, next) {
 			try{
 				mongo.connect(pathMongodb,(err, db)=>{
 					assert.equal(null, err);
+					req.body.time = Date.now();
 					db.collection("emailClient").insertOne(req.body, {ordered:false}, (err, result)=>{
 						assert.equal(null, err);
 						db.close();

@@ -1,0 +1,85 @@
+.waitting-post{
+  position: fixed;
+  height: 10000px;
+  width: 100%;
+  top: 0px;
+  z-index: 1000000;
+  background-color: #fff !important;
+}
+.waitting-post-contents{
+  text-align: center;
+  margin-top: 30%;
+}
+.fa.fa-spinner.fa-pulse.fa-3x.fa-fw{
+  color: #fff;
+}
+.d-none{
+  top: 100000px;
+}
+@keyframes anima1 {
+  0%   { top: 0;                 left: 0;                 }
+  25%  { top: 0;                 left: calc(100% - 20px); }
+  50%  { top: calc(100% - 20px); left: calc(100% - 20px); }
+  75%  { top: calc(100% - 20px); left: 0;                 }
+  100% { top: 0;                 left: 0;                 }
+}
+@keyframes anima2 {
+  0%   { top: 0;                 left: calc(100% - 20px); }
+  25%  { top: calc(100% - 20px); left: calc(100% - 20px); }
+  50%  { top: calc(100% - 20px); left: 0;                 }
+  75%  { top: 0;                 left: 0;                 }
+  100% { top: 0;                 left: calc(100% - 20px); }
+}
+@keyframes anima3 {
+  0%   { top: calc(100% - 20px); left: calc(100% - 20px); }
+  25%  { top: calc(100% - 20px); left: 0;                 }
+  50%  { top: 0;                 left: 0;                 }
+  75%  { top: 0;                 left: calc(100% - 20px); }
+  100% { top: calc(100% - 20px); left: calc(100% - 20px); }
+}
+@keyframes anima4 {
+  0%   { top: calc(100% - 20px); left: 0;                 }
+  25%  { top: 0;                 left: 0;                 }
+  50%  { top: 0;                 left: calc(100% - 20px); }
+  75%  { top: calc(100% - 20px); left: calc(100% - 20px); }
+  100% { top: calc(100% - 20px); left: 0;                 }
+}
+body {
+  margin: 0;
+}
+.containerAnime {
+  height: 60px;
+  width: 60px;
+  margin: 22% auto;
+  position: relative;
+}
+.item {
+  position: absolute;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+}
+.item:nth-child(1) {
+  background-color: brown;
+  top: 0;
+  left: 0;
+  animation: anima1 2s ease infinite; 
+}
+.item:nth-child(2) {
+  background-color: cornflowerblue;
+  top: 0;
+  right: 0;
+  animation: anima2 2s ease infinite;
+}
+.item:nth-child(3) {
+  background-color: darkolivegreen;
+  bottom: 0;
+  left: 0;
+  animation: anima3 2s ease infinite;
+}
+.item:nth-child(4) {
+  background-color: coral;
+  bottom: 0;
+  right: 0;
+  animation: anima4 2s ease infinite;
+}

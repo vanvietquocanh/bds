@@ -4,10 +4,11 @@
 </style><style type="text/css">.gm-style .gm-style-cc span,.gm-style .gm-style-cc a,.gm-style .gm-style-mtc div{font-size:10px;box-sizing:border-box}
 </style><style type="text/css">@media print {  .gm-style .gmnoprint, .gmnoprint {    display:none  }}@media screen {  .gm-style .gmnoscreen, .gmnoscreen {    display:none  }}</style><style type="text/css">.gm-style-pbc{transition:opacity ease-in-out;background-color:rgba(0,0,0,0.45);text-align:center}.gm-style-pbt{font-size:22px;color:white;font-family:Roboto,Arial,sans-serif;position:relative;margin:0;top:50%;-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%)}
 </style>
+    <%-infoCompany.metaSEO%>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="profile" href="http://gmpg.org/xfn/11">
-	<title><%-infoCompany.companyName%> – <%-infoCompany.location.contryCity%> - Bất động sản</title>
+	<link rel="canonical" href="<%-href%>">
+	<title><%-infoCompany.companyName%> – <%-infoCompany.location.city%> - Bất động sản</title>
 <meta property="og:title" content="Recent Properties"><link rel="alternate" type="application/rss+xml" title="<%-infoCompany.companyName%> » Feed" href="./">
 		<script src="./includes/js/wp-emoji-release.min.js?ver=4.4.1" type="text/javascript"></script>
 		<style type="text/css">
@@ -127,67 +128,28 @@ img.emoji {
 									<a href="/">Trang chủ</a>
 								</li>
 								<li id="menu-item-450" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-450">
-									<a style="cursor: pointer">Sơ đồ bảng giá</a>
-								<ul class="dropdown-menu sub-menu">
-									<li id="menu-item-454" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-454">
-										<a style="cursor: pointer">Nguyễn Tri Phương</a>
-										<ul class="dropdown-menu sub-menu">
-											<li id="menu-item-457" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-457">
-												<a href="/gioi-thieu-<%-infoCompany.nameCompany%>?">Giới Thiệu</a>
-											</li>
-											<li id="menu-item-460" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-460">
-												<a href="/so-do-bang-gia-<%-infoCompany.nameCompany%>?">Bảng giá và sơ đồ</a>
-											</li>
-											<li id="menu-item-456" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-456">
-												<a href="/tien-do-du-an-<%-infoCompany.nameCompany%>?">Tiến độ</a>
-											</li>
-											<li id="menu-item-458" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-458">
-												<a href="/cac-lo-dang-ban-<%-infoCompany.nameCompany%>?">Các lô đang bán</a>
-											</li>
-										</ul>
-									</li>
-									<li id="menu-item-454" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-454"><a style="cursor: pointer">Nam Hòa Xuân</a>
-										<ul class="dropdown-menu sub-menu">
-											<li id="menu-item-457" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-457"><a href="/gioi-thieu-<%-infoCompany.nameCompany%>?">Giới Thiệu</a></li>
-											<li id="menu-item-460" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-460"><a href="/so-do-bang-gia-<%-infoCompany.nameCompany%>?">Bảng giá và sơ đồ</a></li>
-											<li id="menu-item-456" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-456"><a href="/tien-do-du-an-<%-infoCompany.nameCompany%>?">Tiến độ</a></li>
-											<li id="menu-item-458" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-458"><a href="/cac-lo-dang-ban-<%-infoCompany.nameCompany%>?">Các lô đang bán</a></li>
-										</ul>
-									</li>
-	<li id="menu-item-455" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-455"><a style="cursor: pointer">Đảo VIP</a>
-		<ul class="dropdown-menu sub-menu">
-			<li id="menu-item-457" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-457"><a href="/gioi-thieu-<%-infoCompany.nameCompany%>?">Giới Thiệu</a></li>
-			<li id="menu-item-460" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-460"><a href="/so-do-bang-gia-<%-infoCompany.nameCompany%>?">Bảng giá và sơ đồ</a></li>
-			<li id="menu-item-456" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-456"><a href="/tien-do-du-an-<%-infoCompany.nameCompany%>?">Tiến độ</a></li>
-			<li id="menu-item-458" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-458"><a href="/cac-lo-dang-ban-<%-infoCompany.nameCompany%>?">Các lô đang bán</a></li>
-		</ul>
-	</li>
-	<li id="menu-item-480" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-480"><a style="cursor: pointer">Hòa Xuân 1A</a>
-		<ul class="dropdown-menu sub-menu">
-			<li id="menu-item-457" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-457"><a href="/gioi-thieu-<%-infoCompany.nameCompany%>?">Giới Thiệu</a></li>
-			<li id="menu-item-460" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-460"><a href="/so-do-bang-gia-<%-infoCompany.nameCompany%>?">Bảng giá và sơ đồ</a></li>
-			<li id="menu-item-456" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-456"><a href="/tien-do-du-an-<%-infoCompany.nameCompany%>?">Tiến độ</a></li>
-			<li id="menu-item-458" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-458"><a href="/cac-lo-dang-ban-<%-infoCompany.nameCompany%>?">Các lô đang bán</a></li>
-		</ul>
-	</li>
-	<li id="menu-item-487" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-487"><a style="cursor: pointer">Làng Châu Âu</a>
-		<ul class="dropdown-menu sub-menu">
-			<li id="menu-item-488" class="menu-item menu-item-type-taxonomy menu-item-object-statuses menu-item-488"><a href="/gioi-thieu-<%-infoCompany.nameCompany%>?">Giới Thiệu</a></li>
-			<li id="menu-item-489" class="menu-item menu-item-type-taxonomy menu-item-object-statuses menu-item-489"><a href="/so-do-bang-gia-<%-infoCompany.nameCompany%>?">Bảng giá & sơ đồ</a></li>
-			<li id="menu-item-490" class="menu-item menu-item-type-taxonomy menu-item-object-statuses menu-item-490"><a href="/tien-do-du-an-<%-infoCompany.nameCompany%>?">Tiến độ</a></li>
-			<li id="menu-item-491" class="menu-item menu-item-type-taxonomy menu-item-object-statuses menu-item-491"><a href="./sell-agreed/">Các lô đang bán</a></li>
-		</ul>
-	</li>
-	<li id="menu-item-479" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-479"><a style="cursor: pointer">Làng Châu Âu 2</a>
-		<ul class="dropdown-menu sub-menu">
-			<li id="menu-item-488" class="menu-item menu-item-type-taxonomy menu-item-object-statuses menu-item-488"><a href="/gioi-thieu-<%-infoCompany.nameCompany%>?">Giới Thiệu</a></li>
-			<li id="menu-item-489" class="menu-item menu-item-type-taxonomy menu-item-object-statuses menu-item-489"><a href="/so-do-bang-gia-<%-infoCompany.nameCompany%>?">Bảng giá & sơ đồ</a></li>
-			<li id="menu-item-490" class="menu-item menu-item-type-taxonomy menu-item-object-statuses menu-item-490"><a href="/tien-do-du-an-<%-infoCompany.nameCompany%>?">Tiến độ</a></li>
-			<li id="menu-item-491" class="menu-item menu-item-type-taxonomy menu-item-object-statuses menu-item-491"><a href="/cac-lo-dang-ban-<%-infoCompany.nameCompany%>?">Các lô đang bán</a></li>
-		</ul>
-	</li>
-</ul>
-</li>
+									<a style="cursor: pointer">Các khu vực</a>
+									<ul class="dropdown-menu sub-menu">
+										<li id="menu-item-454" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-454">
+											<a href="?Khu+Vực=nguyen-tri-phuong-happy-real" style="cursor: pointer">Nguyễn Tri Phương</a>
+										</li>
+										<li id="menu-item-454" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-454">
+											<a href="?Khu+Vực=nam-hoa-xuan-happy-real" style="cursor: pointer">Nam Hòa Xuân</a>
+										</li>
+										<li id="menu-item-455" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-455">
+											<a href="?Khu+Vực=dao-vip-happy-real" style="cursor: pointer">Đảo VIP</a>
+										</li>
+										<li id="menu-item-480" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-480">
+											<a href="?Khu+Vực=hoa-xuan-1a-happy-real" style="cursor: pointer">Hòa Xuân 1A</a>
+										</li>
+										<li id="menu-item-487" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-487">
+											<a href="?Khu+Vực=lang-chau-au-1-happy-real" style="cursor: pointer">Làng Châu Âu</a>
+										</li>
+										<li id="menu-item-479" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-479">
+											<a href="?Khu+Vực=lang-chau-au-2-happy-real" style="cursor: pointer">Làng Châu Âu 2</a>
+										</li>
+									</ul>
+								</li>
 <li id="menu-item-466" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-496"><a href="/view-video-<%-infoCompany.companyName.split(' ').join('-').toLowerCase()%>">Video</a></li>
 <li id="menu-item-496" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-496"><a href="/gui-ban-<%-infoCompany.companyName.split(' ').join('-').toLowerCase()%>">Gửi Bán</a></li>
 <li id="menu-item-494" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-494"><a href="/lien-he-<%-infoCompany.companyName.split(' ').join('-').toLowerCase()%>">Liên Hệ</a></li>
@@ -279,13 +241,11 @@ img.emoji {
 					<select class="form-control" name="Khu Vực" id="rent_filter_rent_sale_widget-2_location">
 						<option value="">
 											Vị Trí									</option>
-
-				
-															<option value="DN">TP.<%-infoCompany.location.contryCity%></option>
-
 						
 																					<option value="nam-hoa-xuan-happy-real">
-									»&nbsp; Nam Hòa Xuân								</option>																																								<option value="dao-vip-happy-real">
+									»&nbsp; Nam Hòa Xuân								</option>
+																					<option value="hoa-xuan-1a-happy-real">
+									»&nbsp; Hòa Xuân 1A								</option>																																								<option value="dao-vip-happy-real">
 									»&nbsp; Đảo VIP								</option>																																								<option value="lang-chau-au-1-happy-real">
 									»&nbsp; Làng Châu Âu 1								</option>																																								<option value="lang-chau-au-2-happy-real">
 									»&nbsp; Làng Châu Âu 2								</option>																																								<option value="nguyen-tri-phuong-happy-real">
@@ -296,21 +256,13 @@ img.emoji {
 		</div><!-- /.form-group -->
 																					<div class="form-group">
 		
-		<select class="form-control" name="Loại BDS" id="rent_filter_rent_sale_widget-2_property_type">
-			
-			<option value="">
-									Loại bất động sản							</option>					
-																									<option value="Đất">
-						Khu vực xây dựng					</option>					
-																									<option value="Nhà">
-						Nhà ở					</option>
-
-					
-																									<option value="Biệt Thự">
-						Biệt thự					</option>
-
-					
-																									</select>
+		<select class="form-control" name="Loại BDS" id="rent_filter_rent_sale_widget-2_property_type">	
+			<option value="">Loại bất động sản</option>
+			<option value="Đất">Khu vực xây dựng</option>
+			<option value="Nhà">Nhà ở</option>
+			<option value="Biệt Thự">Biệt thự</option>	
+			<option value="Khác">Khác</option>	
+		</select>
 	</div><!-- /.form-group -->
 	<div class="form-group fix-fg-40">
         <input type="text" id="range" value="" name="Giá" />
@@ -369,13 +321,10 @@ img.emoji {
 			<%}else{%>
 				<%count = 12}%>
 			<%for (var j = 0; j < count; j++) {%>
-				<%var arrName = ["nguyen-tri-phuong-happy-real","dao-vip-happy-real","nam-hoa-xuan-happy-real","hoa-xuan-1a-happy-real","lang-chau-au-1-happy-real","lang-chau-au-2-happy-real"]%>
-				<%var realName = ["Nguyễn Tri Phương","Đảo Vip","Nam Hòa Xuân","Hòa Xuân 1A","Làng Châu Âu 1","Làng Châu Âu 2"]%>
-
 				<div class="property-container">
 					<div class="property-box">
 					    <div class="property-box-image ">
-					        <a href="/chi-tiet?area=<%-arrArea[j]._id%>" class="property-box-image-inner ">
+					        <a href="/chi-tiet?area=<%-arrArea[j]._id%>" target="_blank" class="property-box-image-inner ">
 								
 					            				<img width="270" height="226" src="<%-arrArea[j].image[0]%>" class="attachment-property-box-thumbnail size-property-box-thumbnail wp-post-image icon-image-up" alt="interiors">            
 								<div class="property-box-image-price">
@@ -388,7 +337,7 @@ img.emoji {
 					    <div class="property-box-content">
 					        <div class="property-box-title">
 						        
-					            <h3><a href="/chi-tiet?area=<%-arrArea[j]._id%>"><%-arrArea[j]['Loại dự án']%></a></h3>
+					            <h3><a href="/chi-tiet?area=<%-arrArea[j]._id%>" target="_blank"><%-arrArea[j]['Loại dự án']%></a></h3>
 
 						                </div><!-- /.property-box-title -->
 
@@ -401,7 +350,7 @@ img.emoji {
 						                <%-arrArea[j]['Giá']%> tỉ VND	            </div><!-- /.property-box-price -->
 						        
 							    <div class="property-box-read-more">
-								    <a href="/chi-tiet?area=<%-arrArea[j]._id%>">Read More</a>
+								    <a href="/chi-tiet?area=<%-arrArea[j]._id%>" target="_blank" >Read More</a>
 							    </div><!-- /.property-box-price -->
 
 							    <div class="property-box-meta">
@@ -432,6 +381,46 @@ img.emoji {
 		<div class="sidebar col-sm-4 col-md-3">
 		
 
+
+
+<div id="properties_widget-2" class="widget widget_properties_widget">
+
+			<h2 class="widgettitle">		Nổi bật		</h2>
+	
+			
+		<div class="type-small item-per-row-1">
+			<%var count%>
+			<%if(resultPrice.length<=3){%>
+				<%count = resultPrice.length%>
+			<%}else{%>
+				<%count = 3}%>
+			<%for (var j = 0; j < count; j++) {%>		
+												<div class="property-container">
+										
+<div class="property-small">
+	<div class="property-small-image ">
+					<a href="/chi-tiet?area=<%-resultPrice[j]._id%>" target="_blank">
+				<img width="150" height="150" src="<%-resultPrice[j].image[0]%>" class="attachment-thumbnail size-thumbnail wp-post-image" alt="interiors">			</a>
+			</div><!-- /.property-small-image -->
+	
+	<div class="property-small-content">
+							<div class="property-small-type">
+				<%-resultPrice[j]['Loại BDS']%>			</div><!-- /.property-small-type -->
+		
+		<h3 class="property-small-title">
+			<a href="/chi-tiet?area=<%-resultPrice[j]._id%>" target="_blank"><%-resultPrice[j]['Loại dự án']%></a>
+		</h3><!-- /.property-small-title -->
+
+							<div class="property-small-price">
+				<%-resultPrice[j]['Giá']%> tỉ VND			</div><!-- /.property-small-price -->
+			</div><!-- /.property-small-content -->
+</div><!-- /.property-small -->
+				</div><!-- /.property-container -->
+				<%}%>		
+						</div>
+	
+	
+</div>	
 <div id="agents_widget-2" class="widget widget_agents_widget">
 
     <h2 class="widgettitle">	Cần mua gấp    </h2>
@@ -466,7 +455,9 @@ img.emoji {
 					<option value="">
 										Vị Trí									</option>
 																				<option value="nam-hoa-xuan-happy-real">
-								»&nbsp; Nam Hòa Xuân								</option>																																								<option value="dao-vip-happy-real">
+								»&nbsp; Nam Hòa Xuân								</option>	
+																				<option value="hoa-xuan-1a-happy-real">
+								»&nbsp; Hòa Xuân 1A								</option>																																								<option value="dao-vip-happy-real">
 								»&nbsp; Đảo VIP								</option>																																								<option value="lang-chau-au-1-happy-real">
 								»&nbsp; Làng Châu Âu 1								</option>																																								<option value="lang-chau-au-2-happy-real">
 								»&nbsp; Làng Châu Âu 2								</option>																																								<option value="nguyen-tri-phuong-happy-real">
@@ -488,7 +479,8 @@ img.emoji {
 
 				
 																								<option value="Biệt Thự">
-					Biệt thự					</option>
+					Biệt thự					</option><option value="Khác">
+					Khác					</option>
 
 				
 																								</select>
@@ -500,7 +492,7 @@ img.emoji {
     <input type="text" class="form-control" placeholder="Số điện thoại liên hệ" id="" value="" name="SĐT" />
 </div>
 <div class="form-group">
-    <input type="text" id="range2" value="" name="Giá" />
+    <input type="number" id="" step="0.01" min="0.1" class="form-control" value="" placeholder="Ngân sách (tỉ VNĐ)" name="Giá" />
 </div><!-- /.form-group -->
 																																																																																																																																																																																																																				
 								<div class="form-group">
@@ -517,45 +509,7 @@ img.emoji {
 
 
 </div>
-
-<div id="properties_widget-2" class="widget widget_properties_widget">
-
-			<h2 class="widgettitle">		Nổi bật		</h2>
-	
-			
-		<div class="type-small item-per-row-1">
-			<%var count%>
-			<%if(resultPrice.length<=3){%>
-				<%count = resultPrice.length%>
-			<%}else{%>
-				<%count = 3}%>
-			<%for (var j = 0; j < count; j++) {%>		
-												<div class="property-container">
-										
-<div class="property-small">
-	<div class="property-small-image ">
-					<a href="/chi-tiet?area=<%-resultPrice[j]._id%>">
-				<img width="150" height="150" src="<%-resultPrice[j].image[0]%>" class="attachment-thumbnail size-thumbnail wp-post-image" alt="interiors">			</a>
-			</div><!-- /.property-small-image -->
-	
-	<div class="property-small-content">
-							<div class="property-small-type">
-				<%-resultPrice[j]['Loại BDS']%>			</div><!-- /.property-small-type -->
-		
-		<h3 class="property-small-title">
-			<a href="/chi-tiet?area=<%-resultPrice[j]._id%>"><%-resultPrice[j]['Loại dự án']%></a>
-		</h3><!-- /.property-small-title -->
-
-							<div class="property-small-price">
-				<%-resultPrice[j]['Giá']%> tỉ VND			</div><!-- /.property-small-price -->
-			</div><!-- /.property-small-content -->
-</div><!-- /.property-small -->
-				</div><!-- /.property-container -->
-				<%}%>		
-						</div>
-	
-	
-</div>	</div><!-- /.sidebar -->
+</div><!-- /.sidebar -->
 </div><!-- /.row -->
 
 			
@@ -574,7 +528,7 @@ img.emoji {
 
 					<div class="property-box">
 					    <div class="property-box-image ">
-					        <a href="/chi-tiet?area=<%-resultDowntown[j]._id%>" class="property-box-image-inner ">
+					        <a href="/chi-tiet?area=<%-resultDowntown[j]._id%>" target="_blank" class="property-box-image-inner ">
 								
 					            				<img width="270" height="226" src="<%-resultDowntown[j].image[0]%>" class="attachment-property-box-thumbnail size-property-box-thumbnail wp-post-image" alt="interiors">            
 								<div class="property-box-image-price">
@@ -588,7 +542,7 @@ img.emoji {
 					    <div class="property-box-content">
 					        <div class="property-box-title">
 						        
-					            <h3><a href="/chi-tiet?area=<%-resultDowntown[j]._id%>"><%-resultDowntown[j]['Loại dự án']%></a></h3>
+					            <h3><a href="/chi-tiet?area=<%-resultDowntown[j]._id%>" target="_blank" ><%-resultDowntown[j]['Loại dự án']%></a></h3>
 
 						                </div><!-- /.property-box-title -->
 
@@ -601,7 +555,7 @@ img.emoji {
 						                <%-resultDowntown[j]['Giá']%> tỉ VND	            </div><!-- /.property-box-price -->
 						        
 							    <div class="property-box-read-more">
-								    <a href="/chi-tiet?area=<%-resultDowntown[j]._id%>">Read More</a>
+								    <a href="/chi-tiet?area=<%-resultDowntown[j]._id%>" target="_blank">Read More</a>
 							    </div><!-- /.property-box-price -->
 
 							    <div class="property-box-meta">
@@ -726,7 +680,7 @@ img.emoji {
 									<div id="text-3" class="widget widget_text"><h2 class="widgettitle">Thông tin liên hệ:</h2>
 			<div class="textwidget">Mọi trao đổi và giải đáp mọi thông tin chi tiết vui lòng liên hệ:  
 <dl>
-<dt><i class="pp pp-normal-map-pointer"></i><%-infoCompany.location.street%></dt><dd><%-infoCompany.location.contryCity%></dd>
+<dt><i class="pp pp-normal-map-pointer"></i><%-infoCompany.location.street%></dt><dd><%-infoCompany.location.city%></dd>
 <dt><i class="pp pp-normal-phone"></i> <a href="tel:<%-infoCompany.phoneNumber%>‬‬" style="color:#fff"><%-infoCompany.phoneNumber%>‬‬</a> </dt><dd><a href="mailto:<%-infoCompany.email%>" style="color: rgba(255, 255, 255, 0.7)"><%-infoCompany.email%></a></dd>
 <dt><i class="pp pp-normal-clock"></i> Thứ 2 - Thứ 7</dt><dd>8:00 - 18:00</dd>
 </dl></div>
@@ -810,18 +764,6 @@ var _wpcf7 = {"loaderUrl":"http:\/\/preview.byaviators.com\/theme\/realia\/wp-co
             step: 1,
             postfix: " TỈ VNĐ"
         });
-        $("#range2").ionRangeSlider({
-            hide_min_max: true,
-            keyboard: true,
-            min: 0,
-            max: 100,
-            from: 0,
-            to: 50,
-            type: 'double',
-            step: 1,
-            postfix: " TỈ VNĐ"
-        });
-
     });
 </script>
 </body></html>

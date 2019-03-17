@@ -142,6 +142,8 @@ $(document).ready(function () {
         $("#submit").click(e=>{
             $("#date").val(Date.now())
             $("#formAddArea").attr("action",window.location.pathname.split("admin").join("new-area"))
+            $("#waitHtml").removeClass("d-none");
+            $("#formAddArea").submit();  
             // let data = createData(false)
             // delete data._id;
             // console.log(data);

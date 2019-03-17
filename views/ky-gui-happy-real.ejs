@@ -6,11 +6,15 @@
 </style>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="profile" href="http://gmpg.org/xfn/11">
-	<title><%-infoCompany.companyName%> – Đà Nẵng - Bất động sản</title>
+	<%-infoCompany.metaSEO%>
+	<link rel="canonical" href="<%-href%>">
+	<title>Gửi bán đất - <%-infoCompany.companyName%> – Đà Nẵng - Bất động sản</title>
 <meta property="og:title" content="Recent Properties"><link rel="alternate" type="application/rss+xml" title="<%-infoCompany.companyName%> » Feed" href="./">
 		<script src="./includes/js/wp-emoji-release.min.js?ver=4.4.1" type="text/javascript"></script>
 		<style type="text/css">
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none;}
 img.wp-smiley,
 img.emoji {
 	display: inline !important;
@@ -124,67 +128,28 @@ img.emoji {
 									<a href="/">Trang chủ</a>
 								</li>
 								<li id="menu-item-450" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-450">
-									<a style="cursor: pointer">Sơ đồ bảng giá</a>
-								<ul class="dropdown-menu sub-menu">
-									<li id="menu-item-454" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-454">
-										<a style="cursor: pointer">Nguyễn Tri Phương</a>
-										<ul class="dropdown-menu sub-menu">
-											<li id="menu-item-457" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-457">
-												<a href="/gioi-thieu-<%-infoCompany.companyName.split(' ').join('-').toLowerCase()%>?">Giới Thiệu</a>
-											</li>
-											<li id="menu-item-460" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-460">
-												<a href="/so-do-bang-gia-<%-infoCompany.companyName.split(' ').join('-').toLowerCase()%>?">Bảng giá và sơ đồ</a>
-											</li>
-											<li id="menu-item-456" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-456">
-												<a href="/tien-do-du-an-<%-infoCompany.companyName.split(' ').join('-').toLowerCase()%>?">Tiến độ</a>
-											</li>
-											<li id="menu-item-458" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-458">
-												<a href="/cac-lo-dang-ban-<%-infoCompany.companyName.split(' ').join('-').toLowerCase()%>?">Các lô đang bán</a>
-											</li>
-										</ul>
-									</li>
-									<li id="menu-item-454" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-454"><a style="cursor: pointer">Nam Hòa Xuân</a>
-										<ul class="dropdown-menu sub-menu">
-											<li id="menu-item-457" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-457"><a href="/gioi-thieu-<%-infoCompany.companyName.split(' ').join('-').toLowerCase()%>?">Giới Thiệu</a></li>
-											<li id="menu-item-460" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-460"><a href="/so-do-bang-gia-<%-infoCompany.companyName.split(' ').join('-').toLowerCase()%>?">Bảng giá và sơ đồ</a></li>
-											<li id="menu-item-456" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-456"><a href="/tien-do-du-an-<%-infoCompany.companyName.split(' ').join('-').toLowerCase()%>?">Tiến độ</a></li>
-											<li id="menu-item-458" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-458"><a href="/cac-lo-dang-ban-<%-infoCompany.companyName.split(' ').join('-').toLowerCase()%>?">Các lô đang bán</a></li>
-										</ul>
-									</li>
-	<li id="menu-item-455" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-455"><a style="cursor: pointer">Đảo VIP</a>
-		<ul class="dropdown-menu sub-menu">
-			<li id="menu-item-457" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-457"><a href="/gioi-thieu-<%-infoCompany.companyName.split(' ').join('-').toLowerCase()%>?">Giới Thiệu</a></li>
-			<li id="menu-item-460" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-460"><a href="/so-do-bang-gia-<%-infoCompany.companyName.split(' ').join('-').toLowerCase()%>?">Bảng giá và sơ đồ</a></li>
-			<li id="menu-item-456" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-456"><a href="/tien-do-du-an-<%-infoCompany.companyName.split(' ').join('-').toLowerCase()%>?">Tiến độ</a></li>
-			<li id="menu-item-458" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-458"><a href="/cac-lo-dang-ban-<%-infoCompany.companyName.split(' ').join('-').toLowerCase()%>?">Các lô đang bán</a></li>
-		</ul>
-	</li>
-	<li id="menu-item-480" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-480"><a style="cursor: pointer">Hòa Xuân 1A</a>
-		<ul class="dropdown-menu sub-menu">
-			<li id="menu-item-457" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-457"><a href="/gioi-thieu-<%-infoCompany.companyName.split(' ').join('-').toLowerCase()%>?">Giới Thiệu</a></li>
-			<li id="menu-item-460" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-460"><a href="/so-do-bang-gia-<%-infoCompany.companyName.split(' ').join('-').toLowerCase()%>?">Bảng giá và sơ đồ</a></li>
-			<li id="menu-item-456" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-456"><a href="/tien-do-du-an-<%-infoCompany.companyName.split(' ').join('-').toLowerCase()%>?">Tiến độ</a></li>
-			<li id="menu-item-458" class="menu-item menu-item-type-taxonomy menu-item-object-locations menu-item-458"><a href="/cac-lo-dang-ban-<%-infoCompany.companyName.split(' ').join('-').toLowerCase()%>?">Các lô đang bán</a></li>
-		</ul>
-	</li>
-	<li id="menu-item-487" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-487"><a style="cursor: pointer">Làng Châu Âu</a>
-		<ul class="dropdown-menu sub-menu">
-			<li id="menu-item-488" class="menu-item menu-item-type-taxonomy menu-item-object-statuses menu-item-488"><a href="/gioi-thieu-<%-infoCompany.companyName.split(' ').join('-').toLowerCase()%>?">Giới Thiệu</a></li>
-			<li id="menu-item-489" class="menu-item menu-item-type-taxonomy menu-item-object-statuses menu-item-489"><a href="/so-do-bang-gia-<%-infoCompany.companyName.split(' ').join('-').toLowerCase()%>?">Bảng giá & sơ đồ</a></li>
-			<li id="menu-item-490" class="menu-item menu-item-type-taxonomy menu-item-object-statuses menu-item-490"><a href="/tien-do-du-an-<%-infoCompany.companyName.split(' ').join('-').toLowerCase()%>?">Tiến độ</a></li>
-			<li id="menu-item-491" class="menu-item menu-item-type-taxonomy menu-item-object-statuses menu-item-491"><a href="./sell-agreed/">Các lô đang bán</a></li>
-		</ul>
-	</li>
-	<li id="menu-item-479" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-479"><a style="cursor: pointer">Làng Châu Âu 2</a>
-		<ul class="dropdown-menu sub-menu">
-			<li id="menu-item-488" class="menu-item menu-item-type-taxonomy menu-item-object-statuses menu-item-488"><a href="/gioi-thieu-<%-infoCompany.companyName.split(' ').join('-').toLowerCase()%>?">Giới Thiệu</a></li>
-			<li id="menu-item-489" class="menu-item menu-item-type-taxonomy menu-item-object-statuses menu-item-489"><a href="/so-do-bang-gia-<%-infoCompany.companyName.split(' ').join('-').toLowerCase()%>?">Bảng giá & sơ đồ</a></li>
-			<li id="menu-item-490" class="menu-item menu-item-type-taxonomy menu-item-object-statuses menu-item-490"><a href="/tien-do-du-an-<%-infoCompany.companyName.split(' ').join('-').toLowerCase()%>?">Tiến độ</a></li>
-			<li id="menu-item-491" class="menu-item menu-item-type-taxonomy menu-item-object-statuses menu-item-491"><a href="/cac-lo-dang-ban-<%-infoCompany.companyName.split(' ').join('-').toLowerCase()%>?">Các lô đang bán</a></li>
-		</ul>
-	</li>
-</ul>
-</li>
+									<a style="cursor: pointer">Các khu vực</a>
+									<ul class="dropdown-menu sub-menu">
+										<li id="menu-item-454" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-454">
+											<a href="/?Khu+Vực=nguyen-tri-phuong-happy-real" style="cursor: pointer">Nguyễn Tri Phương</a>
+										</li>
+										<li id="menu-item-454" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-454">
+											<a href="/?Khu+Vực=nam-hoa-xuan-happy-real" style="cursor: pointer">Nam Hòa Xuân</a>
+										</li>
+										<li id="menu-item-455" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-455">
+											<a href="/?Khu+Vực=dao-vip-happy-real" style="cursor: pointer">Đảo VIP</a>
+										</li>
+										<li id="menu-item-480" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-480">
+											<a href="/?Khu+Vực=hoa-xuan-1a-happy-real" style="cursor: pointer">Hòa Xuân 1A</a>
+										</li>
+										<li id="menu-item-487" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-487">
+											<a href="/?Khu+Vực=lang-chau-au-1-happy-real" style="cursor: pointer">Làng Châu Âu</a>
+										</li>
+										<li id="menu-item-479" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-479">
+											<a href="/?Khu+Vực=lang-chau-au-2-happy-real" style="cursor: pointer">Làng Châu Âu 2</a>
+										</li>
+									</ul>
+								</li>
 <li id="menu-item-466" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-496"><a href="view-video-<%-infoCompany.companyName.split(' ').join('-').toLowerCase()%>">Video</a></li>
 <li id="menu-item-496" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-496"><a href="/gui-ban-<%-infoCompany.companyName.split(' ').join('-').toLowerCase()%>">Gửi Bán</a></li>
 <li id="menu-item-494" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-494"><a href="/lien-he-<%-infoCompany.companyName.split(' ').join('-').toLowerCase()%>">Liên Hệ</a></li>
@@ -251,34 +216,27 @@ img.emoji {
 			
 		<div class="type-box item-per-row-3">
 			<div class="properties-row">
-				<form id="formAddArea" action="/gui-ban" method="post" enctype="multipart/form-data">
-	                <input type="number" id="date" style="display: none" name="Ngày">
+				<form id="formAddArea" action="/gui-ban" method="post">
 	                <div class="form-group row">
 	                    <div class="col-xs-3">
-	                        <input type="number" placeholder="Lô số" name="Lô số" id="landNumber" class="form-control m-b-5 col-xs-3">
+	                        <input type="number" placeholder="Lô số" name="Lô số" id="landNumber" min="0.1" step="0.01" class="form-control m-b-5 col-xs-3">
 	                    </div>
 	                    <div class="col-xs-3">
-	                        <input type="text" placeholder="Họ & tên" name="k" id="landNumber" class="form-control m-b-5 col-xs-3">
+	                        <input type="text" placeholder="Họ & tên" name="Họ tên" id="landNumber" class="form-control m-b-5 col-xs-3">
 	                    </div>
 	                    <div class="col-xs-3">
-	                        <input type="text" placeholder="Số điện thoại" name="Loại dự án" id="typeProject" class="form-control m-b-5 col-xs-3">
+	                        <input type="text" placeholder="Số điện thoại" name="SĐT" id="typeProject" class="form-control m-b-5 col-xs-3">
 	                    </div>
 	                    <div class="col-xs-3">
 					        <input type="number" class="form-control m-b-5 col-xs-3" min="0.1" step="0.01" placeholder="Giá bán mong muốn(tỉ VNĐ)" value="" name="Giá" />
 						</div>
 	                    <div class="col-xs-6">
-	                        <input type="text" placeholder="Địa chỉ" name="Vị trí" id="location" class="form-control m-b-5 col-xs-3">
+	                        <input type="text" placeholder="Địa chỉ" name="Địa chỉ" id="location" class="form-control m-b-5 col-xs-3">
 	                    </div>
 	                    <div class="col-xs-3 checkbox checkbox-primary">
-	                        <input id="landCertificates" type="checkbox">
+	                        <input name="Sổ đỏ" id="landCertificates" type="checkbox">
 	                        <label for="landCertificates">
-	                            Sổ đỏ
-	                        </label>
-	                    </div>
-	                    <div class="col-xs-3 checkbox checkbox-primary" style="margin-top: 10px;">
-	                        <input id="certificateOfHousing" type="checkbox">
-	                        <label for="certificateOfHousing">
-	                            Sổ hồng
+	                            Có Sổ Đỏ
 	                        </label>
 	                    </div>
 	                </div>
