@@ -10427,3 +10427,20 @@ p {
 
 .background-white {
   background-color: #fff; }
+body #GoTop {
+    width: 31px !important;
+    height: 31px !important;
+    text-align: center !important;
+    position: fixed !important;
+    right: 10px !important;
+    line-height: 1.8em !important;
+    border: 2px solid #fff !important;
+    background: rgba(22, 160, 133, 0.75) !important;
+    bottom: 10px !important;
+}
+.gotop::after{
+    content: "\f102" !important;
+    color: #fff !important;
+    font-size: 20px !important;
+    line-height: 1.5em !important;
+}

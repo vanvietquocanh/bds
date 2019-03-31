@@ -38,17 +38,6 @@ jQuery(document).ready(function($) {
 	// $("body").on("contextmenu",function(e){
 		// e.preEventDefault();
   //   });
-    var button = "<div id='GoTop' class='gotop fa'></div>";
-	var bodyPage = $('body');
-	bodyPage.append(button);
-	window.onscroll = function() {scrollFunction()};
-	function scrollFunction() {
-	    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-	        document.getElementById("GoTop").style.display = "block";
-	    } else {
-	        document.getElementById("GoTop").style.display = "none";
-	    }
-	}
 	function valEmail(email) {
 		var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
    		return re.test(String(email).toLowerCase());

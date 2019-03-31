@@ -24,7 +24,6 @@ router.post('/:area', upload.array('photos', 12), function(req, res, next) {
         }
         delete req.body["Hướng1"];
         delete req.body["Hướng2"];
-        assert.equal(null, err);
         req.body["Hướng"] = direction;
         req.body["Khu Vực"] = req.params.area;
         req.body["Ngày"] = Number(req.body["Ngày"])

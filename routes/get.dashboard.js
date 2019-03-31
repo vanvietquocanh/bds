@@ -10,6 +10,7 @@ const pathMongodb = require("./mongodb.path.js");
 /* GET home page. */
 router.get('/', function(req, res, next) {
 	// if(req.user){
+		console.log(req.user);
 		var date 			= new Date();
 		var beginDayNow 	= new Date(date.getFullYear(), date.getMonth(), date.getDate()).getTime();
 		var beginMonthNow   = new Date(date.getFullYear(), date.getMonth(), 1).getTime();
