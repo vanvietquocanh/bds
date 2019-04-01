@@ -9,8 +9,7 @@ const pathMongodb = require("./mongodb.path.js");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-	// if(req.user){
-		console.log(req.user);
+	if(req.user&&req.user.id===infoCompany.idAdmin){
 		var date 			= new Date();
 		var beginDayNow 	= new Date(date.getFullYear(), date.getMonth(), date.getDate()).getTime();
 		var beginMonthNow   = new Date(date.getFullYear(), date.getMonth(), 1).getTime();
@@ -63,9 +62,9 @@ router.get('/', function(req, res, next) {
 			})
 		})
 
-	// }else{
-	// 	res.redirect("/error")
-	// }
+	}else{
+		res.redirect("/error")
+	}
 });
 
 

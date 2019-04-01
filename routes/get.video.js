@@ -11,7 +11,6 @@ var remove = `<div id="showmap" style="border-radius: .5em; background: #02344a;
 						</div>`
 router.get('/', function(req, res, next) {
 	var query = {
-
 	}
 	var date 			= new Date();
 	var beginDayNow 	= `${date.getDate()}/${date.getMonth()+1}/${date.getFullYear()}`

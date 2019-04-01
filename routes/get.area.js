@@ -41,7 +41,7 @@ var arrRealName =   [
 					]
 /* GET home page. */
 router.get('/:area', function(req, res, next) {
-	// if(req.user){
+	if(req.user&&req.user.id===infoCompany.idAdmin){
 		function responDataFor(dbName, nameFile, form) {
 			mongo.connect(pathMongodb,(err, db)=>{
 				assert.equal(null, err);
@@ -78,9 +78,9 @@ router.get('/:area', function(req, res, next) {
 		}else{
 			res.redirect("/error")
 		}
-	// }else{
-	// 	res.redirect("/error")
-	// }
+	}else{
+		res.redirect("/error")
+	}
 });
 
 module.exports = router;

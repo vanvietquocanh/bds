@@ -1,4 +1,5 @@
 module.exports = {
+	idAdmin 	: "2039257296295805",
 	companyName : "Happy Real",
 	phoneNumber : "0905431279",
 	email 	 	: "happyreal@gmail.com",
