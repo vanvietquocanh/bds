@@ -1,14 +1,14 @@
-div.wpcf7 {
+div.hpcf7 {
 	margin: 0;
 	padding: 0;
 }
 
-div.wpcf7-response-output {
+div.hpcf7-response-output {
 	margin: 2em 0.5em 1em;
 	padding: 0.2em 1em;
 }
 
-div.wpcf7 .screen-reader-response {
+div.hpcf7 .screen-reader-response {
 	position: absolute;
 	overflow: hidden;
 	clip: rect(1px, 1px, 1px, 1px);
@@ -19,33 +19,33 @@ div.wpcf7 .screen-reader-response {
 	border: 0;
 }
 
-div.wpcf7-mail-sent-ok {
+div.hpcf7-mail-sent-ok {
 	border: 2px solid #398f14;
 }
 
-div.wpcf7-mail-sent-ng {
+div.hpcf7-mail-sent-ng {
 	border: 2px solid #ff0000;
 }
 
-div.wpcf7-spam-blocked {
+div.hpcf7-spam-blocked {
 	border: 2px solid #ffa500;
 }
 
-div.wpcf7-validation-errors {
+div.hpcf7-validation-errors {
 	border: 2px solid #f7e700;
 }
 
-.wpcf7-form-control-wrap {
+.hpcf7-form-control-wrap {
 	position: relative;
 }
 
-span.wpcf7-not-valid-tip {
+span.hpcf7-not-valid-tip {
 	color: #f00;
 	font-size: 1em;
 	display: block;
 }
 
-.use-floating-validation-tip span.wpcf7-not-valid-tip {
+.use-floating-validation-tip span.hpcf7-not-valid-tip {
 	position: absolute;
 	top: 20%;
 	left: 20%;
@@ -55,24 +55,24 @@ span.wpcf7-not-valid-tip {
 	padding: .2em .8em;
 }
 
-span.wpcf7-list-item {
+span.hpcf7-list-item {
 	margin-left: 0.5em;
 }
 
-.wpcf7-display-none {
+.hpcf7-display-none {
 	display: none;
 }
 
-div.wpcf7 img.ajax-loader {
+div.hpcf7 img.ajax-loader {
 	border: none;
 	vertical-align: middle;
 	margin-left: 4px;
 }
 
-div.wpcf7 div.ajax-error {
+div.hpcf7 div.ajax-error {
 	display: none;
 }
 
-div.wpcf7 .placeheld {
+div.hpcf7 .placeheld {
 	color: #888;
 }

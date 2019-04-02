@@ -8,7 +8,7 @@ jQuery(document).ready(function($) {
     $(document).on("click", favorite_toggle_class, function(e) {
         var action = $(this).hasClass("marked") ? "realia_favorites_remove_favorite" : "realia_favorites_add_favorite";
         var toggler = $(this);
-
+        console.log(action,toggler);
         $.ajax({
             url: toggler.data('ajax-url'),
             data: {

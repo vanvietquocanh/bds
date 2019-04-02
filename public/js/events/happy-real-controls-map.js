@@ -57,15 +57,24 @@ jQuery(document).ready(function($) {
       }
       var infowindow = new google.maps.InfoWindow({
       });
+      function renderMap() {
+        if(detectmob()){
+          zoom = 11;
+          $("#map").css("height","300px")
+        }else{
+          zoom = 12;
+          $("#map").css("height","500px")
+        }
+      }
       function createMarker(place) {
         var marker = new google.maps.Marker({
           map: map,
           icon: place.geometry.icons,
           position: place.geometry.location,
-          title: 'Uluru (Ayers Rock)'
+          title: place["Loại dự án"]
         });
         google.maps.event.addListener(marker, 'click', function() {
-          infowindow.setContent(place.name);
+          infowindow.setContent(place["Loại dự án"]);
           infowindow.open(map, this);
         });
         marker.addListener('click', function() {
@@ -80,17 +89,15 @@ jQuery(document).ready(function($) {
         $("#map").css("height","0px")
       }
       initMap(zoom);
-      $(".fa.fa-map").click(function(event) {
-        if($("#map").css("height")==="0px"){
-          if(detectmob()){
-            zoom = 11;
-            $("#map").css("height","300px")
+      if(window.location.pathname!=='/chi-tiet'){
+        $(".fa.fa-map").click(function(event) {
+          if($("#map").css("height")==="0px"){
+            renderMap()
           }else{
-            zoom = 12;
-            $("#map").css("height","500px")
+            $("#map").css("height","0px")
           }
-        }else{
-          $("#map").css("height","0px")
-        }
-      });
+        });
+      }else{
+        renderMap()
+      }
 });

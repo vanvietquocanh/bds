@@ -9,7 +9,12 @@ html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%; }
+  @media screen and (max-width: 768px){
+    .fix-zalo{
 
+      margin-top: 2.5em !important;
+    }
+  }
 body {
   margin: 0; }
 
@@ -237,10 +242,10 @@ th {
     border-top-color: #000 !important; }
   .label {
     border: 1px solid #000; }
-  .table, .widget #wp-calendar, .property-table, .transactions-table {
+  .table, .widget #hpr-calendar, .property-table, .transactions-table {
     border-collapse: collapse !important; }
-    .table td, .widget #wp-calendar td, .property-table td, .transactions-table td,
-    .table th, .widget #wp-calendar th, .property-table th, .transactions-table th {
+    .table td, .widget #hpr-calendar td, .property-table td, .transactions-table td,
+    .table th, .widget #hpr-calendar th, .property-table th, .transactions-table th {
       background-color: #fff !important; }
   .table-bordered th,
   .table-bordered td {
@@ -1232,7 +1237,10 @@ p {
   line-height: 1.4; }
   @media (min-width: 768px) {
     .navbar-info {
-      margin: 68px 0 0 60px !important; }
+      margin: 2.5em 0 0 60px !important; }
+    .fix-zalo{
+      margin-top: 2.5em !important;
+    }
     }
     .lead {
       font-size: 21px; } }
@@ -2045,33 +2053,33 @@ caption {
 th {
   text-align: left; }
 
-.table, .widget #wp-calendar, .property-table, .transactions-table {
+.table, .widget #hpr-calendar, .property-table, .transactions-table {
   width: 100%;
   max-width: 100%;
   margin-bottom: 20px; }
-  .table > thead > tr > th, .widget #wp-calendar > thead > tr > th, .property-table > thead > tr > th, .transactions-table > thead > tr > th,
-  .table > thead > tr > td, .widget #wp-calendar > thead > tr > td, .property-table > thead > tr > td, .transactions-table > thead > tr > td,
-  .table > tbody > tr > th, .widget #wp-calendar > tbody > tr > th, .property-table > tbody > tr > th, .transactions-table > tbody > tr > th,
-  .table > tbody > tr > td, .widget #wp-calendar > tbody > tr > td, .property-table > tbody > tr > td, .transactions-table > tbody > tr > td,
-  .table > tfoot > tr > th, .widget #wp-calendar > tfoot > tr > th, .property-table > tfoot > tr > th, .transactions-table > tfoot > tr > th,
-  .table > tfoot > tr > td, .widget #wp-calendar > tfoot > tr > td, .property-table > tfoot > tr > td, .transactions-table > tfoot > tr > td {
+  .table > thead > tr > th, .widget #hpr-calendar > thead > tr > th, .property-table > thead > tr > th, .transactions-table > thead > tr > th,
+  .table > thead > tr > td, .widget #hpr-calendar > thead > tr > td, .property-table > thead > tr > td, .transactions-table > thead > tr > td,
+  .table > tbody > tr > th, .widget #hpr-calendar > tbody > tr > th, .property-table > tbody > tr > th, .transactions-table > tbody > tr > th,
+  .table > tbody > tr > td, .widget #hpr-calendar > tbody > tr > td, .property-table > tbody > tr > td, .transactions-table > tbody > tr > td,
+  .table > tfoot > tr > th, .widget #hpr-calendar > tfoot > tr > th, .property-table > tfoot > tr > th, .transactions-table > tfoot > tr > th,
+  .table > tfoot > tr > td, .widget #hpr-calendar > tfoot > tr > td, .property-table > tfoot > tr > td, .transactions-table > tfoot > tr > td {
     padding: 8px;
     line-height: 1.42857;
     vertical-align: top;
     border-top: 1px solid #ddd; }
-  .table > thead > tr > th, .widget #wp-calendar > thead > tr > th, .property-table > thead > tr > th, .transactions-table > thead > tr > th {
+  .table > thead > tr > th, .widget #hpr-calendar > thead > tr > th, .property-table > thead > tr > th, .transactions-table > thead > tr > th {
     vertical-align: bottom;
     border-bottom: 2px solid #ddd; }
-  .table > caption + thead > tr:first-child > th, .widget #wp-calendar > caption + thead > tr:first-child > th, .property-table > caption + thead > tr:first-child > th, .transactions-table > caption + thead > tr:first-child > th,
-  .table > caption + thead > tr:first-child > td, .widget #wp-calendar > caption + thead > tr:first-child > td, .property-table > caption + thead > tr:first-child > td, .transactions-table > caption + thead > tr:first-child > td,
-  .table > colgroup + thead > tr:first-child > th, .widget #wp-calendar > colgroup + thead > tr:first-child > th, .property-table > colgroup + thead > tr:first-child > th, .transactions-table > colgroup + thead > tr:first-child > th,
-  .table > colgroup + thead > tr:first-child > td, .widget #wp-calendar > colgroup + thead > tr:first-child > td, .property-table > colgroup + thead > tr:first-child > td, .transactions-table > colgroup + thead > tr:first-child > td,
-  .table > thead:first-child > tr:first-child > th, .widget #wp-calendar > thead:first-child > tr:first-child > th, .property-table > thead:first-child > tr:first-child > th, .transactions-table > thead:first-child > tr:first-child > th,
-  .table > thead:first-child > tr:first-child > td, .widget #wp-calendar > thead:first-child > tr:first-child > td, .property-table > thead:first-child > tr:first-child > td, .transactions-table > thead:first-child > tr:first-child > td {
+  .table > caption + thead > tr:first-child > th, .widget #hpr-calendar > caption + thead > tr:first-child > th, .property-table > caption + thead > tr:first-child > th, .transactions-table > caption + thead > tr:first-child > th,
+  .table > caption + thead > tr:first-child > td, .widget #hpr-calendar > caption + thead > tr:first-child > td, .property-table > caption + thead > tr:first-child > td, .transactions-table > caption + thead > tr:first-child > td,
+  .table > colgroup + thead > tr:first-child > th, .widget #hpr-calendar > colgroup + thead > tr:first-child > th, .property-table > colgroup + thead > tr:first-child > th, .transactions-table > colgroup + thead > tr:first-child > th,
+  .table > colgroup + thead > tr:first-child > td, .widget #hpr-calendar > colgroup + thead > tr:first-child > td, .property-table > colgroup + thead > tr:first-child > td, .transactions-table > colgroup + thead > tr:first-child > td,
+  .table > thead:first-child > tr:first-child > th, .widget #hpr-calendar > thead:first-child > tr:first-child > th, .property-table > thead:first-child > tr:first-child > th, .transactions-table > thead:first-child > tr:first-child > th,
+  .table > thead:first-child > tr:first-child > td, .widget #hpr-calendar > thead:first-child > tr:first-child > td, .property-table > thead:first-child > tr:first-child > td, .transactions-table > thead:first-child > tr:first-child > td {
     border-top: 0; }
-  .table > tbody + tbody, .widget #wp-calendar > tbody + tbody, .property-table > tbody + tbody, .transactions-table > tbody + tbody {
+  .table > tbody + tbody, .widget #hpr-calendar > tbody + tbody, .property-table > tbody + tbody, .transactions-table > tbody + tbody {
     border-top: 2px solid #ddd; }
-  .table .table, .widget #wp-calendar .table, .property-table .table, .transactions-table .table, .table .widget #wp-calendar, .widget .table #wp-calendar, .widget #wp-calendar #wp-calendar, .property-table .widget #wp-calendar, .widget .property-table #wp-calendar, .transactions-table .widget #wp-calendar, .widget .transactions-table #wp-calendar, .table .property-table, .widget #wp-calendar .property-table, .property-table .property-table, .transactions-table .property-table, .table .transactions-table, .widget #wp-calendar .transactions-table, .property-table .transactions-table, .transactions-table .transactions-table {
+  .table .table, .widget #hpr-calendar .table, .property-table .table, .transactions-table .table, .table .widget #hpr-calendar, .widget .table #hpr-calendar, .widget #hpr-calendar #hpr-calendar, .property-table .widget #hpr-calendar, .widget .property-table #hpr-calendar, .transactions-table .widget #hpr-calendar, .widget .transactions-table #hpr-calendar, .table .property-table, .widget #hpr-calendar .property-table, .property-table .property-table, .transactions-table .property-table, .table .transactions-table, .widget #hpr-calendar .transactions-table, .property-table .transactions-table, .transactions-table .transactions-table {
     background-color: #fff; }
 
 .table-condensed > thead > tr > th,
@@ -2112,18 +2120,18 @@ table th[class*="col-"] {
   float: none;
   display: table-cell; }
 
-.table > thead > tr > td.active, .widget #wp-calendar > thead > tr > td.active, .property-table > thead > tr > td.active, .transactions-table > thead > tr > td.active,
-.table > thead > tr > th.active, .widget #wp-calendar > thead > tr > th.active, .property-table > thead > tr > th.active, .transactions-table > thead > tr > th.active,
-.table > thead > tr.active > td, .widget #wp-calendar > thead > tr.active > td, .property-table > thead > tr.active > td, .transactions-table > thead > tr.active > td,
-.table > thead > tr.active > th, .widget #wp-calendar > thead > tr.active > th, .property-table > thead > tr.active > th, .transactions-table > thead > tr.active > th,
-.table > tbody > tr > td.active, .widget #wp-calendar > tbody > tr > td.active, .property-table > tbody > tr > td.active, .transactions-table > tbody > tr > td.active,
-.table > tbody > tr > th.active, .widget #wp-calendar > tbody > tr > th.active, .property-table > tbody > tr > th.active, .transactions-table > tbody > tr > th.active,
-.table > tbody > tr.active > td, .widget #wp-calendar > tbody > tr.active > td, .property-table > tbody > tr.active > td, .transactions-table > tbody > tr.active > td,
-.table > tbody > tr.active > th, .widget #wp-calendar > tbody > tr.active > th, .property-table > tbody > tr.active > th, .transactions-table > tbody > tr.active > th,
-.table > tfoot > tr > td.active, .widget #wp-calendar > tfoot > tr > td.active, .property-table > tfoot > tr > td.active, .transactions-table > tfoot > tr > td.active,
-.table > tfoot > tr > th.active, .widget #wp-calendar > tfoot > tr > th.active, .property-table > tfoot > tr > th.active, .transactions-table > tfoot > tr > th.active,
-.table > tfoot > tr.active > td, .widget #wp-calendar > tfoot > tr.active > td, .property-table > tfoot > tr.active > td, .transactions-table > tfoot > tr.active > td,
-.table > tfoot > tr.active > th, .widget #wp-calendar > tfoot > tr.active > th, .property-table > tfoot > tr.active > th, .transactions-table > tfoot > tr.active > th {
+.table > thead > tr > td.active, .widget #hpr-calendar > thead > tr > td.active, .property-table > thead > tr > td.active, .transactions-table > thead > tr > td.active,
+.table > thead > tr > th.active, .widget #hpr-calendar > thead > tr > th.active, .property-table > thead > tr > th.active, .transactions-table > thead > tr > th.active,
+.table > thead > tr.active > td, .widget #hpr-calendar > thead > tr.active > td, .property-table > thead > tr.active > td, .transactions-table > thead > tr.active > td,
+.table > thead > tr.active > th, .widget #hpr-calendar > thead > tr.active > th, .property-table > thead > tr.active > th, .transactions-table > thead > tr.active > th,
+.table > tbody > tr > td.active, .widget #hpr-calendar > tbody > tr > td.active, .property-table > tbody > tr > td.active, .transactions-table > tbody > tr > td.active,
+.table > tbody > tr > th.active, .widget #hpr-calendar > tbody > tr > th.active, .property-table > tbody > tr > th.active, .transactions-table > tbody > tr > th.active,
+.table > tbody > tr.active > td, .widget #hpr-calendar > tbody > tr.active > td, .property-table > tbody > tr.active > td, .transactions-table > tbody > tr.active > td,
+.table > tbody > tr.active > th, .widget #hpr-calendar > tbody > tr.active > th, .property-table > tbody > tr.active > th, .transactions-table > tbody > tr.active > th,
+.table > tfoot > tr > td.active, .widget #hpr-calendar > tfoot > tr > td.active, .property-table > tfoot > tr > td.active, .transactions-table > tfoot > tr > td.active,
+.table > tfoot > tr > th.active, .widget #hpr-calendar > tfoot > tr > th.active, .property-table > tfoot > tr > th.active, .transactions-table > tfoot > tr > th.active,
+.table > tfoot > tr.active > td, .widget #hpr-calendar > tfoot > tr.active > td, .property-table > tfoot > tr.active > td, .transactions-table > tfoot > tr.active > td,
+.table > tfoot > tr.active > th, .widget #hpr-calendar > tfoot > tr.active > th, .property-table > tfoot > tr.active > th, .transactions-table > tfoot > tr.active > th {
   background-color: #f5f5f5; }
 
 .table-hover > tbody > tr > td.active:hover,
@@ -2133,18 +2141,18 @@ table th[class*="col-"] {
 .table-hover > tbody > tr.active:hover > th {
   background-color: #e8e8e8; }
 
-.table > thead > tr > td.success, .widget #wp-calendar > thead > tr > td.success, .property-table > thead > tr > td.success, .transactions-table > thead > tr > td.success,
-.table > thead > tr > th.success, .widget #wp-calendar > thead > tr > th.success, .property-table > thead > tr > th.success, .transactions-table > thead > tr > th.success,
-.table > thead > tr.success > td, .widget #wp-calendar > thead > tr.success > td, .property-table > thead > tr.success > td, .transactions-table > thead > tr.success > td,
-.table > thead > tr.success > th, .widget #wp-calendar > thead > tr.success > th, .property-table > thead > tr.success > th, .transactions-table > thead > tr.success > th,
-.table > tbody > tr > td.success, .widget #wp-calendar > tbody > tr > td.success, .property-table > tbody > tr > td.success, .transactions-table > tbody > tr > td.success,
-.table > tbody > tr > th.success, .widget #wp-calendar > tbody > tr > th.success, .property-table > tbody > tr > th.success, .transactions-table > tbody > tr > th.success,
-.table > tbody > tr.success > td, .widget #wp-calendar > tbody > tr.success > td, .property-table > tbody > tr.success > td, .transactions-table > tbody > tr.success > td,
-.table > tbody > tr.success > th, .widget #wp-calendar > tbody > tr.success > th, .property-table > tbody > tr.success > th, .transactions-table > tbody > tr.success > th,
-.table > tfoot > tr > td.success, .widget #wp-calendar > tfoot > tr > td.success, .property-table > tfoot > tr > td.success, .transactions-table > tfoot > tr > td.success,
-.table > tfoot > tr > th.success, .widget #wp-calendar > tfoot > tr > th.success, .property-table > tfoot > tr > th.success, .transactions-table > tfoot > tr > th.success,
-.table > tfoot > tr.success > td, .widget #wp-calendar > tfoot > tr.success > td, .property-table > tfoot > tr.success > td, .transactions-table > tfoot > tr.success > td,
-.table > tfoot > tr.success > th, .widget #wp-calendar > tfoot > tr.success > th, .property-table > tfoot > tr.success > th, .transactions-table > tfoot > tr.success > th {
+.table > thead > tr > td.success, .widget #hpr-calendar > thead > tr > td.success, .property-table > thead > tr > td.success, .transactions-table > thead > tr > td.success,
+.table > thead > tr > th.success, .widget #hpr-calendar > thead > tr > th.success, .property-table > thead > tr > th.success, .transactions-table > thead > tr > th.success,
+.table > thead > tr.success > td, .widget #hpr-calendar > thead > tr.success > td, .property-table > thead > tr.success > td, .transactions-table > thead > tr.success > td,
+.table > thead > tr.success > th, .widget #hpr-calendar > thead > tr.success > th, .property-table > thead > tr.success > th, .transactions-table > thead > tr.success > th,
+.table > tbody > tr > td.success, .widget #hpr-calendar > tbody > tr > td.success, .property-table > tbody > tr > td.success, .transactions-table > tbody > tr > td.success,
+.table > tbody > tr > th.success, .widget #hpr-calendar > tbody > tr > th.success, .property-table > tbody > tr > th.success, .transactions-table > tbody > tr > th.success,
+.table > tbody > tr.success > td, .widget #hpr-calendar > tbody > tr.success > td, .property-table > tbody > tr.success > td, .transactions-table > tbody > tr.success > td,
+.table > tbody > tr.success > th, .widget #hpr-calendar > tbody > tr.success > th, .property-table > tbody > tr.success > th, .transactions-table > tbody > tr.success > th,
+.table > tfoot > tr > td.success, .widget #hpr-calendar > tfoot > tr > td.success, .property-table > tfoot > tr > td.success, .transactions-table > tfoot > tr > td.success,
+.table > tfoot > tr > th.success, .widget #hpr-calendar > tfoot > tr > th.success, .property-table > tfoot > tr > th.success, .transactions-table > tfoot > tr > th.success,
+.table > tfoot > tr.success > td, .widget #hpr-calendar > tfoot > tr.success > td, .property-table > tfoot > tr.success > td, .transactions-table > tfoot > tr.success > td,
+.table > tfoot > tr.success > th, .widget #hpr-calendar > tfoot > tr.success > th, .property-table > tfoot > tr.success > th, .transactions-table > tfoot > tr.success > th {
   background-color: #dff0d8; }
 
 .table-hover > tbody > tr > td.success:hover,
@@ -2154,18 +2162,18 @@ table th[class*="col-"] {
 .table-hover > tbody > tr.success:hover > th {
   background-color: #d0e9c6; }
 
-.table > thead > tr > td.info, .widget #wp-calendar > thead > tr > td.info, .property-table > thead > tr > td.info, .transactions-table > thead > tr > td.info,
-.table > thead > tr > th.info, .widget #wp-calendar > thead > tr > th.info, .property-table > thead > tr > th.info, .transactions-table > thead > tr > th.info,
-.table > thead > tr.info > td, .widget #wp-calendar > thead > tr.info > td, .property-table > thead > tr.info > td, .transactions-table > thead > tr.info > td,
-.table > thead > tr.info > th, .widget #wp-calendar > thead > tr.info > th, .property-table > thead > tr.info > th, .transactions-table > thead > tr.info > th,
-.table > tbody > tr > td.info, .widget #wp-calendar > tbody > tr > td.info, .property-table > tbody > tr > td.info, .transactions-table > tbody > tr > td.info,
-.table > tbody > tr > th.info, .widget #wp-calendar > tbody > tr > th.info, .property-table > tbody > tr > th.info, .transactions-table > tbody > tr > th.info,
-.table > tbody > tr.info > td, .widget #wp-calendar > tbody > tr.info > td, .property-table > tbody > tr.info > td, .transactions-table > tbody > tr.info > td,
-.table > tbody > tr.info > th, .widget #wp-calendar > tbody > tr.info > th, .property-table > tbody > tr.info > th, .transactions-table > tbody > tr.info > th,
-.table > tfoot > tr > td.info, .widget #wp-calendar > tfoot > tr > td.info, .property-table > tfoot > tr > td.info, .transactions-table > tfoot > tr > td.info,
-.table > tfoot > tr > th.info, .widget #wp-calendar > tfoot > tr > th.info, .property-table > tfoot > tr > th.info, .transactions-table > tfoot > tr > th.info,
-.table > tfoot > tr.info > td, .widget #wp-calendar > tfoot > tr.info > td, .property-table > tfoot > tr.info > td, .transactions-table > tfoot > tr.info > td,
-.table > tfoot > tr.info > th, .widget #wp-calendar > tfoot > tr.info > th, .property-table > tfoot > tr.info > th, .transactions-table > tfoot > tr.info > th {
+.table > thead > tr > td.info, .widget #hpr-calendar > thead > tr > td.info, .property-table > thead > tr > td.info, .transactions-table > thead > tr > td.info,
+.table > thead > tr > th.info, .widget #hpr-calendar > thead > tr > th.info, .property-table > thead > tr > th.info, .transactions-table > thead > tr > th.info,
+.table > thead > tr.info > td, .widget #hpr-calendar > thead > tr.info > td, .property-table > thead > tr.info > td, .transactions-table > thead > tr.info > td,
+.table > thead > tr.info > th, .widget #hpr-calendar > thead > tr.info > th, .property-table > thead > tr.info > th, .transactions-table > thead > tr.info > th,
+.table > tbody > tr > td.info, .widget #hpr-calendar > tbody > tr > td.info, .property-table > tbody > tr > td.info, .transactions-table > tbody > tr > td.info,
+.table > tbody > tr > th.info, .widget #hpr-calendar > tbody > tr > th.info, .property-table > tbody > tr > th.info, .transactions-table > tbody > tr > th.info,
+.table > tbody > tr.info > td, .widget #hpr-calendar > tbody > tr.info > td, .property-table > tbody > tr.info > td, .transactions-table > tbody > tr.info > td,
+.table > tbody > tr.info > th, .widget #hpr-calendar > tbody > tr.info > th, .property-table > tbody > tr.info > th, .transactions-table > tbody > tr.info > th,
+.table > tfoot > tr > td.info, .widget #hpr-calendar > tfoot > tr > td.info, .property-table > tfoot > tr > td.info, .transactions-table > tfoot > tr > td.info,
+.table > tfoot > tr > th.info, .widget #hpr-calendar > tfoot > tr > th.info, .property-table > tfoot > tr > th.info, .transactions-table > tfoot > tr > th.info,
+.table > tfoot > tr.info > td, .widget #hpr-calendar > tfoot > tr.info > td, .property-table > tfoot > tr.info > td, .transactions-table > tfoot > tr.info > td,
+.table > tfoot > tr.info > th, .widget #hpr-calendar > tfoot > tr.info > th, .property-table > tfoot > tr.info > th, .transactions-table > tfoot > tr.info > th {
   background-color: #d9edf7; }
 
 .table-hover > tbody > tr > td.info:hover,
@@ -2175,18 +2183,18 @@ table th[class*="col-"] {
 .table-hover > tbody > tr.info:hover > th {
   background-color: #c4e3f3; }
 
-.table > thead > tr > td.warning, .widget #wp-calendar > thead > tr > td.warning, .property-table > thead > tr > td.warning, .transactions-table > thead > tr > td.warning,
-.table > thead > tr > th.warning, .widget #wp-calendar > thead > tr > th.warning, .property-table > thead > tr > th.warning, .transactions-table > thead > tr > th.warning,
-.table > thead > tr.warning > td, .widget #wp-calendar > thead > tr.warning > td, .property-table > thead > tr.warning > td, .transactions-table > thead > tr.warning > td,
-.table > thead > tr.warning > th, .widget #wp-calendar > thead > tr.warning > th, .property-table > thead > tr.warning > th, .transactions-table > thead > tr.warning > th,
-.table > tbody > tr > td.warning, .widget #wp-calendar > tbody > tr > td.warning, .property-table > tbody > tr > td.warning, .transactions-table > tbody > tr > td.warning,
-.table > tbody > tr > th.warning, .widget #wp-calendar > tbody > tr > th.warning, .property-table > tbody > tr > th.warning, .transactions-table > tbody > tr > th.warning,
-.table > tbody > tr.warning > td, .widget #wp-calendar > tbody > tr.warning > td, .property-table > tbody > tr.warning > td, .transactions-table > tbody > tr.warning > td,
-.table > tbody > tr.warning > th, .widget #wp-calendar > tbody > tr.warning > th, .property-table > tbody > tr.warning > th, .transactions-table > tbody > tr.warning > th,
-.table > tfoot > tr > td.warning, .widget #wp-calendar > tfoot > tr > td.warning, .property-table > tfoot > tr > td.warning, .transactions-table > tfoot > tr > td.warning,
-.table > tfoot > tr > th.warning, .widget #wp-calendar > tfoot > tr > th.warning, .property-table > tfoot > tr > th.warning, .transactions-table > tfoot > tr > th.warning,
-.table > tfoot > tr.warning > td, .widget #wp-calendar > tfoot > tr.warning > td, .property-table > tfoot > tr.warning > td, .transactions-table > tfoot > tr.warning > td,
-.table > tfoot > tr.warning > th, .widget #wp-calendar > tfoot > tr.warning > th, .property-table > tfoot > tr.warning > th, .transactions-table > tfoot > tr.warning > th {
+.table > thead > tr > td.warning, .widget #hpr-calendar > thead > tr > td.warning, .property-table > thead > tr > td.warning, .transactions-table > thead > tr > td.warning,
+.table > thead > tr > th.warning, .widget #hpr-calendar > thead > tr > th.warning, .property-table > thead > tr > th.warning, .transactions-table > thead > tr > th.warning,
+.table > thead > tr.warning > td, .widget #hpr-calendar > thead > tr.warning > td, .property-table > thead > tr.warning > td, .transactions-table > thead > tr.warning > td,
+.table > thead > tr.warning > th, .widget #hpr-calendar > thead > tr.warning > th, .property-table > thead > tr.warning > th, .transactions-table > thead > tr.warning > th,
+.table > tbody > tr > td.warning, .widget #hpr-calendar > tbody > tr > td.warning, .property-table > tbody > tr > td.warning, .transactions-table > tbody > tr > td.warning,
+.table > tbody > tr > th.warning, .widget #hpr-calendar > tbody > tr > th.warning, .property-table > tbody > tr > th.warning, .transactions-table > tbody > tr > th.warning,
+.table > tbody > tr.warning > td, .widget #hpr-calendar > tbody > tr.warning > td, .property-table > tbody > tr.warning > td, .transactions-table > tbody > tr.warning > td,
+.table > tbody > tr.warning > th, .widget #hpr-calendar > tbody > tr.warning > th, .property-table > tbody > tr.warning > th, .transactions-table > tbody > tr.warning > th,
+.table > tfoot > tr > td.warning, .widget #hpr-calendar > tfoot > tr > td.warning, .property-table > tfoot > tr > td.warning, .transactions-table > tfoot > tr > td.warning,
+.table > tfoot > tr > th.warning, .widget #hpr-calendar > tfoot > tr > th.warning, .property-table > tfoot > tr > th.warning, .transactions-table > tfoot > tr > th.warning,
+.table > tfoot > tr.warning > td, .widget #hpr-calendar > tfoot > tr.warning > td, .property-table > tfoot > tr.warning > td, .transactions-table > tfoot > tr.warning > td,
+.table > tfoot > tr.warning > th, .widget #hpr-calendar > tfoot > tr.warning > th, .property-table > tfoot > tr.warning > th, .transactions-table > tfoot > tr.warning > th {
   background-color: #fcf8e3; }
 
 .table-hover > tbody > tr > td.warning:hover,
@@ -2196,18 +2204,18 @@ table th[class*="col-"] {
 .table-hover > tbody > tr.warning:hover > th {
   background-color: #faf2cc; }
 
-.table > thead > tr > td.danger, .widget #wp-calendar > thead > tr > td.danger, .property-table > thead > tr > td.danger, .transactions-table > thead > tr > td.danger,
-.table > thead > tr > th.danger, .widget #wp-calendar > thead > tr > th.danger, .property-table > thead > tr > th.danger, .transactions-table > thead > tr > th.danger,
-.table > thead > tr.danger > td, .widget #wp-calendar > thead > tr.danger > td, .property-table > thead > tr.danger > td, .transactions-table > thead > tr.danger > td,
-.table > thead > tr.danger > th, .widget #wp-calendar > thead > tr.danger > th, .property-table > thead > tr.danger > th, .transactions-table > thead > tr.danger > th,
-.table > tbody > tr > td.danger, .widget #wp-calendar > tbody > tr > td.danger, .property-table > tbody > tr > td.danger, .transactions-table > tbody > tr > td.danger,
-.table > tbody > tr > th.danger, .widget #wp-calendar > tbody > tr > th.danger, .property-table > tbody > tr > th.danger, .transactions-table > tbody > tr > th.danger,
-.table > tbody > tr.danger > td, .widget #wp-calendar > tbody > tr.danger > td, .property-table > tbody > tr.danger > td, .transactions-table > tbody > tr.danger > td,
-.table > tbody > tr.danger > th, .widget #wp-calendar > tbody > tr.danger > th, .property-table > tbody > tr.danger > th, .transactions-table > tbody > tr.danger > th,
-.table > tfoot > tr > td.danger, .widget #wp-calendar > tfoot > tr > td.danger, .property-table > tfoot > tr > td.danger, .transactions-table > tfoot > tr > td.danger,
-.table > tfoot > tr > th.danger, .widget #wp-calendar > tfoot > tr > th.danger, .property-table > tfoot > tr > th.danger, .transactions-table > tfoot > tr > th.danger,
-.table > tfoot > tr.danger > td, .widget #wp-calendar > tfoot > tr.danger > td, .property-table > tfoot > tr.danger > td, .transactions-table > tfoot > tr.danger > td,
-.table > tfoot > tr.danger > th, .widget #wp-calendar > tfoot > tr.danger > th, .property-table > tfoot > tr.danger > th, .transactions-table > tfoot > tr.danger > th {
+.table > thead > tr > td.danger, .widget #hpr-calendar > thead > tr > td.danger, .property-table > thead > tr > td.danger, .transactions-table > thead > tr > td.danger,
+.table > thead > tr > th.danger, .widget #hpr-calendar > thead > tr > th.danger, .property-table > thead > tr > th.danger, .transactions-table > thead > tr > th.danger,
+.table > thead > tr.danger > td, .widget #hpr-calendar > thead > tr.danger > td, .property-table > thead > tr.danger > td, .transactions-table > thead > tr.danger > td,
+.table > thead > tr.danger > th, .widget #hpr-calendar > thead > tr.danger > th, .property-table > thead > tr.danger > th, .transactions-table > thead > tr.danger > th,
+.table > tbody > tr > td.danger, .widget #hpr-calendar > tbody > tr > td.danger, .property-table > tbody > tr > td.danger, .transactions-table > tbody > tr > td.danger,
+.table > tbody > tr > th.danger, .widget #hpr-calendar > tbody > tr > th.danger, .property-table > tbody > tr > th.danger, .transactions-table > tbody > tr > th.danger,
+.table > tbody > tr.danger > td, .widget #hpr-calendar > tbody > tr.danger > td, .property-table > tbody > tr.danger > td, .transactions-table > tbody > tr.danger > td,
+.table > tbody > tr.danger > th, .widget #hpr-calendar > tbody > tr.danger > th, .property-table > tbody > tr.danger > th, .transactions-table > tbody > tr.danger > th,
+.table > tfoot > tr > td.danger, .widget #hpr-calendar > tfoot > tr > td.danger, .property-table > tfoot > tr > td.danger, .transactions-table > tfoot > tr > td.danger,
+.table > tfoot > tr > th.danger, .widget #hpr-calendar > tfoot > tr > th.danger, .property-table > tfoot > tr > th.danger, .transactions-table > tfoot > tr > th.danger,
+.table > tfoot > tr.danger > td, .widget #hpr-calendar > tfoot > tr.danger > td, .property-table > tfoot > tr.danger > td, .transactions-table > tfoot > tr.danger > td,
+.table > tfoot > tr.danger > th, .widget #hpr-calendar > tfoot > tr.danger > th, .property-table > tfoot > tr.danger > th, .transactions-table > tfoot > tr.danger > th {
   background-color: #f2dede; }
 
 .table-hover > tbody > tr > td.danger:hover,
@@ -2227,27 +2235,27 @@ table th[class*="col-"] {
       overflow-y: hidden;
       -ms-overflow-style: -ms-autohiding-scrollbar;
       border: 1px solid #ddd; }
-      .table-responsive > .table, .widget .table-responsive > #wp-calendar, .table-responsive > .property-table, .table-responsive > .transactions-table {
+      .table-responsive > .table, .widget .table-responsive > #hpr-calendar, .table-responsive > .property-table, .table-responsive > .transactions-table {
         margin-bottom: 0; }
-        .table-responsive > .table > thead > tr > th, .widget .table-responsive > #wp-calendar > thead > tr > th, .table-responsive > .property-table > thead > tr > th, .table-responsive > .transactions-table > thead > tr > th,
+        .table-responsive > .table > thead > tr > th, .widget .table-responsive > #hpr-calendar > thead > tr > th, .table-responsive > .property-table > thead > tr > th, .table-responsive > .transactions-table > thead > tr > th,
         .table-responsive > .table > thead > tr > td, .widget
-        .table-responsive > #wp-calendar > thead > tr > td,
+        .table-responsive > #hpr-calendar > thead > tr > td,
         .table-responsive > .property-table > thead > tr > td,
         .table-responsive > .transactions-table > thead > tr > td,
         .table-responsive > .table > tbody > tr > th, .widget
-        .table-responsive > #wp-calendar > tbody > tr > th,
+        .table-responsive > #hpr-calendar > tbody > tr > th,
         .table-responsive > .property-table > tbody > tr > th,
         .table-responsive > .transactions-table > tbody > tr > th,
         .table-responsive > .table > tbody > tr > td, .widget
-        .table-responsive > #wp-calendar > tbody > tr > td,
+        .table-responsive > #hpr-calendar > tbody > tr > td,
         .table-responsive > .property-table > tbody > tr > td,
         .table-responsive > .transactions-table > tbody > tr > td,
         .table-responsive > .table > tfoot > tr > th, .widget
-        .table-responsive > #wp-calendar > tfoot > tr > th,
+        .table-responsive > #hpr-calendar > tfoot > tr > th,
         .table-responsive > .property-table > tfoot > tr > th,
         .table-responsive > .transactions-table > tfoot > tr > th,
         .table-responsive > .table > tfoot > tr > td, .widget
-        .table-responsive > #wp-calendar > tfoot > tr > td,
+        .table-responsive > #hpr-calendar > tfoot > tr > td,
         .table-responsive > .property-table > tfoot > tr > td,
         .table-responsive > .transactions-table > tfoot > tr > td {
           white-space: nowrap; }
@@ -5836,206 +5844,206 @@ button.list-group-item-danger {
 .list-group + .panel-footer {
   border-top-width: 0; }
 
-.panel > .table, .widget .panel > #wp-calendar, .panel > .property-table, .panel > .transactions-table,
+.panel > .table, .widget .panel > #hpr-calendar, .panel > .property-table, .panel > .transactions-table,
 .panel > .table-responsive > .table, .widget
-.panel > .table-responsive > #wp-calendar,
+.panel > .table-responsive > #hpr-calendar,
 .panel > .table-responsive > .property-table,
 .panel > .table-responsive > .transactions-table,
 .panel > .panel-collapse > .table, .widget
-.panel > .panel-collapse > #wp-calendar,
+.panel > .panel-collapse > #hpr-calendar,
 .panel > .panel-collapse > .property-table,
 .panel > .panel-collapse > .transactions-table {
   margin-bottom: 0; }
-  .panel > .table caption, .widget .panel > #wp-calendar caption, .panel > .property-table caption, .panel > .transactions-table caption,
+  .panel > .table caption, .widget .panel > #hpr-calendar caption, .panel > .property-table caption, .panel > .transactions-table caption,
   .panel > .table-responsive > .table caption, .widget
-  .panel > .table-responsive > #wp-calendar caption,
+  .panel > .table-responsive > #hpr-calendar caption,
   .panel > .table-responsive > .property-table caption,
   .panel > .table-responsive > .transactions-table caption,
   .panel > .panel-collapse > .table caption, .widget
-  .panel > .panel-collapse > #wp-calendar caption,
+  .panel > .panel-collapse > #hpr-calendar caption,
   .panel > .panel-collapse > .property-table caption,
   .panel > .panel-collapse > .transactions-table caption {
     padding-left: 15px;
     padding-right: 15px; }
 
-.panel > .table:first-child, .widget .panel > #wp-calendar:first-child, .panel > .property-table:first-child, .panel > .transactions-table:first-child,
+.panel > .table:first-child, .widget .panel > #hpr-calendar:first-child, .panel > .property-table:first-child, .panel > .transactions-table:first-child,
 .panel > .table-responsive:first-child > .table:first-child, .widget
-.panel > .table-responsive:first-child > #wp-calendar:first-child,
+.panel > .table-responsive:first-child > #hpr-calendar:first-child,
 .panel > .table-responsive:first-child > .property-table:first-child,
 .panel > .table-responsive:first-child > .transactions-table:first-child {
   border-top-right-radius: 3px;
   border-top-left-radius: 3px; }
-  .panel > .table:first-child > thead:first-child > tr:first-child, .widget .panel > #wp-calendar:first-child > thead:first-child > tr:first-child, .panel > .property-table:first-child > thead:first-child > tr:first-child, .panel > .transactions-table:first-child > thead:first-child > tr:first-child,
+  .panel > .table:first-child > thead:first-child > tr:first-child, .widget .panel > #hpr-calendar:first-child > thead:first-child > tr:first-child, .panel > .property-table:first-child > thead:first-child > tr:first-child, .panel > .transactions-table:first-child > thead:first-child > tr:first-child,
   .panel > .table:first-child > tbody:first-child > tr:first-child, .widget
-  .panel > #wp-calendar:first-child > tbody:first-child > tr:first-child,
+  .panel > #hpr-calendar:first-child > tbody:first-child > tr:first-child,
   .panel > .property-table:first-child > tbody:first-child > tr:first-child,
   .panel > .transactions-table:first-child > tbody:first-child > tr:first-child,
   .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child, .widget
-  .panel > .table-responsive:first-child > #wp-calendar:first-child > thead:first-child > tr:first-child,
+  .panel > .table-responsive:first-child > #hpr-calendar:first-child > thead:first-child > tr:first-child,
   .panel > .table-responsive:first-child > .property-table:first-child > thead:first-child > tr:first-child,
   .panel > .table-responsive:first-child > .transactions-table:first-child > thead:first-child > tr:first-child,
   .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child, .widget
-  .panel > .table-responsive:first-child > #wp-calendar:first-child > tbody:first-child > tr:first-child,
+  .panel > .table-responsive:first-child > #hpr-calendar:first-child > tbody:first-child > tr:first-child,
   .panel > .table-responsive:first-child > .property-table:first-child > tbody:first-child > tr:first-child,
   .panel > .table-responsive:first-child > .transactions-table:first-child > tbody:first-child > tr:first-child {
     border-top-left-radius: 3px;
     border-top-right-radius: 3px; }
-    .panel > .table:first-child > thead:first-child > tr:first-child td:first-child, .widget .panel > #wp-calendar:first-child > thead:first-child > tr:first-child td:first-child, .panel > .property-table:first-child > thead:first-child > tr:first-child td:first-child, .panel > .transactions-table:first-child > thead:first-child > tr:first-child td:first-child,
+    .panel > .table:first-child > thead:first-child > tr:first-child td:first-child, .widget .panel > #hpr-calendar:first-child > thead:first-child > tr:first-child td:first-child, .panel > .property-table:first-child > thead:first-child > tr:first-child td:first-child, .panel > .transactions-table:first-child > thead:first-child > tr:first-child td:first-child,
     .panel > .table:first-child > thead:first-child > tr:first-child th:first-child, .widget
-    .panel > #wp-calendar:first-child > thead:first-child > tr:first-child th:first-child,
+    .panel > #hpr-calendar:first-child > thead:first-child > tr:first-child th:first-child,
     .panel > .property-table:first-child > thead:first-child > tr:first-child th:first-child,
     .panel > .transactions-table:first-child > thead:first-child > tr:first-child th:first-child,
     .panel > .table:first-child > tbody:first-child > tr:first-child td:first-child, .widget
-    .panel > #wp-calendar:first-child > tbody:first-child > tr:first-child td:first-child,
+    .panel > #hpr-calendar:first-child > tbody:first-child > tr:first-child td:first-child,
     .panel > .property-table:first-child > tbody:first-child > tr:first-child td:first-child,
     .panel > .transactions-table:first-child > tbody:first-child > tr:first-child td:first-child,
     .panel > .table:first-child > tbody:first-child > tr:first-child th:first-child, .widget
-    .panel > #wp-calendar:first-child > tbody:first-child > tr:first-child th:first-child,
+    .panel > #hpr-calendar:first-child > tbody:first-child > tr:first-child th:first-child,
     .panel > .property-table:first-child > tbody:first-child > tr:first-child th:first-child,
     .panel > .transactions-table:first-child > tbody:first-child > tr:first-child th:first-child,
     .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:first-child, .widget
-    .panel > .table-responsive:first-child > #wp-calendar:first-child > thead:first-child > tr:first-child td:first-child,
+    .panel > .table-responsive:first-child > #hpr-calendar:first-child > thead:first-child > tr:first-child td:first-child,
     .panel > .table-responsive:first-child > .property-table:first-child > thead:first-child > tr:first-child td:first-child,
     .panel > .table-responsive:first-child > .transactions-table:first-child > thead:first-child > tr:first-child td:first-child,
     .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:first-child, .widget
-    .panel > .table-responsive:first-child > #wp-calendar:first-child > thead:first-child > tr:first-child th:first-child,
+    .panel > .table-responsive:first-child > #hpr-calendar:first-child > thead:first-child > tr:first-child th:first-child,
     .panel > .table-responsive:first-child > .property-table:first-child > thead:first-child > tr:first-child th:first-child,
     .panel > .table-responsive:first-child > .transactions-table:first-child > thead:first-child > tr:first-child th:first-child,
     .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:first-child, .widget
-    .panel > .table-responsive:first-child > #wp-calendar:first-child > tbody:first-child > tr:first-child td:first-child,
+    .panel > .table-responsive:first-child > #hpr-calendar:first-child > tbody:first-child > tr:first-child td:first-child,
     .panel > .table-responsive:first-child > .property-table:first-child > tbody:first-child > tr:first-child td:first-child,
     .panel > .table-responsive:first-child > .transactions-table:first-child > tbody:first-child > tr:first-child td:first-child,
     .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:first-child, .widget
-    .panel > .table-responsive:first-child > #wp-calendar:first-child > tbody:first-child > tr:first-child th:first-child,
+    .panel > .table-responsive:first-child > #hpr-calendar:first-child > tbody:first-child > tr:first-child th:first-child,
     .panel > .table-responsive:first-child > .property-table:first-child > tbody:first-child > tr:first-child th:first-child,
     .panel > .table-responsive:first-child > .transactions-table:first-child > tbody:first-child > tr:first-child th:first-child {
       border-top-left-radius: 3px; }
-    .panel > .table:first-child > thead:first-child > tr:first-child td:last-child, .widget .panel > #wp-calendar:first-child > thead:first-child > tr:first-child td:last-child, .panel > .property-table:first-child > thead:first-child > tr:first-child td:last-child, .panel > .transactions-table:first-child > thead:first-child > tr:first-child td:last-child,
+    .panel > .table:first-child > thead:first-child > tr:first-child td:last-child, .widget .panel > #hpr-calendar:first-child > thead:first-child > tr:first-child td:last-child, .panel > .property-table:first-child > thead:first-child > tr:first-child td:last-child, .panel > .transactions-table:first-child > thead:first-child > tr:first-child td:last-child,
     .panel > .table:first-child > thead:first-child > tr:first-child th:last-child, .widget
-    .panel > #wp-calendar:first-child > thead:first-child > tr:first-child th:last-child,
+    .panel > #hpr-calendar:first-child > thead:first-child > tr:first-child th:last-child,
     .panel > .property-table:first-child > thead:first-child > tr:first-child th:last-child,
     .panel > .transactions-table:first-child > thead:first-child > tr:first-child th:last-child,
     .panel > .table:first-child > tbody:first-child > tr:first-child td:last-child, .widget
-    .panel > #wp-calendar:first-child > tbody:first-child > tr:first-child td:last-child,
+    .panel > #hpr-calendar:first-child > tbody:first-child > tr:first-child td:last-child,
     .panel > .property-table:first-child > tbody:first-child > tr:first-child td:last-child,
     .panel > .transactions-table:first-child > tbody:first-child > tr:first-child td:last-child,
     .panel > .table:first-child > tbody:first-child > tr:first-child th:last-child, .widget
-    .panel > #wp-calendar:first-child > tbody:first-child > tr:first-child th:last-child,
+    .panel > #hpr-calendar:first-child > tbody:first-child > tr:first-child th:last-child,
     .panel > .property-table:first-child > tbody:first-child > tr:first-child th:last-child,
     .panel > .transactions-table:first-child > tbody:first-child > tr:first-child th:last-child,
     .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:last-child, .widget
-    .panel > .table-responsive:first-child > #wp-calendar:first-child > thead:first-child > tr:first-child td:last-child,
+    .panel > .table-responsive:first-child > #hpr-calendar:first-child > thead:first-child > tr:first-child td:last-child,
     .panel > .table-responsive:first-child > .property-table:first-child > thead:first-child > tr:first-child td:last-child,
     .panel > .table-responsive:first-child > .transactions-table:first-child > thead:first-child > tr:first-child td:last-child,
     .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:last-child, .widget
-    .panel > .table-responsive:first-child > #wp-calendar:first-child > thead:first-child > tr:first-child th:last-child,
+    .panel > .table-responsive:first-child > #hpr-calendar:first-child > thead:first-child > tr:first-child th:last-child,
     .panel > .table-responsive:first-child > .property-table:first-child > thead:first-child > tr:first-child th:last-child,
     .panel > .table-responsive:first-child > .transactions-table:first-child > thead:first-child > tr:first-child th:last-child,
     .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:last-child, .widget
-    .panel > .table-responsive:first-child > #wp-calendar:first-child > tbody:first-child > tr:first-child td:last-child,
+    .panel > .table-responsive:first-child > #hpr-calendar:first-child > tbody:first-child > tr:first-child td:last-child,
     .panel > .table-responsive:first-child > .property-table:first-child > tbody:first-child > tr:first-child td:last-child,
     .panel > .table-responsive:first-child > .transactions-table:first-child > tbody:first-child > tr:first-child td:last-child,
     .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:last-child, .widget
-    .panel > .table-responsive:first-child > #wp-calendar:first-child > tbody:first-child > tr:first-child th:last-child,
+    .panel > .table-responsive:first-child > #hpr-calendar:first-child > tbody:first-child > tr:first-child th:last-child,
     .panel > .table-responsive:first-child > .property-table:first-child > tbody:first-child > tr:first-child th:last-child,
     .panel > .table-responsive:first-child > .transactions-table:first-child > tbody:first-child > tr:first-child th:last-child {
       border-top-right-radius: 3px; }
 
-.panel > .table:last-child, .widget .panel > #wp-calendar:last-child, .panel > .property-table:last-child, .panel > .transactions-table:last-child,
+.panel > .table:last-child, .widget .panel > #hpr-calendar:last-child, .panel > .property-table:last-child, .panel > .transactions-table:last-child,
 .panel > .table-responsive:last-child > .table:last-child, .widget
-.panel > .table-responsive:last-child > #wp-calendar:last-child,
+.panel > .table-responsive:last-child > #hpr-calendar:last-child,
 .panel > .table-responsive:last-child > .property-table:last-child,
 .panel > .table-responsive:last-child > .transactions-table:last-child {
   border-bottom-right-radius: 3px;
   border-bottom-left-radius: 3px; }
-  .panel > .table:last-child > tbody:last-child > tr:last-child, .widget .panel > #wp-calendar:last-child > tbody:last-child > tr:last-child, .panel > .property-table:last-child > tbody:last-child > tr:last-child, .panel > .transactions-table:last-child > tbody:last-child > tr:last-child,
+  .panel > .table:last-child > tbody:last-child > tr:last-child, .widget .panel > #hpr-calendar:last-child > tbody:last-child > tr:last-child, .panel > .property-table:last-child > tbody:last-child > tr:last-child, .panel > .transactions-table:last-child > tbody:last-child > tr:last-child,
   .panel > .table:last-child > tfoot:last-child > tr:last-child, .widget
-  .panel > #wp-calendar:last-child > tfoot:last-child > tr:last-child,
+  .panel > #hpr-calendar:last-child > tfoot:last-child > tr:last-child,
   .panel > .property-table:last-child > tfoot:last-child > tr:last-child,
   .panel > .transactions-table:last-child > tfoot:last-child > tr:last-child,
   .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child, .widget
-  .panel > .table-responsive:last-child > #wp-calendar:last-child > tbody:last-child > tr:last-child,
+  .panel > .table-responsive:last-child > #hpr-calendar:last-child > tbody:last-child > tr:last-child,
   .panel > .table-responsive:last-child > .property-table:last-child > tbody:last-child > tr:last-child,
   .panel > .table-responsive:last-child > .transactions-table:last-child > tbody:last-child > tr:last-child,
   .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child, .widget
-  .panel > .table-responsive:last-child > #wp-calendar:last-child > tfoot:last-child > tr:last-child,
+  .panel > .table-responsive:last-child > #hpr-calendar:last-child > tfoot:last-child > tr:last-child,
   .panel > .table-responsive:last-child > .property-table:last-child > tfoot:last-child > tr:last-child,
   .panel > .table-responsive:last-child > .transactions-table:last-child > tfoot:last-child > tr:last-child {
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px; }
-    .panel > .table:last-child > tbody:last-child > tr:last-child td:first-child, .widget .panel > #wp-calendar:last-child > tbody:last-child > tr:last-child td:first-child, .panel > .property-table:last-child > tbody:last-child > tr:last-child td:first-child, .panel > .transactions-table:last-child > tbody:last-child > tr:last-child td:first-child,
+    .panel > .table:last-child > tbody:last-child > tr:last-child td:first-child, .widget .panel > #hpr-calendar:last-child > tbody:last-child > tr:last-child td:first-child, .panel > .property-table:last-child > tbody:last-child > tr:last-child td:first-child, .panel > .transactions-table:last-child > tbody:last-child > tr:last-child td:first-child,
     .panel > .table:last-child > tbody:last-child > tr:last-child th:first-child, .widget
-    .panel > #wp-calendar:last-child > tbody:last-child > tr:last-child th:first-child,
+    .panel > #hpr-calendar:last-child > tbody:last-child > tr:last-child th:first-child,
     .panel > .property-table:last-child > tbody:last-child > tr:last-child th:first-child,
     .panel > .transactions-table:last-child > tbody:last-child > tr:last-child th:first-child,
     .panel > .table:last-child > tfoot:last-child > tr:last-child td:first-child, .widget
-    .panel > #wp-calendar:last-child > tfoot:last-child > tr:last-child td:first-child,
+    .panel > #hpr-calendar:last-child > tfoot:last-child > tr:last-child td:first-child,
     .panel > .property-table:last-child > tfoot:last-child > tr:last-child td:first-child,
     .panel > .transactions-table:last-child > tfoot:last-child > tr:last-child td:first-child,
     .panel > .table:last-child > tfoot:last-child > tr:last-child th:first-child, .widget
-    .panel > #wp-calendar:last-child > tfoot:last-child > tr:last-child th:first-child,
+    .panel > #hpr-calendar:last-child > tfoot:last-child > tr:last-child th:first-child,
     .panel > .property-table:last-child > tfoot:last-child > tr:last-child th:first-child,
     .panel > .transactions-table:last-child > tfoot:last-child > tr:last-child th:first-child,
     .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:first-child, .widget
-    .panel > .table-responsive:last-child > #wp-calendar:last-child > tbody:last-child > tr:last-child td:first-child,
+    .panel > .table-responsive:last-child > #hpr-calendar:last-child > tbody:last-child > tr:last-child td:first-child,
     .panel > .table-responsive:last-child > .property-table:last-child > tbody:last-child > tr:last-child td:first-child,
     .panel > .table-responsive:last-child > .transactions-table:last-child > tbody:last-child > tr:last-child td:first-child,
     .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:first-child, .widget
-    .panel > .table-responsive:last-child > #wp-calendar:last-child > tbody:last-child > tr:last-child th:first-child,
+    .panel > .table-responsive:last-child > #hpr-calendar:last-child > tbody:last-child > tr:last-child th:first-child,
     .panel > .table-responsive:last-child > .property-table:last-child > tbody:last-child > tr:last-child th:first-child,
     .panel > .table-responsive:last-child > .transactions-table:last-child > tbody:last-child > tr:last-child th:first-child,
     .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:first-child, .widget
-    .panel > .table-responsive:last-child > #wp-calendar:last-child > tfoot:last-child > tr:last-child td:first-child,
+    .panel > .table-responsive:last-child > #hpr-calendar:last-child > tfoot:last-child > tr:last-child td:first-child,
     .panel > .table-responsive:last-child > .property-table:last-child > tfoot:last-child > tr:last-child td:first-child,
     .panel > .table-responsive:last-child > .transactions-table:last-child > tfoot:last-child > tr:last-child td:first-child,
     .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:first-child, .widget
-    .panel > .table-responsive:last-child > #wp-calendar:last-child > tfoot:last-child > tr:last-child th:first-child,
+    .panel > .table-responsive:last-child > #hpr-calendar:last-child > tfoot:last-child > tr:last-child th:first-child,
     .panel > .table-responsive:last-child > .property-table:last-child > tfoot:last-child > tr:last-child th:first-child,
     .panel > .table-responsive:last-child > .transactions-table:last-child > tfoot:last-child > tr:last-child th:first-child {
       border-bottom-left-radius: 3px; }
-    .panel > .table:last-child > tbody:last-child > tr:last-child td:last-child, .widget .panel > #wp-calendar:last-child > tbody:last-child > tr:last-child td:last-child, .panel > .property-table:last-child > tbody:last-child > tr:last-child td:last-child, .panel > .transactions-table:last-child > tbody:last-child > tr:last-child td:last-child,
+    .panel > .table:last-child > tbody:last-child > tr:last-child td:last-child, .widget .panel > #hpr-calendar:last-child > tbody:last-child > tr:last-child td:last-child, .panel > .property-table:last-child > tbody:last-child > tr:last-child td:last-child, .panel > .transactions-table:last-child > tbody:last-child > tr:last-child td:last-child,
     .panel > .table:last-child > tbody:last-child > tr:last-child th:last-child, .widget
-    .panel > #wp-calendar:last-child > tbody:last-child > tr:last-child th:last-child,
+    .panel > #hpr-calendar:last-child > tbody:last-child > tr:last-child th:last-child,
     .panel > .property-table:last-child > tbody:last-child > tr:last-child th:last-child,
     .panel > .transactions-table:last-child > tbody:last-child > tr:last-child th:last-child,
     .panel > .table:last-child > tfoot:last-child > tr:last-child td:last-child, .widget
-    .panel > #wp-calendar:last-child > tfoot:last-child > tr:last-child td:last-child,
+    .panel > #hpr-calendar:last-child > tfoot:last-child > tr:last-child td:last-child,
     .panel > .property-table:last-child > tfoot:last-child > tr:last-child td:last-child,
     .panel > .transactions-table:last-child > tfoot:last-child > tr:last-child td:last-child,
     .panel > .table:last-child > tfoot:last-child > tr:last-child th:last-child, .widget
-    .panel > #wp-calendar:last-child > tfoot:last-child > tr:last-child th:last-child,
+    .panel > #hpr-calendar:last-child > tfoot:last-child > tr:last-child th:last-child,
     .panel > .property-table:last-child > tfoot:last-child > tr:last-child th:last-child,
     .panel > .transactions-table:last-child > tfoot:last-child > tr:last-child th:last-child,
     .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:last-child, .widget
-    .panel > .table-responsive:last-child > #wp-calendar:last-child > tbody:last-child > tr:last-child td:last-child,
+    .panel > .table-responsive:last-child > #hpr-calendar:last-child > tbody:last-child > tr:last-child td:last-child,
     .panel > .table-responsive:last-child > .property-table:last-child > tbody:last-child > tr:last-child td:last-child,
     .panel > .table-responsive:last-child > .transactions-table:last-child > tbody:last-child > tr:last-child td:last-child,
     .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:last-child, .widget
-    .panel > .table-responsive:last-child > #wp-calendar:last-child > tbody:last-child > tr:last-child th:last-child,
+    .panel > .table-responsive:last-child > #hpr-calendar:last-child > tbody:last-child > tr:last-child th:last-child,
     .panel > .table-responsive:last-child > .property-table:last-child > tbody:last-child > tr:last-child th:last-child,
     .panel > .table-responsive:last-child > .transactions-table:last-child > tbody:last-child > tr:last-child th:last-child,
     .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:last-child, .widget
-    .panel > .table-responsive:last-child > #wp-calendar:last-child > tfoot:last-child > tr:last-child td:last-child,
+    .panel > .table-responsive:last-child > #hpr-calendar:last-child > tfoot:last-child > tr:last-child td:last-child,
     .panel > .table-responsive:last-child > .property-table:last-child > tfoot:last-child > tr:last-child td:last-child,
     .panel > .table-responsive:last-child > .transactions-table:last-child > tfoot:last-child > tr:last-child td:last-child,
     .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:last-child, .widget
-    .panel > .table-responsive:last-child > #wp-calendar:last-child > tfoot:last-child > tr:last-child th:last-child,
+    .panel > .table-responsive:last-child > #hpr-calendar:last-child > tfoot:last-child > tr:last-child th:last-child,
     .panel > .table-responsive:last-child > .property-table:last-child > tfoot:last-child > tr:last-child th:last-child,
     .panel > .table-responsive:last-child > .transactions-table:last-child > tfoot:last-child > tr:last-child th:last-child {
       border-bottom-right-radius: 3px; }
 
-.panel > .panel-body + .table, .widget .panel > .panel-body + #wp-calendar, .panel > .panel-body + .property-table, .panel > .panel-body + .transactions-table,
+.panel > .panel-body + .table, .widget .panel > .panel-body + #hpr-calendar, .panel > .panel-body + .property-table, .panel > .panel-body + .transactions-table,
 .panel > .panel-body + .table-responsive,
 .panel > .table + .panel-body, .widget
-.panel > #wp-calendar + .panel-body,
+.panel > #hpr-calendar + .panel-body,
 .panel > .property-table + .panel-body,
 .panel > .transactions-table + .panel-body,
 .panel > .table-responsive + .panel-body {
   border-top: 1px solid #ddd; }
 
-.panel > .table > tbody:first-child > tr:first-child th, .widget .panel > #wp-calendar > tbody:first-child > tr:first-child th, .panel > .property-table > tbody:first-child > tr:first-child th, .panel > .transactions-table > tbody:first-child > tr:first-child th,
+.panel > .table > tbody:first-child > tr:first-child th, .widget .panel > #hpr-calendar > tbody:first-child > tr:first-child th, .panel > .property-table > tbody:first-child > tr:first-child th, .panel > .transactions-table > tbody:first-child > tr:first-child th,
 .panel > .table > tbody:first-child > tr:first-child td, .widget
-.panel > #wp-calendar > tbody:first-child > tr:first-child td,
+.panel > #hpr-calendar > tbody:first-child > tr:first-child td,
 .panel > .property-table > tbody:first-child > tr:first-child td,
 .panel > .transactions-table > tbody:first-child > tr:first-child td {
   border-top: 0; }
@@ -6840,7 +6848,7 @@ button.close {
 .affix {
   position: fixed; }
 
-@-ms-viewport {
+@-ms-viehprort {
   width: device-width; }
 
 .visible-xs {
@@ -7070,7 +7078,7 @@ button.close {
   font-weight: 300;
   margin-bottom: 40px; }
 
-.widget #wp-calendar {
+.widget #hpr-calendar {
   margin: 0; }
 
 .widget.widget_enquire_widget form {
@@ -9877,6 +9885,7 @@ h3.agent-box-title, .agent-box-title.property-detail-subtitle {
   position: absolute;
   pointer-events: none;
   width: 100%;
+  display: flex;
   z-index: 2; }
 
 .widget_property_carousel_widget .owl-prev, .widget_property_carousel_widget .owl-next {
@@ -9911,6 +9920,8 @@ h3.agent-box-title, .agent-box-title.property-detail-subtitle {
 
 .widget_property_carousel_widget .owl-next {
   float: right;
+  position: absolute;
+  right: 0px;
   margin-right: -15px; }
   .widget_property_carousel_widget .owl-next:before {
     content: "\e874";
@@ -10427,20 +10438,9 @@ p {
 
 .background-white {
   background-color: #fff; }
-body #GoTop {
-    width: 31px !important;
-    height: 31px !important;
-    text-align: center !important;
-    position: fixed !important;
-    right: 10px !important;
-    line-height: 1.8em !important;
-    border: 2px solid #fff !important;
-    background: rgba(22, 160, 133, 0.75) !important;
-    bottom: 10px !important;
-}
-.gotop::after{
-    content: "\f102" !important;
-    color: #fff !important;
-    font-size: 20px !important;
-    line-height: 1.5em !important;
+
+@media screen and (min-width: 1024px){
+  .navbar-info{
+    margin-top: 3.7em !important;
+  }
 }
