@@ -51,7 +51,8 @@ router.get('/', function(req, res, next) {
 											countVideo	    :countVideo,
 											countArea 	    :countArea,
 											countbuyUrgently:countbuyUrgently,
-											countsaleArea 	:countsaleArea
+											countsaleArea 	:countsaleArea,
+											user 			:req.user
 										})
 									})
 								})

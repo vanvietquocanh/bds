@@ -69,7 +69,12 @@ router.get('/:area', function(req, res, next) {
 					assert.equal(null, err);
 					db.close();
 					if(!err){
-						res.render("khu-vuc-happy-real", {"result": result, "infoCompany":infoCompany, NameRoute:arrRealName[arrName.indexOf(req.params.area)]})
+						res.render("khu-vuc-happy-real", {
+							"result"	 : result, 
+							"infoCompany":infoCompany, 
+							"NameRoute"	 :arrRealName[arrName.indexOf(req.params.area)],
+							"user" 	     :req.user
+						})
 					}else{
 						res.send(err)
 					}

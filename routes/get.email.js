@@ -12,7 +12,10 @@ router.get('/', function(req, res, next) {
 		mongo.connect(pathMongodb,(err, db)=>{
 			db.collection("emailClient").find().sort({'Ngày':-1}).toArray((err, result)=>{
 				db.close();
-				res.render("email-happy-real",{"result":result})
+				res.render("email-happy-real",{
+					"result":result, 
+					"user" 	:req.user
+				})
 			})
 		})
 	}else{

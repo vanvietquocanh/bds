@@ -24,7 +24,14 @@ router.get('/', function(req, res, next) {
 										if(lowestPrice.length!==0){
 											db.collection("connection").insertOne({time:Date.now(), day:beginDayNow, month:beginMonthNow},(err, re)=>{				
 												db.close();
-												res.render("details",{"chatbox":chatbox, details: result, lowestPrice:lowestPrice, arrArea:relateTO, infoCompany:infoCompany, href:req.protocol + '://' + req.get('host') + req.originalUrl})
+												res.render("details",{
+													"chatbox"	 :chatbox,
+													"details"	 :result,
+													"lowestPrice":lowestPrice, 
+													"arrArea"	 :relateTO, 
+													"infoCompany":infoCompany, 
+													"href"		 :req.protocol + '://' + req.get('host') + req.originalUrl
+												})
 											})
 										}else{
 											db.close();

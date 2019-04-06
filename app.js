@@ -12,6 +12,7 @@ var FacebookStrategy = require('passport-facebook');
 var indexRouter = require('./routes/get.index');
 var usersRouter = require('./routes/users');
 var signinRouter = require('./routes/signin');
+var logoutRouter = require('./routes/get.logout');
 var dashboardRouter = require('./routes/get.dashboard');
 var areaRouter = require('./routes/get.area');
 var contactRouter = require('./routes/get.contact');
@@ -25,7 +26,6 @@ var removeEmailClientRouter = require('./routes/post.removeEmailClient');
 var sendBuyRouter = require('./routes/post.sendBuy');
 var activeRemoveAreaGuest = require('./routes/post.activeRemoveAreaGuest');
 var saleAreaGuest = require('./routes/post.removeSaleAreaGuest');
-// var findRouter = require('./routes/get.find');
 var receiveEmailRouter = require('./routes/post.receive-email');
 var produceImage = require('./routes/produce.image.js');
 var details = require('./routes/get.details');
@@ -59,15 +59,6 @@ app.use(sassMiddleware({
   sourceMap: true
 }));
 app.use(express.static(path.join(__dirname, 'public')));
-app.use('/', indexRouter);
-app.use('/chi-tiet', details);
-app.use('/view-video-happy-real', videoRouter);
-app.use('/lien-he-happy-real', contactRouter);
-app.use('/gui-ban-happy-real', getSendSale);
-app.use('/gui-mua', sendBuyRouter);
-app.use('/gui-ban', postSendSale);
-app.use('/receive-email', receiveEmailRouter);
-
 app.use(session(
                 { secret: 'coppycat',
                   resave: false,
@@ -93,6 +84,7 @@ passport.deserializeUser((id, done)=>{
 })
 app.route("/facebook").get(passport.authenticate("facebook"));
 app.use('/signin', signinRouter);
+app.use('/logoutme', logoutRouter);
 app.use('/users', usersRouter);
 app.use('/admin', dashboardRouter);
 app.use('/new-area', newRealEstateRouter);
@@ -104,7 +96,14 @@ app.use('/removeemail', removeEmailClientRouter);
 app.use('/area-guest', activeRemoveAreaGuest);
 app.use('/huonggiachu', huonggiachu);
 app.use('/email-happy-real', emailRouter);
-
+app.use('/chi-tiet', details);
+app.use('/bat-dong-san-video', videoRouter);
+app.use('/lien-he-happy-real', contactRouter);
+app.use('/gui-ban-happy-real', getSendSale);
+app.use('/gui-mua', sendBuyRouter);
+app.use('/gui-ban', postSendSale);
+app.use('/receive-email', receiveEmailRouter);
+app.use('/', indexRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
